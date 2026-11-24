@@ -171,19 +171,19 @@
 
     html.theme-light {
       --bg-page: #ffffff;
-      --bg-sticky: rgba(255, 255, 255, 0.95);
+      --bg-sticky: #ffffff;
       --bg-elevated: #ffffff;
-      --bg-tint: rgba(10, 10, 10, 0.03);
-      --bg-tint-strong: rgba(10, 10, 10, 0.08);
-      --bg-track: rgba(10, 10, 10, 0.16);
-      --bg-overlay: rgba(255, 255, 255, 0.96);
-      --fg-main: #0a0a0a;
-      --fg-muted: rgba(10, 10, 10, 0.78);
-      --fg-subtle: rgba(10, 10, 10, 0.55);
-      --border-main: #0a0a0a;
-      --border-mid: rgba(10, 10, 10, 0.68);
-      --border-soft: rgba(10, 10, 10, 0.3);
-      --inv-bg: #0a0a0a;
+      --bg-tint: #ffffff;
+      --bg-tint-strong: #ffffff;
+      --bg-track: #ffffff;
+      --bg-overlay: #ffffff;
+      --fg-main: #000000;
+      --fg-muted: rgba(0, 0, 0, 0.78);
+      --fg-subtle: rgba(0, 0, 0, 0.55);
+      --border-main: #000000;
+      --border-mid: rgba(0, 0, 0, 0.72);
+      --border-soft: rgba(0, 0, 0, 0.35);
+      --inv-bg: #000000;
       --inv-fg: #ffffff;
     }
 
@@ -2059,7 +2059,7 @@
       });
 
       if (scratchCtx) {
-        scratchCtx.strokeStyle = isLight ? "#0a0a0a" : "#ffffff";
+        scratchCtx.strokeStyle = isLight ? "#000000" : "#ffffff";
       }
     }
 
@@ -2376,7 +2376,7 @@
       scratchCtx.scale(dpr, dpr);
       scratchCtx.lineCap = "round";
       scratchCtx.lineJoin = "round";
-      scratchCtx.strokeStyle = state.theme === "light" ? "#0a0a0a" : "#ffffff";
+      scratchCtx.strokeStyle = state.theme === "light" ? "#000000" : "#ffffff";
       scratchCtx.lineWidth = penWidth;
     }
 
@@ -2627,7 +2627,7 @@
                 <span>${hasProgress ? `${stats.answered}/${stats.total} soal` : "Siap mulai"}</span>
                 <span>${hasProgress ? `✓ ${stats.correct}` : "Buka →"}</span>
               </div>
-              <div class="card-track w-full h-1.5 rounded-full surface-track overflow-hidden">
+              <div class="card-track w-full h-1.5 rounded-full surface-track border border-soft overflow-hidden">
                 <div class="card-fill h-full progress-fill" style="width: ${pct}%"></div>
               </div>
             </div>
@@ -2723,7 +2723,7 @@
                 </p>
               </div>
 
-              <div class="card-track w-full h-1.5 rounded-full surface-track overflow-hidden">
+              <div class="card-track w-full h-1.5 rounded-full surface-track border border-soft overflow-hidden">
                 <div class="card-fill h-full progress-fill" style="width: ${pct}%"></div>
               </div>
             </button>
