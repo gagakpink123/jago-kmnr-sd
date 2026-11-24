@@ -15,16 +15,16 @@
   <meta name="googlebot" content="index, follow" />
   <meta name="language" content="Indonesian" />
   <meta name="rating" content="general" />
-  <meta id="meta-theme-color" name="theme-color" content="#FFFFFF" />
+  <meta id="meta-theme-color" name="theme-color" content="#0a0a0a" />
   <meta name="application-name" content="Jago KMNR SD" />
   <meta name="apple-mobile-web-app-title" content="Jago KMNR SD" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <!-- Catatan: Ganti href di bawah dengan URL domain asli Anda setelah website di-hosting -->
   <link rel="canonical" href="./" />
 
-  <!-- Ikon Tab Browser (Swiss Geometric Favicon SVG) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111111'/%3E%3Crect x='4' y='4' width='24' height='24' fill='none' stroke='%23FFFFFF' stroke-width='2'/%3E%3Cline x1='16' y1='4' x2='16' y2='28' stroke='%23FFFFFF' stroke-width='1.5'/%3E%3Cline x1='4' y1='16' x2='28' y2='16' stroke='%23FFFFFF' stroke-width='1.5'/%3E%3Crect x='18' y='18' width='8' height='8' fill='%23FF0000'/%3E%3C/svg%3E" />
+  <!-- Ikon Tab Browser (Favicon SVG) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a0a'/%3E%3Crect x='5' y='6' width='22' height='15' rx='2' fill='none' stroke='%23ffffff' stroke-width='2.4'/%3E%3Cpath d='M10 13.5h5M12.5 11v5M19 12l3.5 3.5M22.5 12L19 15.5M10 25l6-4 6 4' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 
   <!-- Open Graph / Pratinjau Media Sosial & WhatsApp -->
   <meta property="og:type" content="website" />
@@ -32,14 +32,14 @@
   <meta property="og:site_name" content="Jago KMNR SD" />
   <meta property="og:title" content="Jago KMNR SD — Kuis Matematika Nalaria Realistik Kelas 1–6 SD" />
   <meta property="og:description" content="Latihan soal Kompetisi Matematika Nalaria Realistik (KMNR) SD kelas 1–6 interaktif. Berisi 530 soal standar internasional lengkap dengan pembahasan langsung." />
-  <meta property="og:image" content="https://placehold.co/1200x630/111111/FFFFFF?text=JAGO+KMNR+SD+%E2%80%A2+KELAS+1-6" />
-  <meta property="og:image:alt" content="Jago KMNR SD — Tantangan Matematika Nalaria Realistik" />
+  <meta property="og:image" content="https://placehold.co/1200x630/0a0a0a/ffffff?text=Jago+KMNR+SD+%E2%80%A2+Kelas+1-6" />
+  <meta property="og:image:alt" content="Jago KMNR SD — Papan Tantangan Matematika Nalaria Realistik" />
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Jago KMNR SD — Kuis Matematika Nalaria Realistik Kelas 1–6 SD" />
   <meta name="twitter:description" content="Latihan 530 soal interaktif KMNR SD kelas 1 sampai 6 lengkap dengan pembahasan langsung dan papan coret-coretan." />
-  <meta name="twitter:image" content="https://placehold.co/1200x630/111111/FFFFFF?text=JAGO+KMNR+SD+%E2%80%A2+KELAS+1-6" />
+  <meta name="twitter:image" content="https://placehold.co/1200x630/0a0a0a/ffffff?text=Jago+KMNR+SD+%E2%80%A2+Kelas+1-6" />
 
   <!-- Vercel Web Analytics & Speed Insights -->
   <script>
@@ -141,343 +141,327 @@
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Barlow Condensed (Swiss Display), Inter (Neo-Grotesk), JetBrains Mono (Technical DIN) -->
+  <!-- Google Fonts: Cabin Sketch (judul) & Nunito (teks soal & pembahasan rapi) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
     /* =========================================================================
-       SWISS INTERNATIONAL DESIGN SYSTEM TOKENS
-       Monochromatic Palette: Pure White (#FFFFFF), Near Black (#111111),
-       Light Gray (#E5E5E5), Signal Red Accent (#FF0000)
+       TOKEN WARNA TEMA GANDA: PAPAN HITAM (DEFAULT) & PAPAN PUTIH POLOS
        ========================================================================= */
     :root {
-      --bg-page: #FFFFFF;
-      --bg-surface: #FFFFFF;
-      --bg-muted: #E5E5E5;
-      --bg-sticky: rgba(255, 255, 255, 0.96);
-      --bg-overlay: rgba(255, 255, 255, 0.97);
-      --fg-main: #111111;
-      --fg-muted: #4A4A4A;
-      --fg-subtle: #767676;
-      --border-main: #111111;
-      --border-subtle: #D4D4D4;
-      --grid-hairline: #EFEFEF;
-      --accent: #FF0000;
-      --accent-fg: #FFFFFF;
-      --inv-bg: #111111;
-      --inv-fg: #FFFFFF;
-      --ease-swiss: cubic-bezier(0.19, 1, 0.22, 1);
+      --bg-page: #0a0a0a;
+      --bg-sticky: rgba(10, 10, 10, 0.95);
+      --bg-elevated: #0f0f0f;
+      --bg-tint: rgba(255, 255, 255, 0.03);
+      --bg-tint-strong: rgba(255, 255, 255, 0.09);
+      --bg-track: rgba(255, 255, 255, 0.2);
+      --bg-overlay: rgba(0, 0, 0, 0.94);
+      --fg-main: #ffffff;
+      --fg-muted: rgba(255, 255, 255, 0.78);
+      --fg-subtle: rgba(255, 255, 255, 0.52);
+      --border-main: #ffffff;
+      --border-mid: rgba(255, 255, 255, 0.65);
+      --border-soft: rgba(255, 255, 255, 0.34);
+      --inv-bg: #ffffff;
+      --inv-fg: #0a0a0a;
+      --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    html.theme-dark {
-      --bg-page: #111111;
-      --bg-surface: #111111;
-      --bg-muted: #222222;
-      --bg-sticky: rgba(17, 17, 17, 0.96);
-      --bg-overlay: rgba(17, 17, 17, 0.97);
-      --fg-main: #FFFFFF;
-      --fg-muted: #BDBDBD;
-      --fg-subtle: #888888;
-      --border-main: #FFFFFF;
-      --border-subtle: #333333;
-      --grid-hairline: #1B1B1B;
-      --accent: #FF0000;
-      --accent-fg: #FFFFFF;
-      --inv-bg: #FFFFFF;
-      --inv-fg: #111111;
+    html.theme-light {
+      --bg-page: #ffffff;
+      --bg-sticky: #ffffff;
+      --bg-elevated: #ffffff;
+      --bg-tint: #ffffff;
+      --bg-tint-strong: #ffffff;
+      --bg-track: #ffffff;
+      --bg-overlay: #ffffff;
+      --fg-main: #000000;
+      --fg-muted: rgba(0, 0, 0, 0.78);
+      --fg-subtle: rgba(0, 0, 0, 0.55);
+      --border-main: #000000;
+      --border-mid: rgba(0, 0, 0, 0.72);
+      --border-soft: rgba(0, 0, 0, 0.35);
+      --inv-bg: #000000;
+      --inv-fg: #ffffff;
     }
 
     * {
       -webkit-tap-highlight-color: transparent;
-      border-radius: 0px !important;
     }
 
     body {
       background-color: var(--bg-page);
       color: var(--fg-main);
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-weight: 500;
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.005em;
       overflow-x: hidden;
-      background-image:
-        linear-gradient(to right, var(--grid-hairline) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--grid-hairline) 1px, transparent 1px);
-      background-size: 32px 32px;
-      transition: background-color 0.2s ease, color 0.2s ease;
+      transition: background-color 0.25s ease, color 0.25s ease;
     }
 
     ::selection {
-      background-color: var(--accent);
-      color: var(--accent-fg);
+      background-color: var(--inv-bg);
+      color: var(--inv-fg);
     }
 
-    /* Tipografi Swiss Modernism */
     .font-display {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: -0.02em;
-      line-height: 0.94;
+      font-family: 'Cabin Sketch', cursive, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.025em;
     }
 
-    .font-mono-tech {
-      font-family: 'JetBrains Mono', monospace;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .num-tabular {
-      font-variant-numeric: tabular-nums;
-    }
-
-    /* Permukaan & Garis Arsitektural */
+    /* Kelas Semantik Tema */
     .surface-page { background-color: var(--bg-page); color: var(--fg-main); }
-    .surface-card { background-color: var(--bg-surface); color: var(--fg-main); }
-    .surface-muted { background-color: var(--bg-muted); color: var(--fg-main); }
     .surface-sticky { background-color: var(--bg-sticky); }
+    .surface-elevated { background-color: var(--bg-elevated); color: var(--fg-main); }
+    .surface-tint { background-color: var(--bg-tint); }
+    .surface-tint-strong { background-color: var(--bg-tint-strong); }
+    .surface-track { background-color: var(--bg-track); }
     .surface-overlay { background-color: var(--bg-overlay); color: var(--fg-main); }
     .surface-inv { background-color: var(--inv-bg); color: var(--inv-fg); }
-    .surface-accent { background-color: var(--accent); color: var(--accent-fg); }
 
     .text-main { color: var(--fg-main); }
     .text-muted { color: var(--fg-muted); }
     .text-subtle { color: var(--fg-subtle); }
-    .text-accent { color: var(--accent); }
 
     .border-main { border-color: var(--border-main); }
-    .border-subtle { border-color: var(--border-subtle); }
-    .border-accent { border-color: var(--accent); }
+    .border-mid { border-color: var(--border-mid); }
+    .border-soft { border-color: var(--border-soft); }
 
-    /* Tombol Neo-Brutalist Swiss */
-    .btn-swiss {
-      border: 1.5px solid var(--border-main);
-      background-color: var(--bg-surface);
+    .btn-outline {
+      border-color: var(--border-mid);
       color: var(--fg-main);
-      transition: background-color 0.14s ease, color 0.14s ease, border-color 0.14s ease, transform 0.12s var(--ease-swiss);
     }
-    .btn-swiss:hover:not(:disabled) {
+    .btn-outline:hover:not(:disabled) {
       background-color: var(--inv-bg);
       color: var(--inv-fg);
-    }
-    .btn-swiss:active:not(:disabled) {
-      transform: translateY(1px);
+      border-color: var(--border-main);
     }
 
-    .btn-swiss-solid {
-      border: 1.5px solid var(--border-main);
-      background-color: var(--inv-bg);
-      color: var(--inv-fg);
-      transition: background-color 0.14s ease, color 0.14s ease, border-color 0.14s ease, transform 0.12s var(--ease-swiss);
-    }
-    .btn-swiss-solid:hover:not(:disabled) {
-      background-color: var(--accent);
-      border-color: var(--accent);
-      color: var(--accent-fg);
-    }
-    .btn-swiss-solid:active:not(:disabled) {
-      transform: translateY(1px);
-    }
-
-    /* Kartu Grid Modular */
-    .grid-cell-interactive {
-      background-color: var(--bg-surface);
+    .btn-subtle {
+      border-color: var(--border-mid);
       color: var(--fg-main);
-      transition: background-color 0.15s ease, color 0.15s ease;
     }
-    .grid-cell-interactive:hover {
+    .btn-subtle:hover:not(:disabled) {
+      background-color: var(--bg-tint-strong);
+      border-color: var(--border-main);
+    }
+
+    .card-interactive {
+      border-color: var(--border-mid);
+      background-color: var(--bg-tint);
+      color: var(--fg-main);
+    }
+    .card-interactive:hover {
+      border-color: var(--border-main);
       background-color: var(--inv-bg);
       color: var(--inv-fg);
     }
-    .grid-cell-interactive:hover .cell-muted {
-      color: var(--inv-fg);
-      opacity: 0.72;
+    .card-interactive:hover .card-badge {
+      background-color: var(--bg-page);
+      color: var(--fg-main);
     }
-    .grid-cell-interactive:hover .cell-border {
-      border-color: var(--border-subtle);
+    .card-interactive:hover .card-divider {
+      border-color: var(--border-soft);
     }
-    .grid-cell-interactive:hover .cell-track {
-      background-color: var(--border-subtle);
+    .card-interactive:hover .card-track {
+      background-color: var(--bg-track);
     }
-    .grid-cell-interactive:hover .cell-fill {
-      background-color: var(--accent);
+    .card-interactive:hover .card-fill {
+      background-color: var(--bg-page);
     }
-    .grid-cell-interactive:hover .cell-tag {
-      background-color: var(--accent);
-      color: var(--accent-fg);
-      border-color: var(--accent);
+    .card-interactive:hover .pip-filled {
+      background-color: var(--bg-page);
     }
+    .card-interactive:hover .pip-empty {
+      border-color: var(--fg-subtle);
+    }
+
+    .pip-filled { background-color: var(--fg-main); }
+    .pip-empty { border: 1.5px solid var(--fg-subtle); }
 
     .ring-current-node {
-      outline: 2px solid var(--accent);
-      outline-offset: -4px;
+      box-shadow: 0 0 0 2px var(--bg-elevated), 0 0 0 4px var(--fg-main);
     }
 
-    /* Animasi Presisi */
-    @keyframes swissSlideIn {
-      from { opacity: 0; transform: translateY(6px); }
+    /* Animasi Halus */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .animate-view { animation: swissSlideIn 0.28s var(--ease-swiss) both; }
-    .animate-card { opacity: 0; animation: swissSlideIn 0.32s var(--ease-swiss) forwards; }
-
-    .progress-fill-accent {
-      background-color: var(--accent);
-      transition: width 0.38s var(--ease-swiss);
+    @keyframes gentleScale {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
     }
-    .progress-fill-mono {
+
+    @keyframes drawChalkStroke {
+      from { stroke-dashoffset: 820; opacity: 0.35; }
+      to { stroke-dashoffset: 0; opacity: 1; }
+    }
+
+    .animate-view { animation: fadeSlideUp 0.36s var(--ease-out-expo) both; }
+    .animate-card { opacity: 0; animation: fadeSlideUp 0.4s var(--ease-out-expo) forwards; }
+    .animate-reveal { animation: gentleScale 0.3s var(--ease-out-expo) both; }
+
+    .chalk-ring-path {
+      stroke-dasharray: 820;
+      stroke-dashoffset: 820;
+      vector-effect: non-scaling-stroke;
+      animation: drawChalkStroke 0.65s var(--ease-out-expo) forwards;
+    }
+
+    .btn-tactile {
+      transition:
+        transform 0.16s var(--ease-out-expo),
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+    }
+    .btn-tactile:active:not(:disabled) {
+      transform: scale(0.98);
+    }
+
+    .progress-fill {
       background-color: var(--fg-main);
-      transition: width 0.38s var(--ease-swiss);
+      transition: width 0.45s var(--ease-out-expo);
     }
 
-    /* Scrollbar Tajam */
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg-page); }
-    ::-webkit-scrollbar-thumb { background: var(--border-main); }
-    ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+    /* Scrollbar Ramping */
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border-soft); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--fg-main); }
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
-  <!-- Wrapper Utama Berbasis Swiss Grid -->
-  <div id="main-wrapper" class="w-full max-w-4xl mx-auto flex-1 flex flex-col px-3.5 py-3.5 sm:px-6 sm:py-6">
+  <!-- Wrapper Utama Sederhana & Mobile-First -->
+  <div id="main-wrapper" class="w-full max-w-3xl mx-auto flex-1 flex flex-col px-4 py-3.5 sm:px-6 sm:py-6">
 
-    <!-- Header Standar (Masthead Editorial) -->
-    <header id="header-standard" class="surface-card border-[1.5px] border-main mb-5">
-      <!-- Strip Metadata Teknis Atas -->
-      <div class="flex items-center justify-between gap-2 px-3 py-1.5 border-b border-main surface-muted font-mono-tech text-[10px] sm:text-[11px] uppercase tracking-[0.08em]">
-        <div class="flex items-center gap-2 truncate">
-          <span class="inline-block w-2 h-2 surface-accent shrink-0"></span>
-          <span class="font-bold text-main">INDEX // KMNR-SD</span>
-          <span class="hidden sm:inline text-muted">• RME / KANGAROO / SASMO / TIMSS</span>
+    <!-- Header Standar (Beranda, Pilih Paket & Rekap) -->
+    <header id="header-standard" class="flex items-center justify-between gap-2.5 pb-3.5 mb-5 border-b-2 border-mid">
+      <button
+        onclick="goHome()"
+        class="flex items-center gap-3 text-left group cursor-pointer min-w-0"
+        title="Kembali ke Beranda"
+      >
+        <div class="w-10 h-10 rounded-xl surface-inv flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:rotate-[-4deg]">
+          <svg class="w-5 h-5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="5" width="24" height="17" rx="2.5" />
+            <path d="M10 13.5h5M12.5 11v5" />
+            <path d="M19 12l4 4M23 12l-4 4" />
+            <path d="M10 26l6-4 6 4" />
+          </svg>
         </div>
-        <span class="text-muted shrink-0">ED. 2026</span>
-      </div>
+        <div class="truncate">
+          <h1 class="font-display text-2xl sm:text-[28px] font-bold text-main leading-none truncate">
+            Jago KMNR SD
+          </h1>
+          <p class="text-xs sm:text-sm text-muted mt-1 font-medium truncate">
+            Matematika Nalaria Realistik • Kelas 1–6
+          </p>
+        </div>
+      </button>
 
-      <!-- Baris Utama Masthead -->
-      <div class="flex items-stretch justify-between gap-3 p-3.5 sm:p-5">
+      <!-- Kontrol Pojok Kanan Atas (Tema, Suara & Navigasi) -->
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
         <button
-          onclick="goHome()"
-          class="flex items-center gap-3.5 text-left group cursor-pointer min-w-0"
-          title="Kembali ke Indeks Kelas"
+          onclick="toggleTheme()"
+          aria-label="Ganti Tema Latar"
+          title="Ganti Tema Hitam / Putih"
+          class="btn-tactile btn-outline h-9 px-2.5 sm:px-3 rounded-xl border-2 flex items-center justify-center gap-1.5 text-xs sm:text-sm font-extrabold cursor-pointer"
         >
-          <!-- Simbol Geometris Swiss -->
-          <div class="w-11 h-11 sm:w-12 sm:h-12 border-[1.5px] border-main surface-inv flex items-center justify-center shrink-0 relative">
-            <svg class="w-6 h-6" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="16" y1="3" x2="16" y2="29" />
-              <line x1="3" y1="16" x2="29" y2="16" />
-              <rect x="6" y="6" width="8" height="8" stroke="currentColor" />
-              <rect x="18" y="18" width="8" height="8" fill="#FF0000" stroke="none" />
-            </svg>
-          </div>
-          <div class="min-w-0">
-            <h1 class="font-display text-3xl sm:text-[42px] font-black text-main tracking-tight truncate">
-              JAGO KMNR SD
-            </h1>
-            <p class="font-mono-tech text-[11px] sm:text-xs text-muted uppercase tracking-[0.06em] mt-1 truncate">
-              MATEMATIKA NALARIA REALISTIK — KELAS 01–06
-            </p>
-          </div>
+          <span class="theme-icon-el">☀</span>
+          <span class="theme-label-el hidden sm:inline">Putih</span>
         </button>
 
-        <!-- Kontrol Pojok Kanan Atas -->
-        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0 self-center">
-          <button
-            onclick="toggleTheme()"
-            aria-label="Ganti Mode Kontras"
-            title="Switch Light / Dark Contrast"
-            class="btn-swiss h-9 px-2.5 sm:px-3 font-mono-tech text-[11px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer"
-          >
-            <span class="theme-icon-el text-accent">■</span>
-            <span class="theme-label-el hidden sm:inline">DARK</span>
-          </button>
+        <button
+          onclick="toggleSound()"
+          aria-label="Pengaturan Suara"
+          class="btn-tactile btn-outline w-9 h-9 sm:w-auto sm:px-3 rounded-xl border-2 flex items-center justify-center gap-1.5 text-sm font-bold cursor-pointer"
+        >
+          <span class="sound-icon-el">🔊</span>
+          <span class="sound-label-el hidden sm:inline">Suara</span>
+        </button>
 
-          <button
-            onclick="toggleSound()"
-            aria-label="Pengaturan Audio"
-            class="btn-swiss h-9 w-9 sm:w-auto sm:px-3 font-mono-tech text-[11px] font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 cursor-pointer"
-          >
-            <span class="sound-icon-el">ON</span>
-            <span class="sound-label-el hidden md:inline">AUDIO</span>
-          </button>
-
-          <button
-            id="btn-home"
-            onclick="goHome()"
-            class="btn-swiss-solid hidden h-9 px-3 sm:px-3.5 font-mono-tech text-[11px] font-bold uppercase tracking-wider cursor-pointer"
-          >
-            ← INDEKS
-          </button>
-        </div>
+        <button
+          id="btn-home"
+          onclick="goHome()"
+          class="btn-tactile surface-inv hidden h-9 px-3 sm:px-3.5 rounded-xl text-xs sm:text-sm font-extrabold cursor-pointer"
+        >
+          ← Kelas
+        </button>
       </div>
     </header>
 
-    <!-- Header Teknis Ultra-Tipis Saat Kuis Berjalan -->
-    <header id="header-compact" class="hidden sticky top-0 z-20 mb-4 surface-sticky backdrop-blur-sm border-[1.5px] border-main">
-      <div class="flex items-center justify-between gap-2 px-2.5 py-2 sm:px-3.5">
+    <!-- Header Super Tipis Saat Kuis Berjalan -->
+    <header id="header-compact" class="hidden sticky top-0 z-20 -mx-4 px-4 sm:mx-0 sm:px-0 pt-1 pb-2.5 mb-4 surface-sticky backdrop-blur-md">
+      <div class="flex items-center justify-between gap-2 mb-2">
         <div class="flex items-center gap-1.5 sm:gap-2 min-w-0">
           <button
             onclick="goToPacks(state.selectedGrade)"
-            class="btn-swiss px-2.5 py-1 font-mono-tech text-[11px] font-bold uppercase tracking-wider shrink-0 cursor-pointer"
+            class="btn-tactile btn-subtle px-2.5 py-1 rounded-lg border-2 text-xs sm:text-sm font-bold shrink-0 cursor-pointer"
             title="Kembali ke Daftar Paket"
           >
-            ← PAKET
+            ← Paket
           </button>
           <button
             onclick="openQuestionMap()"
-            class="btn-swiss surface-muted px-2.5 py-1 font-mono-tech text-[11px] font-bold uppercase tracking-wider truncate flex items-center gap-1.5 cursor-pointer"
-            title="Buka Matriks Nomor Soal"
+            class="btn-tactile btn-subtle surface-tint-strong px-2.5 py-1 rounded-lg border-2 border-dashed text-xs sm:text-sm font-bold truncate flex items-center gap-1 cursor-pointer"
+            title="Buka Peta Nomor Soal"
           >
-            <span class="w-1.5 h-1.5 surface-accent shrink-0"></span>
-            <span id="compact-title" class="truncate">KLS 01 // PKT 01</span>
-            <span>▾</span>
+            <span id="compact-title" class="truncate">Kls 1 • Pkt 1</span>
+            <span class="opacity-80 text-xs">▾</span>
           </button>
         </div>
 
-        <!-- Kontrol Pojok Kanan Atas Saat Kuis -->
+        <!-- Kontrol Pojok Kanan Atas Saat Kuis (Coretan, Tema & Suara) -->
         <div class="flex items-center gap-1.5 shrink-0">
           <button
             onclick="openScratchpad()"
-            class="btn-swiss px-2.5 py-1 font-mono-tech text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5 cursor-pointer"
-            title="Buka Kanvas Coret-Coretan"
+            class="btn-tactile btn-outline px-2.5 py-1 rounded-lg border-2 text-xs sm:text-sm font-bold flex items-center gap-1 cursor-pointer"
+            title="Buka Papan Coret-Coretan"
           >
-            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 20h9" />
-              <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
             </svg>
-            <span>CORETAN</span>
+            <span>Coretan</span>
           </button>
 
           <button
             onclick="toggleTheme()"
-            aria-label="Ganti Mode Kontras"
-            title="Switch Light / Dark Contrast"
-            class="btn-swiss w-8 h-7 font-mono-tech text-[11px] font-bold flex items-center justify-center cursor-pointer"
+            aria-label="Ganti Tema Latar"
+            title="Ganti Tema Hitam / Putih"
+            class="btn-tactile btn-outline w-8 h-8 rounded-lg border-2 flex items-center justify-center text-xs font-extrabold cursor-pointer"
           >
-            <span class="theme-icon-el text-accent">■</span>
+            <span class="theme-icon-el">☀</span>
           </button>
 
           <button
             onclick="toggleSound()"
-            aria-label="Pengaturan Audio"
-            class="btn-swiss w-8 h-7 font-mono-tech text-[10px] font-bold flex items-center justify-center cursor-pointer"
+            aria-label="Pengaturan Suara"
+            class="btn-tactile btn-outline w-8 h-8 rounded-lg border-2 flex items-center justify-center text-xs cursor-pointer"
           >
-            <span class="sound-icon-el">ON</span>
+            <span class="sound-icon-el">🔊</span>
           </button>
         </div>
       </div>
 
-      <!-- Garis Progres Signal Red -->
-      <div class="w-full h-[4px] surface-muted border-t border-main overflow-hidden">
-        <div id="compact-progress-bar" class="h-full progress-fill-accent" style="width: 0%"></div>
+      <!-- Garis Progres Tebal -->
+      <div class="w-full h-[5px] rounded-full surface-track border border-soft overflow-hidden">
+        <div id="compact-progress-bar" class="h-full progress-fill" style="width: 0%"></div>
       </div>
     </header>
 
     <!-- Area Konten Utama -->
     <main id="app-content" class="flex-1 flex flex-col">
       <!-- Konten Semantik Awal untuk Perayap Mesin Pencari & Fallback Non-JS -->
-      <section class="surface-card p-5 border-[1.5px] border-main space-y-3">
-        <h2 class="font-display text-2xl font-black text-main">KUMPULAN SOAL &amp; PEMBAHASAN KMNR SD (KELAS 1–6)</h2>
+      <section class="p-5 rounded-2xl border-2 border-mid space-y-3">
+        <h2 class="font-display text-2xl font-bold text-main">Kumpulan Soal &amp; Pembahasan KMNR SD (Kelas 1–6)</h2>
         <p class="text-sm text-muted">
           Aplikasi latihan interaktif Kompetisi Matematika Nalaria Realistik (KMNR) mengacu pada standar internasional Kangaroo Math, SASMO, TIMSS, dan Realistic Mathematics Education (RME).
         </p>
@@ -492,74 +476,72 @@
       </section>
     </main>
 
-    <!-- Footer Editorial Minimalis -->
-    <footer id="app-footer" class="surface-card mt-8 border-[1.5px] border-main px-3.5 py-3 flex flex-col sm:flex-row items-center justify-between gap-2.5 font-mono-tech text-[11px] text-muted">
-      <div class="flex items-center gap-2 text-center sm:text-left">
-        <span class="w-2 h-2 surface-accent inline-block shrink-0"></span>
-        <span>© 2026 <strong class="text-main font-bold">JAGO KMNR SD</strong> — BY <strong class="text-main font-bold">ADNAN JOGJA</strong></span>
-      </div>
+    <!-- Footer Bersih & Sederhana -->
+    <footer id="app-footer" class="mt-8 pt-4 border-t-2 border-dashed border-soft flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs sm:text-sm text-muted">
+      <p class="text-center sm:text-left">
+        © 2026 <strong class="text-main font-bold">Jago KMNR SD</strong> by <span class="text-main font-semibold underline decoration-current">Adnan Jogja</span>
+      </p>
 
       <div class="flex items-center gap-2">
         <a
           href="mailto:adnanjogja@gmail.com"
-          class="text-main hover:text-accent transition underline underline-offset-4"
+          class="hover:text-main transition underline decoration-current"
         >
           adnanjogja@gmail.com
         </a>
         <button
           onclick="copyEmail()"
-          class="btn-swiss-solid px-2.5 py-1 font-mono-tech text-[10px] font-bold uppercase tracking-wider cursor-pointer"
+          class="btn-tactile surface-inv px-2.5 py-1 rounded-lg font-extrabold text-xs cursor-pointer"
         >
-          SALIN EMAIL
+          Salin Email
         </button>
       </div>
     </footer>
   </div>
 
-  <!-- Overlay Kanvas Coret-Coretan Teknis -->
+  <!-- Overlay Papan Coret-Coretan Mini (Canvas Jari/Mouse) -->
   <div
     id="scratchpad-overlay"
-    class="fixed inset-0 z-40 hidden surface-overlay flex flex-col justify-between select-none"
+    class="fixed inset-0 z-40 hidden surface-overlay backdrop-blur-sm flex flex-col justify-between select-none"
   >
-    <div class="relative z-10 flex flex-wrap items-center justify-between gap-2 px-3.5 py-2.5 sm:px-5 sm:py-3 surface-page border-b-[1.5px] border-main">
-      <div class="flex items-center gap-2.5">
-        <span class="w-2.5 h-2.5 surface-accent inline-block"></span>
-        <span class="font-display text-xl sm:text-2xl font-black text-main">KANVAS CORETAN</span>
-        <span class="hidden md:inline font-mono-tech text-[11px] text-muted uppercase tracking-wider">// DRAFTING PAD</span>
+    <div class="relative z-10 flex flex-wrap items-center justify-between gap-2 px-3.5 py-2.5 sm:px-5 sm:py-3 surface-page border-b-2 border-mid">
+      <div class="flex items-center gap-2">
+        <span class="font-display text-lg sm:text-xl font-bold text-main">Papan Coretan</span>
+        <span class="hidden md:inline text-xs sm:text-sm text-muted">• Coret langsung di layar untuk menghitung</span>
       </div>
 
-      <div class="flex flex-wrap items-center gap-1.5">
+      <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
         <button
           id="btn-pen-thin"
-          onclick="setPenSize(2)"
-          class="btn-swiss-solid min-h-[32px] px-2.5 py-1 font-mono-tech text-[11px] font-bold uppercase cursor-pointer"
+          onclick="setPenSize(2.5)"
+          class="btn-tactile surface-inv min-h-[34px] px-2.5 py-1 rounded-lg text-xs sm:text-sm font-extrabold cursor-pointer"
         >
-          0.5MM
+          Tipis
         </button>
         <button
           id="btn-pen-thick"
-          onclick="setPenSize(5)"
-          class="btn-swiss min-h-[32px] px-2.5 py-1 font-mono-tech text-[11px] font-bold uppercase cursor-pointer"
+          onclick="setPenSize(5.5)"
+          class="btn-tactile btn-subtle min-h-[34px] px-2.5 py-1 rounded-lg border-2 text-xs sm:text-sm font-bold cursor-pointer"
         >
-          1.5MM
+          Tebal
         </button>
         <button
           onclick="undoScratchpad()"
-          class="btn-swiss min-h-[32px] px-2.5 py-1 font-mono-tech text-[11px] font-bold uppercase cursor-pointer"
+          class="btn-tactile btn-subtle min-h-[34px] px-2.5 py-1 rounded-lg border-2 text-xs sm:text-sm font-bold cursor-pointer"
         >
-          ↶ UNDO
+          ↶ Undo
         </button>
         <button
           onclick="clearScratchpad()"
-          class="btn-swiss min-h-[32px] px-2.5 py-1 font-mono-tech text-[11px] font-bold uppercase cursor-pointer"
+          class="btn-tactile btn-subtle min-h-[34px] px-2.5 py-1 rounded-lg border-2 border-dashed text-xs sm:text-sm font-bold cursor-pointer"
         >
-          CLEAR
+          Hapus
         </button>
         <button
           onclick="closeScratchpad()"
-          class="btn-swiss-solid min-h-[32px] px-3 py-1 font-mono-tech text-[11px] font-bold uppercase cursor-pointer"
+          class="btn-tactile surface-inv min-h-[34px] px-3 py-1 rounded-lg text-xs sm:text-sm font-extrabold cursor-pointer"
         >
-          TUTUP ✕
+          Selesai ✕
         </button>
       </div>
     </div>
@@ -569,29 +551,28 @@
         id="scratch-hint"
         class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center text-center px-6 text-subtle"
       >
-        <span class="font-display text-2xl sm:text-3xl font-black text-main opacity-35 mb-1">AREA CORETAN HITUNGAN</span>
-        <span class="font-mono-tech text-xs uppercase tracking-wider">Gunakan jari atau kursor untuk membuat sketsa &amp; perhitungan</span>
+        <span class="font-display text-xl sm:text-2xl mb-1">Coret Hitunganmu di Sini</span>
+        <span class="text-xs sm:text-sm">Gunakan jari atau mouse sebagai papan tulis coretan</span>
       </div>
       <canvas id="scratch-canvas" class="w-full h-full cursor-crosshair touch-none block"></canvas>
     </div>
   </div>
 
-  <!-- Modal Matriks Nomor Soal -->
+  <!-- Drawer / Modal Peta Nomor Soal dengan Filter -->
   <div
     id="map-modal"
     onclick="if(event.target === this) closeQuestionMap()"
-    class="fixed inset-0 z-50 hidden bg-black/70 flex items-end sm:items-center justify-center p-0 sm:p-4"
+    class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4"
   >
-    <div class="surface-card border-t-[2px] sm:border-[2px] border-main w-full max-w-lg max-h-[84vh] flex flex-col p-4 sm:p-5 animate-view">
-      <div class="flex items-start justify-between pb-3 mb-3 border-b border-main">
+    <div class="surface-elevated border-t-[3px] sm:border-[3px] border-main rounded-t-2xl sm:rounded-2xl w-full max-w-lg max-h-[84vh] flex flex-col p-5 animate-view">
+      <div class="flex items-center justify-between pb-3 mb-3 border-b-2 border-dashed border-soft">
         <div>
-          <div class="font-mono-tech text-[10px] uppercase tracking-widest text-accent font-bold mb-0.5">// INDEX MATRIX</div>
-          <h3 id="map-modal-title" class="font-display text-2xl font-black text-main">PETA SOAL</h3>
-          <p id="map-modal-sub" class="font-mono-tech text-[11px] text-muted mt-0.5">Pilih nomor untuk melompat ke soal</p>
+          <h3 id="map-modal-title" class="font-display text-xl font-bold text-main">Peta Soal</h3>
+          <p id="map-modal-sub" class="text-xs sm:text-sm text-muted">Ketuk nomor untuk melompat ke soal</p>
         </div>
         <button
           onclick="closeQuestionMap()"
-          class="btn-swiss w-8 h-8 font-mono-tech text-xs font-bold flex items-center justify-center cursor-pointer"
+          class="btn-tactile btn-outline w-8 h-8 rounded-lg border-2 flex items-center justify-center text-sm font-extrabold cursor-pointer"
         >
           ✕
         </button>
@@ -599,48 +580,47 @@
 
       <div id="map-filters" class="flex flex-wrap items-center gap-1.5 mb-3"></div>
 
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 font-mono-tech text-[11px] text-muted mb-3">
-        <span class="flex items-center gap-1.5"><span class="w-3 h-3 surface-inv border border-main inline-block"></span> BENAR</span>
-        <span class="flex items-center gap-1.5"><span class="w-3 h-3 surface-muted border-[1.5px] border-accent inline-block"></span> SALAH</span>
-        <span class="flex items-center gap-1.5"><span class="w-3 h-3 surface-card border border-main inline-block"></span> KOSONG</span>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted font-semibold mb-3">
+        <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded-sm surface-inv border-2 border-main inline-block"></span> Benar</span>
+        <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded-sm border-2 border-dashed border-main inline-block"></span> Salah</span>
+        <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded-sm border-2 border-soft inline-block"></span> Belum</span>
       </div>
 
-      <div id="map-grid" class="grid grid-cols-5 sm:grid-cols-6 gap-1.5 overflow-y-auto pr-1 py-1"></div>
+      <div id="map-grid" class="grid grid-cols-5 sm:grid-cols-6 gap-2 overflow-y-auto pr-1 py-1"></div>
     </div>
   </div>
 
   <!-- Toast Notifikasi -->
   <div
     id="chalk-toast"
-    class="fixed top-14 left-1/2 -translate-x-1/2 z-50 hidden px-4 py-1.5 surface-inv font-mono-tech font-bold text-[11px] uppercase tracking-wider border-[1.5px] border-accent animate-view"
+    class="fixed top-14 left-1/2 -translate-x-1/2 z-50 hidden px-4 py-1.5 rounded-full surface-inv font-extrabold text-xs sm:text-sm border-2 border-main animate-reveal"
   >
-    NOTIFIKASI
+    Notifikasi
   </div>
 
   <!-- Modal Konfirmasi Reset -->
   <div
     id="reset-modal"
     onclick="if(event.target === this) closeResetModal()"
-    class="fixed inset-0 z-50 hidden bg-black/70 flex items-center justify-center p-4"
+    class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4"
   >
-    <div class="surface-card border-[2px] border-main max-w-sm w-full p-5 animate-view">
-      <div class="font-mono-tech text-[10px] font-bold uppercase tracking-widest text-accent mb-1">// SYSTEM WARNING</div>
-      <h3 class="font-display text-2xl font-black text-main mb-2">ATUR ULANG SEMUA PROGRES?</h3>
+    <div class="surface-elevated border-[3px] border-main rounded-2xl max-w-sm w-full p-5 animate-reveal">
+      <h3 class="font-display text-xl font-bold text-main mb-1.5">Atur Ulang Semua Progres?</h3>
       <p class="text-sm text-muted mb-5 leading-relaxed">
-        Seluruh riwayat jawaban dan skor untuk Kelas 1 sampai Kelas 6 akan dihapus permanen.
+        Catatan jawaban dan skor untuk Kelas 1 sampai Kelas 6 akan dikosongkan kembali.
       </p>
       <div class="flex justify-end gap-2">
         <button
           onclick="closeResetModal()"
-          class="btn-swiss px-4 py-2 font-mono-tech text-xs font-bold uppercase cursor-pointer"
+          class="btn-tactile btn-subtle px-4 py-1.5 rounded-xl border-2 text-sm font-bold cursor-pointer"
         >
-          BATAL
+          Batal
         </button>
         <button
           onclick="confirmResetProgress()"
-          class="btn-swiss-solid px-4 py-2 font-mono-tech text-xs font-bold uppercase cursor-pointer"
+          class="btn-tactile surface-inv px-4 py-1.5 rounded-xl text-sm font-extrabold cursor-pointer"
         >
-          YA, HAPUS
+          Ya, Hapus
         </button>
       </div>
     </div>
@@ -745,16 +725,15 @@
           standard: "Realistic Mathematics (RME)",
           question: `Pada timbangan seimbang, 1 buah semangka sama beratnya dengan ${ratio} buah apel. Jika di piring kiri diletakkan ${countLeft} buah semangka, berapa buah apel yang diperlukan di piring kanan agar seimbang?`,
           svg: `
-            <svg viewBox="0 0 280 86" class="w-full max-w-[260px] mx-auto my-1 text-main" stroke="currentColor" fill="none" stroke-width="1.6">
+            <svg viewBox="0 0 280 86" class="w-full max-w-[250px] mx-auto my-2 text-main" stroke="currentColor" fill="none" stroke-width="2.4">
               <line x1="55" y1="76" x2="225" y2="76" />
               <polygon points="140,44 128,76 152,76" />
               <line x1="70" y1="44" x2="210" y2="44" />
               <line x1="45" y1="36" x2="95" y2="36" />
-              <circle cx="70" cy="23" r="10" />
-              <circle cx="140" cy="44" r="2.5" fill="#FF0000" stroke="none" />
-              <text x="70" y="26" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="9" font-weight="bold">1S</text>
+              <circle cx="70" cy="23" r="11" />
+              <text x="70" y="27" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="bold">S</text>
               <line x1="180" y1="36" x2="240" y2="36" />
-              <text x="210" y="26" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="10" font-weight="bold">${ratio} APEL</text>
+              <text x="210" y="27" text-anchor="middle" fill="currentColor" stroke="none" font-size="11" font-weight="bold">${ratio} Apel</text>
             </svg>
           `,
           options,
@@ -1062,12 +1041,11 @@
           standard: "Kangaroo Ecolier",
           question: `Sebanyak ${count} buah persegi identik dengan panjang sisi ${side} cm disusun berderet memanjang saling berhimpit pada sisinya. Berapa keliling persegi panjang baru yang terbentuk?`,
           svg: `
-            <svg viewBox="0 0 240 82" class="w-full max-w-[230px] mx-auto my-1 text-main" stroke="currentColor" fill="none" stroke-width="1.6">
-              <rect x="45" y="24" width="45" height="45" />
-              <rect x="90" y="24" width="45" height="45" />
-              <rect x="135" y="24" width="45" height="45" stroke-dasharray="3 3" />
-              <rect x="43" y="22" width="4" height="4" fill="#FF0000" stroke="none" />
-              <text x="112" y="14" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="9" font-weight="bold">SISI = ${side} CM (${count} UNIT)</text>
+            <svg viewBox="0 0 240 80" class="w-full max-w-[220px] mx-auto my-2 text-main" stroke="currentColor" fill="none" stroke-width="2.4">
+              <rect x="45" y="22" width="45" height="45" />
+              <rect x="90" y="22" width="45" height="45" />
+              <rect x="135" y="22" width="45" height="45" stroke-dasharray="4 3" />
+              <text x="112" y="15" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="bold">Sisi = ${side} cm (${count} persegi)</text>
             </svg>
           `,
           options,
@@ -1278,10 +1256,10 @@
           standard: "Kangaroo Benjamin",
           question: `Sebuah taman persegi berukuran ${outer} m × ${outer} m. Di sekeliling bagian dalam taman dibuat jalan setapak selebar ${path} m, dan bagian tengahnya ditanami rumput. Berapa luas area rumput tersebut?`,
           svg: `
-            <svg viewBox="0 0 160 115" class="w-full max-w-[160px] mx-auto my-1 text-main" stroke="currentColor" fill="none" stroke-width="1.6">
-              <rect x="35" y="12" width="90" height="90" />
-              <rect x="51" y="28" width="58" height="58" stroke="#FF0000" stroke-dasharray="3 2" />
-              <text x="80" y="60" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="9" font-weight="bold">RUMPUT</text>
+            <svg viewBox="0 0 150 115" class="w-full max-w-[150px] mx-auto my-2 text-main" stroke="currentColor" fill="none" stroke-width="2.4">
+              <rect x="30" y="12" width="90" height="90" />
+              <rect x="46" y="28" width="58" height="58" stroke-dasharray="4 3" />
+              <text x="75" y="61" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="bold">Rumput</text>
             </svg>
           `,
           options,
@@ -1367,12 +1345,10 @@
           standard: "Kangaroo Benjamin",
           question: `Sebuah bangun datar berbentuk huruf 'L' memiliki panjang alas bawah ${base} cm dan tinggi sisi tegak kiri ${height} cm. Berapa keliling bangun huruf 'L' tersebut?`,
           svg: `
-            <svg viewBox="0 0 190 105" class="w-full max-w-[190px] mx-auto my-1 text-main" stroke="currentColor" fill="none" stroke-width="1.6">
-              <polygon points="45,15 80,15 80,60 145,60 145,85 45,85" />
-              <line x1="80" y1="15" x2="145" y2="15" stroke="#FF0000" stroke-dasharray="3 2" />
-              <line x1="145" y1="15" x2="145" y2="60" stroke="#FF0000" stroke-dasharray="3 2" />
-              <text x="95" y="99" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="9" font-weight="bold">${base} CM</text>
-              <text x="24" y="54" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="9" font-weight="bold">${height} CM</text>
+            <svg viewBox="0 0 180 105" class="w-full max-w-[180px] mx-auto my-2 text-main" stroke="currentColor" fill="none" stroke-width="2.4">
+              <polygon points="40,15 75,15 75,60 140,60 140,85 40,85" />
+              <text x="90" y="99" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="bold">${base} cm</text>
+              <text x="23" y="54" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="bold">${height} cm</text>
             </svg>
           `,
           options,
@@ -1527,16 +1503,15 @@
           standard: "Kangaroo Cadet",
           question: `Sebuah kubus kayu berukuran ${n} × ${n} × ${n} dicat seluruh permukaan luarnya, lalu dipotong menjadi ${n * n * n} kubus satuan kecil. Berapa banyak kubus kecil yang terkena cat pada ${modeText}?`,
           svg: `
-            <svg viewBox="0 0 170 112" class="w-full max-w-[165px] mx-auto my-1 text-main" stroke="currentColor" fill="none" stroke-width="1.6">
+            <svg viewBox="0 0 160 110" class="w-full max-w-[155px] mx-auto my-1 text-main" stroke="currentColor" fill="none" stroke-width="2.2" stroke-linejoin="round">
               <polygon points="45,35 95,35 95,85 45,85" />
               <polygon points="45,35 68,18 118,18 95,35" />
               <polygon points="95,35 118,18 118,68 95,85" />
-              <line x1="62" y1="35" x2="62" y2="85" stroke-dasharray="2 2" />
-              <line x1="78" y1="35" x2="78" y2="85" stroke-dasharray="2 2" />
-              <line x1="45" y1="52" x2="95" y2="52" stroke-dasharray="2 2" />
-              <line x1="45" y1="68" x2="95" y2="68" stroke-dasharray="2 2" />
-              <rect x="93" y="33" width="4" height="4" fill="#FF0000" stroke="none" />
-              <text x="82" y="103" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="9" font-weight="bold">GRID ${n}×${n}×${n}</text>
+              <line x1="62" y1="35" x2="62" y2="85" stroke-dasharray="3 2" />
+              <line x1="78" y1="35" x2="78" y2="85" stroke-dasharray="3 2" />
+              <line x1="45" y1="52" x2="95" y2="52" stroke-dasharray="3 2" />
+              <line x1="45" y1="68" x2="95" y2="68" stroke-dasharray="3 2" />
+              <text x="80" y="103" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="bold">Kubus ${n} × ${n} × ${n}</text>
             </svg>
           `,
           options,
@@ -1783,12 +1758,12 @@
           standard: "KMNR Kelas 6",
           question: `Sebuah lingkaran berada tepat di dalam persegi sehingga keempat sisi persegi menyinggung lingkaran. Jika luas persegi adalah ${squareArea} cm², berapakah ${askText} tersebut? (π = 22/7)`,
           svg: `
-            <svg viewBox="0 0 170 114" class="w-full max-w-[165px] mx-auto my-1 text-main" stroke="currentColor" fill="none" stroke-width="1.6">
-              <rect x="47" y="10" width="76" height="76" />
-              <circle cx="85" cy="48" r="38" />
-              <line x1="47" y1="48" x2="123" y2="48" stroke="#FF0000" stroke-width="1.4" />
-              <circle cx="85" cy="48" r="2.5" fill="#FF0000" stroke="none" />
-              <text x="85" y="103" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono, monospace" font-size="9" font-weight="bold">L.PERSEGI = ${squareArea} CM²</text>
+            <svg viewBox="0 0 150 112" class="w-full max-w-[145px] mx-auto my-1 text-main" stroke="currentColor" fill="none" stroke-width="2.3">
+              <rect x="37" y="10" width="76" height="76" />
+              <circle cx="75" cy="48" r="38" stroke-dasharray="4 3" />
+              <line x1="37" y1="48" x2="113" y2="48" stroke-width="1.6" />
+              <circle cx="75" cy="48" r="2.5" fill="currentColor" />
+              <text x="75" y="102" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="bold">Luas Persegi = ${squareArea} cm²</text>
             </svg>
           `,
           options,
@@ -2000,51 +1975,13 @@
       return list.slice(0, 150);
     }
 
-    // Simbol Geometris Minimalis Swiss per Jenjang Kelas (01–06)
-    function getGradeGeometricSvg(grade) {
-      const icons = {
-        1: `<svg class="w-7 h-7" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="4" y="4" width="24" height="24" />
-              <circle cx="16" cy="16" r="5" fill="#FF0000" stroke="none" />
-            </svg>`,
-        2: `<svg class="w-7 h-7" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="4" y="4" width="24" height="24" />
-              <line x1="4" y1="28" x2="28" y2="4" />
-              <rect x="7" y="7" width="5" height="5" fill="#FF0000" stroke="none" />
-            </svg>`,
-        3: `<svg class="w-7 h-7" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
-              <polygon points="16,4 28,27 4,27" />
-              <circle cx="16" cy="20" r="2.5" fill="#FF0000" stroke="none" />
-            </svg>`,
-        4: `<svg class="w-7 h-7" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="4" y="4" width="24" height="24" />
-              <line x1="16" y1="4" x2="16" y2="28" />
-              <line x1="4" y1="16" x2="28" y2="16" />
-              <rect x="16" y="4" width="12" height="12" fill="#FF0000" stroke="none" />
-            </svg>`,
-        5: `<svg class="w-7 h-7" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
-              <rect x="4" y="4" width="24" height="24" />
-              <rect x="9" y="9" width="14" height="14" />
-              <rect x="14" y="14" width="4" height="4" fill="#FF0000" stroke="none" />
-            </svg>`,
-        6: `<svg class="w-7 h-7" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="16" cy="16" r="12" />
-              <line x1="4" y1="16" x2="28" y2="16" />
-              <line x1="16" y1="4" x2="16" y2="28" />
-              <line x1="7.5" y1="7.5" x2="24.5" y2="24.5" />
-              <circle cx="16" cy="16" r="3" fill="#FF0000" stroke="none" />
-            </svg>`
-      };
-      return icons[grade] || icons[1];
-    }
-
     const GRADE_META = [
-      { grade: 1, title: "KELAS 01", sub: "LEVEL 01 // PEMULA", focus: "Antrean, Timbangan, Pola & Kubus", count: 30, build: generateGrade1Questions },
-      { grade: 2, title: "KELAS 02", sub: "LEVEL 02 // EKSPLORASI", focus: "Kalender, Uang Logam, Pemotongan & Mundur", count: 50, build: generateGrade2Questions },
-      { grade: 3, title: "KELAS 03", sub: "LEVEL 03 // PENALARAN", focus: "Keliling, Pecahan, Kombinatorika & Interval", count: 75, build: generateGrade3Questions },
-      { grade: 4, title: "KELAS 04", sub: "LEVEL 04 // ANALISIS", focus: "KPK, Luas Bingkai, Sarang Merpati & Rata-rata", count: 100, build: generateGrade4Questions },
-      { grade: 5, title: "KELAS 05", sub: "LEVEL 05 // TANTANGAN", focus: "Rasio, Diskon, Kubus Dicat, Kecepatan & Skor", count: 125, build: generateGrade5Questions },
-      { grade: 6, title: "KELAS 06", sub: "LEVEL 06 // MASTER", focus: "Aljabar, Teleskopik, Peluang, Venn & Strategi", count: 150, build: generateGrade6Questions }
+      { grade: 1, title: "Kelas 1", sub: "Pemula", focus: "Antrean, Timbangan, Pola & Kubus", count: 30, build: generateGrade1Questions },
+      { grade: 2, title: "Kelas 2", sub: "Eksplorasi", focus: "Kalender, Uang Logam, Pemotongan & Mundur", count: 50, build: generateGrade2Questions },
+      { grade: 3, title: "Kelas 3", sub: "Penalaran", focus: "Keliling, Pecahan, Kombinatorika & Interval", count: 75, build: generateGrade3Questions },
+      { grade: 4, title: "Kelas 4", sub: "Analisis", focus: "KPK, Luas Bingkai, Sarang Merpati & Rata-rata", count: 100, build: generateGrade4Questions },
+      { grade: 5, title: "Kelas 5", sub: "Tantangan", focus: "Rasio, Diskon, Kubus Dicat, Kecepatan & Skor", count: 125, build: generateGrade5Questions },
+      { grade: 6, title: "Kelas 6", sub: "Master", focus: "Aljabar, Teleskopik, Peluang, Venn & Strategi", count: 150, build: generateGrade6Questions }
     ];
 
     const BANK_CACHE = {};
@@ -2093,7 +2030,7 @@
     // State Aplikasi
     let state = {
       view: "home", // 'home' | 'packs' | 'quiz' | 'result'
-      theme: "light", // 'light' (#FFFFFF/#111111/#FF0000) | 'dark' (#111111/#FFFFFF/#FF0000)
+      theme: "dark", // 'dark' | 'light'
       selectedGrade: null,
       selectedPack: 0,
       currentIndex: 0,
@@ -2104,43 +2041,43 @@
     };
 
     // =========================================================================
-    // PENGATURAN TEMA SWISS MONOCHROMATIC (LIGHT #FFFFFF / DARK #111111)
+    // PENGATURAN TEMA (HITAM PAPAN TULIS / PUTIH POLOS)
     // =========================================================================
     function applyTheme(theme) {
-      state.theme = theme === "dark" ? "dark" : "light";
-      const isDark = state.theme === "dark";
-      document.documentElement.classList.toggle("theme-dark", isDark);
+      state.theme = theme === "light" ? "light" : "dark";
+      const isLight = state.theme === "light";
+      document.documentElement.classList.toggle("theme-light", isLight);
 
       const metaTheme = document.getElementById("meta-theme-color");
-      if (metaTheme) metaTheme.setAttribute("content", isDark ? "#111111" : "#FFFFFF");
+      if (metaTheme) metaTheme.setAttribute("content", isLight ? "#ffffff" : "#0a0a0a");
 
       document.querySelectorAll(".theme-icon-el").forEach((el) => {
-        el.textContent = isDark ? "□" : "■";
+        el.textContent = isLight ? "◐" : "☀";
       });
       document.querySelectorAll(".theme-label-el").forEach((el) => {
-        el.textContent = isDark ? "LIGHT" : "DARK";
+        el.textContent = isLight ? "Hitam" : "Putih";
       });
 
       if (scratchCtx) {
-        scratchCtx.strokeStyle = isDark ? "#FFFFFF" : "#111111";
+        scratchCtx.strokeStyle = isLight ? "#000000" : "#ffffff";
       }
     }
 
     function toggleTheme() {
       playTone("tap");
-      const nextTheme = state.theme === "light" ? "dark" : "light";
+      const nextTheme = state.theme === "dark" ? "light" : "dark";
       applyTheme(nextTheme);
       try {
-        localStorage.setItem("jago_kmnr_sd_theme_v4", nextTheme);
+        localStorage.setItem("jago_kmnr_sd_theme", nextTheme);
       } catch (e) {}
       trackVercelEvent("toggle_theme", { theme: nextTheme });
-      showToast(nextTheme === "light" ? "SWISS LIGHT MODE (#FFFFFF)" : "SWISS DARK MODE (#111111)");
+      showToast(nextTheme === "light" ? "Tema putih polos aktif" : "Tema papan hitam aktif");
     }
 
     function loadProgress() {
       try {
-        const savedTheme = localStorage.getItem("jago_kmnr_sd_theme_v4");
-        applyTheme(savedTheme || "light");
+        const savedTheme = localStorage.getItem("jago_kmnr_sd_theme");
+        if (savedTheme) applyTheme(savedTheme);
 
         const saved = localStorage.getItem("jago_kmnr_sd_v3");
         if (saved) {
@@ -2174,7 +2111,7 @@
       };
     }
 
-    // Web Audio API (Efek suara presisi)
+    // Web Audio API (Efek suara ringan)
     function playTone(type) {
       if (!state.soundEnabled) return;
       try {
@@ -2189,28 +2126,28 @@
 
         if (type === "tap") {
           osc.type = "sine";
-          osc.frequency.setValueAtTime(600, now);
-          gain.gain.setValueAtTime(0.03, now);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.045);
+          osc.frequency.setValueAtTime(540, now);
+          gain.gain.setValueAtTime(0.035, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.055);
           osc.start(now);
-          osc.stop(now + 0.045);
+          osc.stop(now + 0.055);
         } else if (type === "correct") {
           osc.type = "sine";
           osc.frequency.setValueAtTime(523.25, now);
           osc.frequency.setValueAtTime(659.25, now + 0.08);
           osc.frequency.setValueAtTime(783.99, now + 0.16);
-          gain.gain.setValueAtTime(0.07, now);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+          gain.gain.setValueAtTime(0.075, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.32);
           osc.start(now);
-          osc.stop(now + 0.3);
+          osc.stop(now + 0.32);
         } else if (type === "wrong") {
           osc.type = "triangle";
-          osc.frequency.setValueAtTime(200, now);
-          osc.frequency.linearRampToValueAtTime(150, now + 0.18);
+          osc.frequency.setValueAtTime(210, now);
+          osc.frequency.linearRampToValueAtTime(160, now + 0.2);
           gain.gain.setValueAtTime(0.045, now);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
           osc.start(now);
-          osc.stop(now + 0.2);
+          osc.stop(now + 0.22);
         }
       } catch (e) {}
     }
@@ -2218,13 +2155,13 @@
     function toggleSound() {
       state.soundEnabled = !state.soundEnabled;
       document.querySelectorAll(".sound-icon-el").forEach((el) => {
-        el.textContent = state.soundEnabled ? "ON" : "OFF";
+        el.textContent = state.soundEnabled ? "🔊" : "🔇";
       });
       document.querySelectorAll(".sound-label-el").forEach((el) => {
-        el.textContent = state.soundEnabled ? "AUDIO" : "MUTE";
+        el.textContent = state.soundEnabled ? "Suara" : "Senyap";
       });
       if (state.soundEnabled) playTone("tap");
-      showToast(state.soundEnabled ? "AUDIO ENABLED" : "AUDIO MUTED");
+      showToast(state.soundEnabled ? "Suara aktif" : "Mode senyap");
     }
 
     let toastTimer = null;
@@ -2233,7 +2170,7 @@
       toast.textContent = msg;
       toast.classList.remove("hidden");
       clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => toast.classList.add("hidden"), 2000);
+      toastTimer = setTimeout(() => toast.classList.add("hidden"), 2100);
     }
 
     function copyEmail() {
@@ -2247,7 +2184,7 @@
       try {
         document.execCommand("copy");
         playTone("tap");
-        showToast("COPIED: ADNANJOGJA@GMAIL.COM");
+        showToast("Email adnanjogja@gmail.com disalin");
       } catch (e) {
         showToast(email);
       }
@@ -2380,11 +2317,11 @@
     }
 
     // =========================================================================
-    // KANVAS CORET-CORETAN TEKNIS (SCRATCHPAD)
+    // PAPAN CORET-CORETAN MINI (SCRATCHPAD CANVAS)
     // =========================================================================
     let scratchCtx = null;
     let isDrawing = false;
-    let penWidth = 2;
+    let penWidth = 2.5;
     let scratchHistory = [];
 
     function initScratchpadEvents() {
@@ -2437,9 +2374,9 @@
       canvas.height = rect.height * dpr;
       scratchCtx = canvas.getContext("2d");
       scratchCtx.scale(dpr, dpr);
-      scratchCtx.lineCap = "square";
-      scratchCtx.lineJoin = "miter";
-      scratchCtx.strokeStyle = state.theme === "dark" ? "#FFFFFF" : "#111111";
+      scratchCtx.lineCap = "round";
+      scratchCtx.lineJoin = "round";
+      scratchCtx.strokeStyle = state.theme === "light" ? "#000000" : "#ffffff";
       scratchCtx.lineWidth = penWidth;
     }
 
@@ -2468,8 +2405,8 @@
       if (scratchCtx) scratchCtx.lineWidth = penWidth;
       const thinBtn = document.getElementById("btn-pen-thin");
       const thickBtn = document.getElementById("btn-pen-thick");
-      const activeCls = "btn-swiss-solid min-h-[32px] px-2.5 py-1 font-mono-tech text-[11px] font-bold uppercase cursor-pointer";
-      const idleCls = "btn-swiss min-h-[32px] px-2.5 py-1 font-mono-tech text-[11px] font-bold uppercase cursor-pointer";
+      const activeCls = "btn-tactile surface-inv min-h-[34px] px-2.5 py-1 rounded-lg text-xs sm:text-sm font-extrabold cursor-pointer";
+      const idleCls = "btn-tactile btn-subtle min-h-[34px] px-2.5 py-1 rounded-lg border-2 text-xs sm:text-sm font-bold cursor-pointer";
       thinBtn.className = size <= 3 ? activeCls : idleCls;
       thickBtn.className = size > 3 ? activeCls : idleCls;
     }
@@ -2521,7 +2458,7 @@
     }, { passive: true });
 
     // =========================================================================
-    // MODAL MATRIKS NOMOR SOAL DENGAN FILTER
+    // DRAWER PETA SOAL DENGAN FILTER
     // =========================================================================
     function setMapFilter(filterKey) {
       playTone("tap");
@@ -2541,15 +2478,14 @@
       const packs = getPacksForGrade(grade);
       const pack = packs[state.selectedPack];
       const ansMap = state.progress[grade]?.answers || {};
-      const padNum = (n) => String(n).padStart(2, "0");
 
-      document.getElementById("map-modal-title").textContent = `PAKET ${padNum(pack.number)} — KELAS ${padNum(grade)}`;
-      document.getElementById("map-modal-sub").textContent = `RANGE #${String(pack.start + 1).padStart(3, "0")} — #${String(pack.end).padStart(3, "0")}`;
+      document.getElementById("map-modal-title").textContent = `Peta Paket ${pack.number} • Kelas ${grade}`;
+      document.getElementById("map-modal-sub").textContent = `Soal ${pack.start + 1} sampai ${pack.end} (Geser layar atau ketuk nomor)`;
 
       const filters = [
-        { key: "all", label: `SEMUA (${pack.count})` },
-        { key: "unanswered", label: `KOSONG (${pack.count - pack.answered})` },
-        { key: "wrong", label: `SALAH (${pack.wrong})` }
+        { key: "all", label: `Semua (${pack.count})` },
+        { key: "unanswered", label: `Belum Dijawab (${pack.count - pack.answered})` },
+        { key: "wrong", label: `Perlu Diulang (${pack.wrong})` }
       ];
 
       document.getElementById("map-filters").innerHTML = filters
@@ -2558,10 +2494,10 @@
           return `
             <button
               onclick="setMapFilter('${f.key}')"
-              class="px-2.5 py-1 font-mono-tech text-[11px] font-bold uppercase cursor-pointer ${
+              class="btn-tactile px-2.5 py-1 rounded-lg text-xs font-extrabold cursor-pointer ${
                 active
-                  ? "surface-accent border-[1.5px] border-accent"
-                  : "btn-swiss"
+                  ? "surface-inv border-2 border-main"
+                  : "btn-subtle border-2"
               }"
             >
               ${f.label}
@@ -2580,8 +2516,8 @@
 
       if (indices.length === 0) {
         document.getElementById("map-grid").innerHTML = `
-          <div class="col-span-full py-6 text-center font-mono-tech text-xs text-muted uppercase">
-            // TIDAK ADA NOMOR PADA FILTER INI
+          <div class="col-span-full py-6 text-center text-sm text-muted">
+            Tidak ada soal pada kategori filter ini.
           </div>
         `;
         return;
@@ -2591,11 +2527,11 @@
         .map((idx) => {
           const rec = ansMap[idx];
           const isCurrent = idx === state.currentIndex;
-          let cls = "btn-swiss font-bold";
+          let cls = "btn-subtle border-2 font-bold";
           if (rec) {
             cls = rec.isCorrect
-              ? "surface-inv border-[1.5px] border-main font-extrabold"
-              : "surface-muted border-[1.5px] border-accent text-main font-extrabold";
+              ? "surface-inv border-2 border-main font-extrabold"
+              : "border-2 border-dashed border-main text-main font-extrabold";
           }
           if (isCurrent) {
             cls += " ring-current-node";
@@ -2603,9 +2539,9 @@
           return `
             <button
               onclick="jumpToQuestion(${idx})"
-              class="h-10 font-mono-tech text-xs flex items-center justify-center cursor-pointer ${cls}"
+              class="btn-tactile h-10 rounded-xl text-sm flex items-center justify-center cursor-pointer ${cls}"
             >
-              ${String(idx + 1).padStart(2, "0")}
+              ${idx + 1}
             </button>
           `;
         })
@@ -2633,12 +2569,12 @@
       } catch (e) {}
       closeResetModal();
       playTone("tap");
-      showToast("PROGRESS RESET COMPLETE");
+      showToast("Semua progres berhasil dihapus");
       render();
     }
 
     // =========================================================================
-    // RENDER HALAMAN BERANDA (SWISS EDITORIAL ASYMMETRIC GRID)
+    // RENDER HALAMAN BERANDA (PILIH JENJANG KELAS)
     // =========================================================================
     function renderHome() {
       const totalAll = GRADE_META.reduce((acc, m) => acc + m.count, 0);
@@ -2651,53 +2587,48 @@
         const pct = Math.round((stats.answered / stats.total) * 100);
         const packCount = Math.ceil(m.count / PACK_SIZE);
         const hasProgress = stats.answered > 0;
-        const padGrade = String(m.grade).padStart(2, "0");
-        const padPacks = String(packCount).padStart(2, "0");
+
+        const levelPips = Array.from({ length: 6 }, (_, i) => {
+          const filled = i < m.grade;
+          return `<span class="w-1.5 h-1.5 rounded-full transition-colors ${filled ? "pip-filled" : "pip-empty"}"></span>`;
+        }).join("");
 
         return `
           <button
             onclick="goToPacks(${m.grade})"
-            style="animation-delay: ${idx * 35}ms"
-            class="animate-card grid-cell-interactive group text-left p-4 sm:p-5 border-r-[1.5px] border-b-[1.5px] border-main flex flex-col justify-between cursor-pointer"
+            style="animation-delay: ${idx * 45}ms"
+            class="animate-card btn-tactile card-interactive group text-left p-3.5 sm:p-5 rounded-2xl border-2 flex flex-col justify-between cursor-pointer"
           >
             <div>
-              <!-- Baris Atas: Indeks & Ikon Geometris -->
-              <div class="flex items-start justify-between gap-2 mb-4">
-                <div>
-                  <span class="font-mono-tech text-[11px] font-bold uppercase tracking-widest text-accent block">
-                    MOD // ${padGrade}
-                  </span>
-                  <span class="cell-tag inline-block mt-1 px-1.5 py-0.5 border border-main font-mono-tech text-[10px] font-bold uppercase tracking-wider">
-                    ${padPacks} PAKET
-                  </span>
+              <div class="flex items-center justify-between gap-1.5 mb-2">
+                <div class="flex items-center gap-1" title="Tingkat Kesulitan ${m.grade}/6">
+                  ${levelPips}
                 </div>
-                <div class="shrink-0">
-                  ${getGradeGeometricSvg(m.grade)}
-                </div>
+                <span class="card-badge surface-inv text-[11px] sm:text-xs font-extrabold px-2 py-0.5 rounded-md transition-colors shrink-0">
+                  ${packCount} Paket
+                </span>
               </div>
 
-              <!-- Judul Besar Condensed -->
-              <h2 class="font-display text-3xl sm:text-[36px] font-black tracking-tight mb-1">
+              <h2 class="font-display text-2xl sm:text-[28px] font-bold leading-tight">
                 ${m.title}
               </h2>
 
-              <p class="cell-muted font-mono-tech text-[11px] uppercase tracking-wider text-muted mb-2">
-                ${m.count} SOAL • ${m.sub}
+              <p class="text-[11px] sm:text-xs uppercase tracking-wider font-extrabold opacity-75 mt-0.5 mb-2">
+                ${m.count} Soal • ${m.sub}
               </p>
 
-              <p class="cell-muted text-xs sm:text-[13px] text-muted leading-snug line-clamp-2 mb-5">
+              <p class="text-xs sm:text-sm opacity-90 leading-snug line-clamp-2 mb-4">
                 ${m.focus}
               </p>
             </div>
 
-            <!-- Footer Kartu & Progress Bar -->
-            <div class="cell-border w-full pt-3 border-t border-main">
-              <div class="flex items-center justify-between font-mono-tech text-[11px] font-bold uppercase mb-1.5">
-                <span>${hasProgress ? `${stats.answered}/${stats.total} SELESAI` : "SIAP MULAI"}</span>
-                <span>${hasProgress ? `✓ ${stats.correct}` : "BUKA →"}</span>
+            <div class="card-divider w-full pt-2.5 border-t border-dashed border-soft">
+              <div class="flex items-center justify-between text-[11px] sm:text-xs font-bold opacity-90 mb-1.5">
+                <span>${hasProgress ? `${stats.answered}/${stats.total} soal` : "Siap mulai"}</span>
+                <span>${hasProgress ? `✓ ${stats.correct}` : "Buka →"}</span>
               </div>
-              <div class="cell-track w-full h-[4px] surface-muted overflow-hidden">
-                <div class="cell-fill h-full progress-fill-accent" style="width: ${pct}%"></div>
+              <div class="card-track w-full h-1.5 rounded-full surface-track border border-soft overflow-hidden">
+                <div class="card-fill h-full progress-fill" style="width: ${pct}%"></div>
               </div>
             </div>
           </button>
@@ -2706,58 +2637,36 @@
 
       return `
         <section class="animate-view">
-          <!-- Blok Editorial Asimetris: Kurikulum & Statistik Global -->
-          <div class="surface-card border-[1.5px] border-main mb-5 grid grid-cols-1 md:grid-cols-12">
-            <div class="md:col-span-8 p-4 sm:p-5 border-b-[1.5px] md:border-b-0 md:border-r-[1.5px] border-main flex flex-col justify-between">
-              <div>
-                <div class="font-mono-tech text-[10px] font-bold uppercase tracking-[0.12em] text-accent mb-1.5">
-                  // KURIKULUM PENALARAN INTERAKTIF
-                </div>
-                <h2 class="font-display text-2xl sm:text-3xl font-black text-main mb-1.5">
-                  PILIH JENJANG PENDIDIKAN DASAR
-                </h2>
-                <p class="text-xs sm:text-sm text-muted leading-relaxed">
-                  Standar internasional KMNR, Kangaroo Math, SASMO &amp; TIMSS disusun secara modular dalam paket latihan @ ${PACK_SIZE} soal per sesi.
-                </p>
-              </div>
+          <div class="p-4 sm:p-5 mb-5 rounded-2xl border-2 border-dashed border-mid surface-tint flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h2 class="font-display text-xl sm:text-2xl font-bold text-main">
+                Pilih Jenjang Kelas SD
+              </h2>
+              <p class="text-xs sm:text-sm text-muted mt-0.5 leading-relaxed">
+                Bank soal KMNR, Kangaroo, SASMO &amp; TIMSS dibagi menjadi paket ringan @ ${PACK_SIZE} soal.
+              </p>
             </div>
 
-            <div class="md:col-span-4 p-4 sm:p-5 surface-muted flex flex-col justify-between gap-3">
-              <div class="flex items-baseline justify-between gap-2">
-                <div>
-                  <div class="font-mono-tech text-[10px] uppercase tracking-widest text-muted">TOTAL BANK SOAL</div>
-                  <div class="font-display text-4xl sm:text-[44px] font-black text-main num-tabular mt-0.5">${totalAll}</div>
+            <div class="flex items-center justify-between sm:justify-end gap-3 pt-2.5 sm:pt-0 border-t sm:border-t-0 border-dashed border-soft shrink-0">
+              <div class="text-left sm:text-right">
+                <div class="text-xs font-extrabold text-main">
+                  ${totalAnsweredAll} / ${totalAll} Terjawab (${overallPct}%)
                 </div>
-                <div class="text-right">
-                  <div class="font-mono-tech text-[10px] uppercase tracking-widest text-muted">PROGRES</div>
-                  <div class="font-display text-3xl font-black text-accent num-tabular mt-0.5">${overallPct}%</div>
+                <div class="text-[11px] text-muted">
+                  Total Benar: ${totalCorrectAll} soal
                 </div>
               </div>
-
-              <div>
-                <div class="flex items-center justify-between font-mono-tech text-[11px] font-bold text-main mb-1">
-                  <span>${totalAnsweredAll}/${totalAll} TERJAWAB</span>
-                  <span>BENAR: ${totalCorrectAll}</span>
-                </div>
-                <div class="w-full h-[5px] surface-card border border-main overflow-hidden">
-                  <div class="h-full progress-fill-accent" style="width: ${overallPct}%"></div>
-                </div>
-              </div>
-
               ${
                 totalAnsweredAll > 0
-                  ? `<button onclick="openResetModal()" class="btn-swiss w-full py-1.5 font-mono-tech text-[11px] font-bold uppercase tracking-wider cursor-pointer">
-                      [×] RESET SEMUA PROGRES
+                  ? `<button onclick="openResetModal()" class="btn-tactile btn-outline px-3 py-1.5 rounded-xl border-2 text-xs font-extrabold cursor-pointer">
+                      Reset
                     </button>`
-                  : `<div class="font-mono-tech text-[10px] uppercase tracking-wider text-muted">
-                      STATUS: READY FOR TRAINING
-                    </div>`
+                  : ""
               }
             </div>
           </div>
 
-          <!-- Matriks Grid 6 Jenjang Kelas (Border Kolaps Tajam) -->
-          <div class="border-t-[1.5px] border-l-[1.5px] border-main grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
             ${cardsHtml}
           </div>
         </section>
@@ -2765,7 +2674,7 @@
     }
 
     // =========================================================================
-    // RENDER HALAMAN PILIH PAKET SOAL (MODULAR MATRIX @ 15 SOAL)
+    // RENDER HALAMAN PILIH PAKET SOAL (BABAK @ 15 SOAL)
     // =========================================================================
     function renderPacks() {
       const grade = state.selectedGrade;
@@ -2773,53 +2682,49 @@
       const stats = getGradeStats(grade);
       const packs = getPacksForGrade(grade);
       const nextPack = packs.find((p) => p.answered < p.count) || packs[0];
-      const padGrade = String(grade).padStart(2, "0");
 
       const packCardsHtml = packs
         .map((p, idx) => {
           const pct = Math.round((p.answered / p.count) * 100);
           const isCompleted = p.answered === p.count;
           const isStarted = p.answered > 0 && !isCompleted;
-          const padPack = String(p.number).padStart(2, "0");
 
-          let statusIndicator = `<span class="w-2.5 h-2.5 border-[1.5px] border-current inline-block"></span>`;
-          let statusText = "BELUM DIMULAI";
+          let statusIcon = "○";
+          let statusText = "Belum dimulai";
           if (isCompleted) {
-            statusIndicator = `<span class="w-2.5 h-2.5 bg-current inline-block"></span>`;
-            statusText = `TUNTAS • ${p.correct}/${p.count} BENAR`;
+            statusIcon = "✓";
+            statusText = `Tuntas • Benar ${p.correct}/${p.count}`;
           } else if (isStarted) {
-            statusIndicator = `<span class="w-2.5 h-2.5 surface-accent inline-block"></span>`;
-            statusText = `AKTIF • ${p.answered}/${p.count} SOAL`;
+            statusIcon = "▶";
+            statusText = `Terjawab ${p.answered}/${p.count}`;
           }
 
           return `
             <button
               onclick="startPack(${grade}, ${p.packIndex}, false)"
-              style="animation-delay: ${idx * 30}ms"
-              class="animate-card grid-cell-interactive group text-left p-4 border-r-[1.5px] border-b-[1.5px] border-main flex flex-col justify-between cursor-pointer"
+              style="animation-delay: ${idx * 35}ms"
+              class="animate-card btn-tactile card-interactive group text-left p-3.5 sm:p-4 rounded-2xl border-2 ${
+                isCompleted ? "border-solid border-main surface-tint-strong" : "border-dashed"
+              } flex flex-col justify-between cursor-pointer"
             >
               <div>
-                <div class="flex items-center justify-between gap-2 mb-2">
-                  <span class="font-mono-tech text-[10px] font-bold uppercase tracking-widest text-accent">
-                    PKT // ${padPack}
+                <div class="flex items-center justify-between gap-1.5 mb-1.5">
+                  <span class="font-display text-lg sm:text-xl font-bold">
+                    Paket ${p.number}
                   </span>
-                  <span class="cell-tag px-1.5 py-0.5 border border-main font-mono-tech text-[10px] font-bold">
-                    #${String(p.start + 1).padStart(3, "0")}—${String(p.end).padStart(3, "0")}
+                  <span class="text-[11px] sm:text-xs font-extrabold px-2 py-0.5 rounded-md border-[1.5px] border-current opacity-90 shrink-0">
+                    #${p.start + 1}–${p.end}
                   </span>
                 </div>
 
-                <h3 class="font-display text-2xl sm:text-[28px] font-black mb-2">
-                  PAKET ${padPack}
-                </h3>
-
-                <p class="cell-muted font-mono-tech text-[11px] font-bold uppercase text-muted mb-4 flex items-center gap-2">
-                  ${statusIndicator}
+                <p class="text-xs sm:text-sm font-bold opacity-85 mb-3 flex items-center gap-1.5">
+                  <span class="text-xs">${statusIcon}</span>
                   <span>${statusText}</span>
                 </p>
               </div>
 
-              <div class="cell-track w-full h-[4px] surface-muted overflow-hidden">
-                <div class="cell-fill h-full ${isCompleted ? "progress-fill-mono" : "progress-fill-accent"}" style="width: ${pct}%"></div>
+              <div class="card-track w-full h-1.5 rounded-full surface-track border border-soft overflow-hidden">
+                <div class="card-fill h-full progress-fill" style="width: ${pct}%"></div>
               </div>
             </button>
           `;
@@ -2828,33 +2733,30 @@
 
       return `
         <section class="animate-view">
-          <!-- Header Modul Jenjang -->
-          <div class="surface-card border-[1.5px] border-main p-4 sm:p-5 mb-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div class="flex items-start gap-3.5">
-              <div class="pt-0.5 shrink-0">${getGradeGeometricSvg(grade)}</div>
-              <div>
-                <div class="font-mono-tech text-[10px] font-bold uppercase tracking-widest text-accent mb-1">
-                  MODUL ${padGrade} // ${packs.length} PAKET LATIHAN
-                </div>
-                <h2 class="font-display text-3xl sm:text-4xl font-black text-main">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 sm:p-5 mb-5 rounded-2xl border-2 border-mid surface-tint">
+            <div>
+              <div class="flex items-center gap-2">
+                <h2 class="font-display text-2xl sm:text-[26px] font-bold text-main">
                   ${meta.title} SD
                 </h2>
-                <p class="text-xs sm:text-sm text-muted mt-1">
-                  ${meta.focus} — Terjawab <strong class="text-main">${stats.answered}/${stats.total}</strong> soal (${stats.correct} benar)
-                </p>
+                <span class="text-xs px-2.5 py-0.5 rounded-full surface-inv font-extrabold">
+                  ${packs.length} Paket
+                </span>
               </div>
+              <p class="text-xs sm:text-sm text-muted mt-1">
+                ${meta.focus} • Selesai ${stats.answered}/${stats.total} soal (${stats.correct} benar)
+              </p>
             </div>
 
             <button
               onclick="startPack(${grade}, ${nextPack.packIndex}, false)"
-              class="btn-swiss-solid self-start sm:self-center px-4 py-2.5 font-mono-tech text-xs font-bold uppercase tracking-wider cursor-pointer shrink-0"
+              class="btn-tactile surface-inv self-start sm:self-auto px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold cursor-pointer shrink-0"
             >
-              ${stats.answered > 0 ? `LANJUT PAKET ${String(nextPack.number).padStart(2, "0")} →` : "MULAI PAKET 01 →"}
+              ${stats.answered > 0 ? `Lanjut Paket ${nextPack.number} →` : "Mulai Paket 1 →"}
             </button>
           </div>
 
-          <!-- Grid Paket Soal -->
-          <div class="border-t-[1.5px] border-l-[1.5px] border-main grid grid-cols-2 sm:grid-cols-3">
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
             ${packCardsHtml}
           </div>
         </section>
@@ -2862,7 +2764,7 @@
     }
 
     // =========================================================================
-    // RENDER HALAMAN KUIS (SWISS EDITORIAL QUESTION & OPTIONS)
+    // RENDER HALAMAN KUIS (HIERARKI 3-TINGKAT + ANIMASI LINGKARAN KAPUR)
     // =========================================================================
     function renderQuiz() {
       const grade = state.selectedGrade;
@@ -2875,24 +2777,36 @@
       const progressPct = Math.round((localNum / pack.count) * 100);
       const letters = ["A", "B", "C", "D"];
 
-      document.getElementById("compact-title").textContent = `KLS ${String(grade).padStart(2, "0")} // PKT ${String(pack.number).padStart(2, "0")} (${String(localNum).padStart(2, "0")}/${String(pack.count).padStart(2, "0")})`;
+      document.getElementById("compact-title").textContent = `Kls ${grade} • Pkt ${pack.number} (${localNum}/${pack.count})`;
       document.getElementById("compact-progress-bar").style.width = `${progressPct}%`;
 
       const optionsHtml = q.options
         .map((opt, idx) => {
-          let style = "btn-swiss";
+          let style = "btn-subtle border-2";
           let badge = "";
-          let letterBox = "border-[1.5px] border-current";
+          let chalkCircleSvg = "";
 
           if (ansRecord) {
             if (idx === q.answer) {
-              style = "surface-inv border-[1.5px] border-main border-l-[5px] border-l-[#FF0000] font-bold";
-              badge = `<span class="surface-accent font-mono-tech text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 shrink-0">✓ BENAR</span>`;
+              style = "surface-inv border-2 border-main font-extrabold";
+              badge = `<span class="text-xs font-extrabold px-2 py-0.5 rounded surface-page shrink-0">✓ Benar</span>`;
+              chalkCircleSvg = `
+                <svg class="absolute -inset-[4px] w-[calc(100%+8px)] h-[calc(100%+8px)] text-main pointer-events-none" viewBox="0 0 320 72" preserveAspectRatio="none">
+                  <path
+                    class="chalk-ring-path"
+                    d="M 14,4 C 95,1 225,1 306,5 C 317,8 318,64 305,67 C 225,71 95,71 14,67 C 3,64 3,8 16,4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.6"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              `;
             } else if (idx === ansRecord.chosen) {
-              style = "surface-muted border-[1.5px] border-accent text-main";
-              badge = `<span class="border border-accent text-accent font-mono-tech text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 shrink-0">✗ SALAH</span>`;
+              style = "border-2 border-dashed border-main text-main surface-tint-strong";
+              badge = `<span class="text-xs font-bold px-2 py-0.5 rounded border-[1.5px] border-main text-main shrink-0">✗ Pilihanmu</span>`;
             } else {
-              style = "surface-card border border-subtle text-subtle";
+              style = "border-2 border-soft text-subtle";
             }
           }
 
@@ -2900,17 +2814,18 @@
             <button
               onclick="selectAnswer(${idx})"
               ${ansRecord ? "disabled" : ""}
-              class="relative w-full min-h-[56px] text-left px-3.5 py-3 flex items-center justify-between gap-3 ${style} ${
+              class="btn-tactile relative w-full min-h-[56px] text-left px-3.5 py-3 rounded-xl flex items-center justify-between gap-3 ${style} ${
                 ansRecord ? "cursor-default" : "cursor-pointer"
               }"
             >
-              <div class="flex items-center gap-3">
-                <span class="w-7 h-7 ${letterBox} flex items-center justify-center font-mono-tech font-bold text-xs shrink-0">
+              ${chalkCircleSvg}
+              <div class="flex items-center gap-3 relative z-10">
+                <span class="w-7 h-7 rounded-lg border-2 border-current flex items-center justify-center font-display font-bold text-sm shrink-0">
                   ${letters[idx]}
                 </span>
-                <span class="text-sm sm:text-[15px] font-semibold leading-snug">${opt}</span>
+                <span class="text-sm sm:text-base font-bold leading-snug">${opt}</span>
               </div>
-              <div>${badge}</div>
+              <div class="relative z-10">${badge}</div>
             </button>
           `;
         })
@@ -2921,9 +2836,9 @@
         const steps = q.explanation
           .map(
             (step, i) => `
-              <li class="flex items-start gap-3 text-sm sm:text-[15px] text-main leading-relaxed">
-                <span class="font-mono-tech text-xs font-bold px-1.5 py-0.5 surface-inv shrink-0 mt-0.5">
-                  ${String(i + 1).padStart(2, "0")}
+              <li class="flex items-start gap-2.5 text-sm sm:text-[15px] text-main leading-relaxed">
+                <span class="w-5 h-5 rounded-full surface-inv font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                  ${i + 1}
                 </span>
                 <span>${step}</span>
               </li>
@@ -2932,27 +2847,22 @@
           .join("");
 
         explanationHtml = `
-          <div class="surface-card mt-5 p-4 sm:p-5 border-[1.5px] border-main border-l-[5px] border-l-[#FF0000] animate-view">
-            <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-main">
-              <div>
-                <span class="font-mono-tech text-[10px] font-bold uppercase tracking-widest text-accent block">
-                  ${ansRecord.isCorrect ? "// VERIFIED SOLUTION" : "// STEP-BY-STEP ANALYSIS"}
-                </span>
-                <span class="font-display text-xl sm:text-2xl font-black text-main">
-                  ${ansRecord.isCorrect ? "JAWABAN TEPAT — PEMBAHASAN" : "PEMBAHASAN PENYELESAIAN"}
-                </span>
-              </div>
+          <div class="mt-5 p-4 sm:p-5 rounded-2xl border-[2.5px] border-dashed border-main surface-tint animate-reveal">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-2.5 mb-3 border-b-2 border-dashed border-soft">
+              <span class="font-display text-lg sm:text-xl font-bold text-main">
+                ${ansRecord.isCorrect ? "✓ Tepat! Pembahasan:" : "✎ Pembahasan Langkah demi Langkah:"}
+              </span>
               <div class="flex items-center gap-2">
-                <span class="font-mono-tech text-xs px-2 py-1 surface-muted border border-main">
-                  KUNCI: <strong class="text-main font-extrabold">${letters[q.answer]}</strong>
+                <span class="text-xs sm:text-sm text-muted">
+                  Kunci: <strong class="text-main font-extrabold">${letters[q.answer]}</strong>
                 </span>
                 ${
                   !ansRecord.isCorrect
                     ? `<button
                         onclick="retrySingleQuestion(${state.currentIndex})"
-                        class="btn-swiss px-2.5 py-1 font-mono-tech text-[11px] font-bold uppercase cursor-pointer"
+                        class="btn-tactile btn-outline px-2.5 py-0.5 rounded-md border-2 text-xs font-extrabold cursor-pointer"
                       >
-                        ↻ ULANGI
+                        ↻ Coba Lagi
                       </button>`
                     : ""
                 }
@@ -2968,75 +2878,73 @@
       return `
         <section class="animate-view flex-1 flex flex-col justify-between pb-24 sm:pb-4">
           <div>
-            <!-- Bingkai Soal Arsitektural -->
-            <div class="surface-card border-[1.5px] border-main mb-4">
-              <div class="flex flex-wrap items-center justify-between gap-2 px-3.5 py-2 border-b border-main surface-muted font-mono-tech text-[11px]">
-                <div class="flex flex-wrap items-center gap-2">
-                  <span class="font-extrabold text-main">NO. ${String(state.currentIndex + 1).padStart(3, "0")}</span>
-                  <span class="text-muted">/</span>
-                  <span class="px-1.5 py-0.5 surface-card border border-main text-main font-bold uppercase">${q.topic}</span>
-                  <span class="hidden sm:inline text-muted uppercase">// ${q.standard}</span>
+            <!-- Tingkat 1: Bingkai Soal Solid Tebal -->
+            <div class="p-4 sm:p-5 mb-4 rounded-2xl border-2 border-mid surface-tint">
+              <div class="flex flex-wrap items-center justify-between gap-2 pb-2.5 mb-3 border-b-2 border-dashed border-soft text-xs sm:text-sm text-muted">
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <span class="font-extrabold text-main">Soal #${state.currentIndex + 1}</span>
+                  <span>•</span>
+                  <span class="px-2 py-0.5 rounded border-[1.5px] border-mid text-main font-bold">${q.topic}</span>
+                  <span class="hidden sm:inline text-muted">• ${q.standard}</span>
                 </div>
 
                 <span class="text-muted shrink-0">
-                  SKOR: <strong class="text-main font-extrabold">${String(pack.correct).padStart(2, "0")}</strong>/${String(pack.answered).padStart(2, "0")}
+                  Skor Paket: <strong class="text-main font-extrabold">${pack.correct}</strong>/${pack.answered}
                 </span>
               </div>
 
-              <div class="p-4 sm:p-6">
-                <p class="text-base sm:text-[18px] font-semibold leading-relaxed text-main">
-                  ${q.question}
-                </p>
+              <p class="text-base sm:text-lg font-semibold leading-relaxed text-main">
+                ${q.question}
+              </p>
 
-                ${q.svg ? `<div class="mt-4 p-3.5 border border-main surface-page">${q.svg}</div>` : ""}
-              </div>
+              ${q.svg ? `<div class="mt-3.5 p-3 rounded-xl border-2 border-dashed border-mid surface-page">${q.svg}</div>` : ""}
             </div>
 
-            <!-- Matriks Pilihan Jawaban -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5">
+            <!-- Tingkat 2: Pilihan Jawaban -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
               ${optionsHtml}
             </div>
 
-            <!-- Panel Pembahasan Langsung -->
+            <!-- Tingkat 3: Pembahasan Langsung -->
             ${explanationHtml}
           </div>
 
           <!-- Navigasi Bawah Sticky di Mobile -->
-          <div class="fixed bottom-0 left-0 right-0 sm:static z-20 surface-sticky backdrop-blur-sm sm:bg-transparent border-t-[1.5px] border-main sm:border-0 px-3.5 pt-2.5 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-0 sm:pt-6 sm:pb-0">
-            <div class="max-w-4xl mx-auto flex items-center justify-between gap-2">
+          <div class="fixed bottom-0 left-0 right-0 sm:static z-20 surface-sticky backdrop-blur-md sm:bg-transparent border-t-2 border-mid sm:border-0 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-0 sm:pt-6 sm:pb-0">
+            <div class="max-w-3xl mx-auto flex items-center justify-between gap-2">
               <button
                 onclick="prevQuestion()"
                 ${state.currentIndex === pack.start ? "disabled" : ""}
-                class="btn-swiss px-3 sm:px-4 py-2 font-mono-tech text-xs font-bold uppercase disabled:opacity-25 cursor-pointer shrink-0"
+                class="btn-tactile btn-subtle px-3 sm:px-4 py-2 rounded-xl border-2 text-xs sm:text-sm font-bold disabled:opacity-25 cursor-pointer shrink-0"
               >
-                ← <span class="hidden sm:inline">SEBELUMNYA</span><span class="sm:hidden">PREV</span>
+                ← <span class="hidden sm:inline">Sebelumnya</span><span class="sm:hidden">Sblm</span>
               </button>
 
               <button
                 onclick="openQuestionMap()"
-                class="btn-swiss sm:hidden px-3 py-2 font-mono-tech text-xs font-bold uppercase cursor-pointer shrink-0"
-                title="Buka Matriks Nomor Soal"
+                class="btn-tactile btn-subtle sm:hidden px-3 py-2 rounded-xl border-2 border-dashed text-xs font-extrabold cursor-pointer shrink-0"
+                title="Buka Peta Nomor Soal"
               >
-                ⊞ ${String(localNum).padStart(2, "0")}/${String(pack.count).padStart(2, "0")}
+                ⊞ ${localNum}/${pack.count}
               </button>
 
-              <span class="font-mono-tech text-[11px] uppercase tracking-wider text-subtle hidden sm:inline">
-                // SWIPE KIRI / KANAN UNTUK NAVIGASI CEPAT
+              <span class="text-xs text-subtle hidden sm:inline">
+                Tip: Geser layar kiri/kanan untuk pindah soal
               </span>
 
               ${
                 ansRecord
                   ? `<button
                       onclick="nextQuestion()"
-                      class="btn-swiss-solid flex-1 sm:flex-initial px-5 py-2 font-mono-tech text-xs font-bold uppercase tracking-wider cursor-pointer truncate"
+                      class="btn-tactile surface-inv flex-1 sm:flex-initial px-5 py-2 rounded-xl text-xs sm:text-sm font-extrabold cursor-pointer truncate"
                     >
-                      ${state.currentIndex + 1 < pack.end ? "SOAL BERIKUTNYA →" : `SELESAI PAKET ${String(pack.number).padStart(2, "0")} →`}
+                      ${state.currentIndex + 1 < pack.end ? "Soal Berikutnya →" : `Selesai Paket ${pack.number} →`}
                     </button>`
                   : `<button
                       onclick="nextQuestion()"
-                      class="btn-swiss px-3.5 sm:px-4 py-2 font-mono-tech text-xs font-bold uppercase cursor-pointer shrink-0"
+                      class="btn-tactile btn-subtle px-3.5 sm:px-4 py-2 rounded-xl border-2 border-dashed text-xs sm:text-sm font-bold cursor-pointer shrink-0"
                     >
-                      LEWATI →
+                      Lewati →
                     </button>`
               }
             </div>
@@ -3046,7 +2954,7 @@
     }
 
     // =========================================================================
-    // RENDER HALAMAN HASIL PAKET SOAL (SWISS EDITORIAL SUMMARY)
+    // RENDER HALAMAN HASIL PAKET SOAL
     // =========================================================================
     function renderResult() {
       const grade = state.selectedGrade;
@@ -3054,55 +2962,41 @@
       const pack = packs[state.selectedPack];
       const hasNextPack = state.selectedPack + 1 < packs.length;
       const pct = pack.count > 0 ? Math.round((pack.correct / pack.count) * 100) : 0;
-      const padGrade = String(grade).padStart(2, "0");
-      const padPack = String(pack.number).padStart(2, "0");
 
-      let title = "TERUS BERLATIH";
-      if (pct >= 90) title = "PAKET DIKUASAI SEMPURNA";
-      else if (pct >= 75) title = "PENALARAN SANGAT TAJAM";
-      else if (pct >= 50) title = "HASIL BAIK — TINGKATKAN";
+      let title = "Terus Berlatih!";
+      if (pct >= 90) title = "Luar Biasa! Paket Dikuasai";
+      else if (pct >= 75) title = "Hebat! Penalaran Tajam";
+      else if (pct >= 50) title = "Bagus! Terus Tingkatkan";
 
       return `
-        <section class="animate-view surface-card border-[1.5px] border-main p-5 sm:p-8">
-          <div class="flex flex-wrap items-center justify-between gap-2 pb-4 mb-6 border-b border-main font-mono-tech text-xs">
-            <span class="surface-accent px-2.5 py-1 font-bold uppercase tracking-wider">
-              REPORT // KELAS ${padGrade} • PAKET ${padPack}
-            </span>
-            <span class="text-muted">RANGE #${String(pack.start + 1).padStart(3, "0")}—${String(pack.end).padStart(3, "0")}</span>
+        <section class="animate-view text-center py-4">
+          <span class="inline-block px-3.5 py-1 rounded-full surface-inv text-xs font-extrabold uppercase tracking-wider mb-3">
+            Kelas ${grade} • Paket ${pack.number} (No. ${pack.start + 1}–${pack.end})
+          </span>
+
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-main mb-2">
+            ${title}
+          </h2>
+
+          <div class="my-5 inline-flex items-baseline gap-2 px-6 py-4 rounded-2xl border-[2.5px] border-dashed border-main surface-tint">
+            <span class="font-display text-4xl sm:text-5xl font-bold text-main">${pack.correct}</span>
+            <span class="text-base sm:text-lg font-bold text-muted">/ ${pack.count} Benar (${pct}%)</span>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center mb-7">
-            <div class="md:col-span-7">
-              <h2 class="font-display text-4xl sm:text-5xl font-black text-main mb-3">
-                ${title}
-              </h2>
-              <p class="text-sm text-muted leading-relaxed">
-                Kamu menyelesaikan <strong class="text-main">${pack.answered} dari ${pack.count}</strong> soal pada Paket ${padPack}. ${
-                  pack.wrong > 0 ? `Terdapat <strong class="text-accent">${pack.wrong} soal salah</strong> yang dapat diulang untuk menyempurnakan skor.` : "Seluruh soal pada paket ini berhasil dijawab dengan benar."
-                }
-              </p>
-            </div>
+          <p class="text-sm text-muted max-w-md mx-auto mb-7 leading-relaxed">
+            Kamu menjawab ${pack.answered} dari ${pack.count} soal pada Paket ${pack.number}. ${
+              pack.wrong > 0 ? `Ada ${pack.wrong} soal yang perlu diulang agar nilaimu sempurna!` : "Semua soal terjawab dengan tepat!"
+            }
+          </p>
 
-            <div class="md:col-span-5 surface-muted border-[1.5px] border-main p-5">
-              <div class="font-mono-tech text-[10px] font-bold uppercase tracking-widest text-muted mb-1">AKURASI SKOR</div>
-              <div class="flex items-baseline gap-2">
-                <span class="font-display text-6xl font-black text-main num-tabular">${pct}%</span>
-                <span class="font-mono-tech text-sm font-bold text-accent">(${pack.correct}/${pack.count})</span>
-              </div>
-              <div class="w-full h-[5px] surface-card border border-main mt-3 overflow-hidden">
-                <div class="h-full progress-fill-accent" style="width: ${pct}%"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-2.5 pt-5 border-t border-main">
+          <div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2.5 max-w-lg mx-auto">
             ${
               hasNextPack
                 ? `<button
                     onclick="startPack(${grade}, ${state.selectedPack + 1}, false)"
-                    class="btn-swiss-solid px-6 py-2.5 font-mono-tech text-xs font-bold uppercase tracking-wider cursor-pointer"
+                    class="btn-tactile surface-inv w-full sm:w-auto px-6 py-2.5 rounded-xl text-sm font-extrabold cursor-pointer"
                   >
-                    LANJUT PAKET ${String(pack.number + 1).padStart(2, "0")} →
+                    Lanjut Paket ${pack.number + 1} →
                   </button>`
                 : ""
             }
@@ -3110,23 +3004,23 @@
               pack.wrong > 0
                 ? `<button
                     onclick="openQuestionMap('wrong')"
-                    class="btn-swiss px-5 py-2.5 font-mono-tech text-xs font-bold uppercase tracking-wider cursor-pointer"
+                    class="btn-tactile btn-subtle w-full sm:w-auto px-5 py-2.5 rounded-xl border-2 text-sm font-bold cursor-pointer"
                   >
-                    ULANGI ${pack.wrong} SOAL SALAH
+                    Ulangi ${pack.wrong} Soal Salah
                   </button>`
                 : ""
             }
             <button
               onclick="startPack(${grade}, ${state.selectedPack}, true)"
-              class="btn-swiss px-5 py-2.5 font-mono-tech text-xs font-bold uppercase tracking-wider cursor-pointer"
+              class="btn-tactile btn-subtle w-full sm:w-auto px-5 py-2.5 rounded-xl border-2 border-dashed text-sm font-bold cursor-pointer"
             >
-              ↻ RESET PAKET INI
+              ↻ Reset Paket Ini
             </button>
             <button
               onclick="goToPacks(${grade})"
-              class="btn-swiss px-5 py-2.5 font-mono-tech text-xs font-bold uppercase tracking-wider cursor-pointer"
+              class="btn-tactile btn-subtle w-full sm:w-auto px-5 py-2.5 rounded-xl border-2 text-sm font-bold cursor-pointer"
             >
-              DAFTAR PAKET KELAS ${padGrade}
+              Daftar Paket Kelas ${grade}
             </button>
           </div>
         </section>
@@ -3155,12 +3049,12 @@
           container.innerHTML = renderHome();
         } else if (state.view === "packs") {
           btnHome.classList.remove("hidden");
-          btnHome.textContent = "← INDEKS";
+          btnHome.textContent = "← Kelas";
           btnHome.onclick = goHome;
           container.innerHTML = renderPacks();
         } else if (state.view === "result") {
           btnHome.classList.remove("hidden");
-          btnHome.textContent = "← PAKET";
+          btnHome.textContent = "← Paket";
           btnHome.onclick = () => goToPacks(state.selectedGrade);
           container.innerHTML = renderResult();
         }
