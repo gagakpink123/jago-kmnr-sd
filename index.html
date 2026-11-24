@@ -6,7 +6,7 @@
   <title>Jago KMNR SD — Kuis Matematika Nalaria Realistik Kelas 1–6 SD</title>
 
   <!-- Pengaturan SEO & Pengindeksan Mesin Pencari (Google, Bing, dll.) -->
-  <meta name="description" content="Latihan soal dan kuis interaktif Kompetisi Matematika Nalaria Realistik (KMNR), Kangaroo Math, SASMO, dan TIMSS untuk siswa kelas 1 sampai 6 SD lengkap dengan pembahasan langsung." />
+  <meta name="description" content="Latihan soal Kompetisi Matematika Nalaria Realistik (KMNR) SD kelas 1–6 interaktif. Berisi 530 soal standar internasional lengkap dengan pembahasan langsung." />
   <meta name="keywords" content="KMNR SD, Kompetisi Matematika Nalaria Realistik, soal matematika SD, kuis matematika interaktif SD, latihan olimpiade matematika SD, Kangaroo Math SD, SASMO SD, TIMSS SD, Jago KMNR SD" />
   <meta name="author" content="Adnan Jogja" />
   <meta name="creator" content="Adnan Jogja" />
@@ -15,13 +15,13 @@
   <meta name="googlebot" content="index, follow" />
   <meta name="language" content="Indonesian" />
   <meta name="rating" content="general" />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta id="meta-theme-color" name="theme-color" content="#0a0a0a" />
   <meta name="application-name" content="Jago KMNR SD" />
   <meta name="apple-mobile-web-app-title" content="Jago KMNR SD" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   <!-- Catatan: Ganti href di bawah dengan URL domain asli Anda setelah website di-hosting -->
-  <link rel="canonical" href="https://jago-kmnr-sd.vercel.app/" />
+  <link rel="canonical" href="./" />
 
   <!-- Ikon Tab Browser (Favicon SVG) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a0a'/%3E%3Crect x='5' y='6' width='22' height='15' rx='2' fill='none' stroke='%23ffffff' stroke-width='2.4'/%3E%3Cpath d='M10 13.5h5M12.5 11v5M19 12l3.5 3.5M22.5 12L19 15.5M10 25l6-4 6 4' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
@@ -31,7 +31,7 @@
   <meta property="og:locale" content="id_ID" />
   <meta property="og:site_name" content="Jago KMNR SD" />
   <meta property="og:title" content="Jago KMNR SD — Kuis Matematika Nalaria Realistik Kelas 1–6 SD" />
-  <meta property="og:description" content="Kumpulan 530 soal penalaran matematika standar internasional (KMNR, Kangaroo Math, SASMO, TIMSS) untuk kelas 1–6 SD dilengkapi pembahasan langkah demi langkah." />
+  <meta property="og:description" content="Latihan soal Kompetisi Matematika Nalaria Realistik (KMNR) SD kelas 1–6 interaktif. Berisi 530 soal standar internasional lengkap dengan pembahasan langsung." />
   <meta property="og:image" content="https://placehold.co/1200x630/0a0a0a/ffffff?text=Jago+KMNR+SD+%E2%80%A2+Kelas+1-6" />
   <meta property="og:image:alt" content="Jago KMNR SD — Papan Tantangan Matematika Nalaria Realistik" />
 
@@ -41,7 +41,7 @@
   <meta name="twitter:description" content="Latihan 530 soal interaktif KMNR SD kelas 1 sampai 6 lengkap dengan pembahasan langsung dan papan coret-coretan." />
   <meta name="twitter:image" content="https://placehold.co/1200x630/0a0a0a/ffffff?text=Jago+KMNR+SD+%E2%80%A2+Kelas+1-6" />
 
-  <!-- Vercel Web Analytics & Speed Insights (HTML Statis) -->
+  <!-- Vercel Web Analytics & Speed Insights -->
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
@@ -114,7 +114,7 @@
             "name": "Apa itu aplikasi Jago KMNR SD?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Jago KMNR SD adalah aplikasi web kuis matematika interaktif bergaya papan tulis untuk melatih penalaran matematika siswa kelas 1 sampai 6 SD mengacu pada standar KMNR, Kangaroo Math, SASMO, dan TIMSS."
+              "text": "Jago KMNR SD adalah aplikasi web kuis matematika interaktif untuk melatih penalaran matematika siswa kelas 1 sampai 6 SD mengacu pada standar KMNR, Kangaroo Math, SASMO, dan TIMSS."
             }
           },
           {
@@ -141,20 +141,50 @@
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Cabin Sketch (goresan kapur judul) & Nunito (font rapi, modern, dan mudah dibaca anak SD) -->
+  <!-- Google Fonts: Cabin Sketch (judul) & Nunito (teks soal & pembahasan rapi) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
   <style>
-    /* Tema Papan Tulis Hitam Polos Sederhana & Tipografi Rapi */
+    /* =========================================================================
+       TOKEN WARNA TEMA GANDA: PAPAN HITAM (DEFAULT) & PAPAN PUTIH POLOS
+       ========================================================================= */
     :root {
-      --board-bg: #0a0a0a;
-      --board-deep: #000000;
-      --board-surface: #121212;
-      --chalk-white: #ffffff;
-      --chalk-ink: #0a0a0a;
+      --bg-page: #0a0a0a;
+      --bg-sticky: rgba(10, 10, 10, 0.95);
+      --bg-elevated: #0f0f0f;
+      --bg-tint: rgba(255, 255, 255, 0.03);
+      --bg-tint-strong: rgba(255, 255, 255, 0.09);
+      --bg-track: rgba(255, 255, 255, 0.2);
+      --bg-overlay: rgba(0, 0, 0, 0.94);
+      --fg-main: #ffffff;
+      --fg-muted: rgba(255, 255, 255, 0.78);
+      --fg-subtle: rgba(255, 255, 255, 0.52);
+      --border-main: #ffffff;
+      --border-mid: rgba(255, 255, 255, 0.65);
+      --border-soft: rgba(255, 255, 255, 0.34);
+      --inv-bg: #ffffff;
+      --inv-fg: #0a0a0a;
       --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    html.theme-light {
+      --bg-page: #ffffff;
+      --bg-sticky: rgba(255, 255, 255, 0.95);
+      --bg-elevated: #ffffff;
+      --bg-tint: rgba(10, 10, 10, 0.03);
+      --bg-tint-strong: rgba(10, 10, 10, 0.08);
+      --bg-track: rgba(10, 10, 10, 0.16);
+      --bg-overlay: rgba(255, 255, 255, 0.96);
+      --fg-main: #0a0a0a;
+      --fg-muted: rgba(10, 10, 10, 0.78);
+      --fg-subtle: rgba(10, 10, 10, 0.55);
+      --border-main: #0a0a0a;
+      --border-mid: rgba(10, 10, 10, 0.68);
+      --border-soft: rgba(10, 10, 10, 0.3);
+      --inv-bg: #0a0a0a;
+      --inv-fg: #ffffff;
     }
 
     * {
@@ -162,12 +192,18 @@
     }
 
     body {
-      background-color: var(--board-bg);
-      color: var(--chalk-white);
+      background-color: var(--bg-page);
+      color: var(--fg-main);
       font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
       font-weight: 600;
       letter-spacing: 0.005em;
       overflow-x: hidden;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    ::selection {
+      background-color: var(--inv-bg);
+      color: var(--inv-fg);
     }
 
     .font-display {
@@ -176,57 +212,99 @@
       letter-spacing: 0.025em;
     }
 
-    .chalk-text {
-      letter-spacing: 0.005em;
+    /* Kelas Semantik Tema */
+    .surface-page { background-color: var(--bg-page); color: var(--fg-main); }
+    .surface-sticky { background-color: var(--bg-sticky); }
+    .surface-elevated { background-color: var(--bg-elevated); color: var(--fg-main); }
+    .surface-tint { background-color: var(--bg-tint); }
+    .surface-tint-strong { background-color: var(--bg-tint-strong); }
+    .surface-track { background-color: var(--bg-track); }
+    .surface-overlay { background-color: var(--bg-overlay); color: var(--fg-main); }
+    .surface-inv { background-color: var(--inv-bg); color: var(--inv-fg); }
+
+    .text-main { color: var(--fg-main); }
+    .text-muted { color: var(--fg-muted); }
+    .text-subtle { color: var(--fg-subtle); }
+
+    .border-main { border-color: var(--border-main); }
+    .border-mid { border-color: var(--border-mid); }
+    .border-soft { border-color: var(--border-soft); }
+
+    .btn-outline {
+      border-color: var(--border-mid);
+      color: var(--fg-main);
+    }
+    .btn-outline:hover:not(:disabled) {
+      background-color: var(--inv-bg);
+      color: var(--inv-fg);
+      border-color: var(--border-main);
     }
 
-    /* Animasi masuk halus (staggered & view transitions) */
+    .btn-subtle {
+      border-color: var(--border-mid);
+      color: var(--fg-main);
+    }
+    .btn-subtle:hover:not(:disabled) {
+      background-color: var(--bg-tint-strong);
+      border-color: var(--border-main);
+    }
+
+    .card-interactive {
+      border-color: var(--border-mid);
+      background-color: var(--bg-tint);
+      color: var(--fg-main);
+    }
+    .card-interactive:hover {
+      border-color: var(--border-main);
+      background-color: var(--inv-bg);
+      color: var(--inv-fg);
+    }
+    .card-interactive:hover .card-badge {
+      background-color: var(--bg-page);
+      color: var(--fg-main);
+    }
+    .card-interactive:hover .card-divider {
+      border-color: var(--border-soft);
+    }
+    .card-interactive:hover .card-track {
+      background-color: var(--bg-track);
+    }
+    .card-interactive:hover .card-fill {
+      background-color: var(--bg-page);
+    }
+    .card-interactive:hover .pip-filled {
+      background-color: var(--bg-page);
+    }
+    .card-interactive:hover .pip-empty {
+      border-color: var(--fg-subtle);
+    }
+
+    .pip-filled { background-color: var(--fg-main); }
+    .pip-empty { border: 1.5px solid var(--fg-subtle); }
+
+    .ring-current-node {
+      box-shadow: 0 0 0 2px var(--bg-elevated), 0 0 0 4px var(--fg-main);
+    }
+
+    /* Animasi Halus */
     @keyframes fadeSlideUp {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes gentleScale {
-      from {
-        opacity: 0;
-        transform: scale(0.97);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
     }
 
-    /* Animasi goresan lingkaran kapur asli */
     @keyframes drawChalkStroke {
-      from {
-        stroke-dashoffset: 820;
-        opacity: 0.35;
-      }
-      to {
-        stroke-dashoffset: 0;
-        opacity: 1;
-      }
+      from { stroke-dashoffset: 820; opacity: 0.35; }
+      to { stroke-dashoffset: 0; opacity: 1; }
     }
 
-    .animate-view {
-      animation: fadeSlideUp 0.38s var(--ease-out-expo) both;
-    }
-
-    .animate-card {
-      opacity: 0;
-      animation: fadeSlideUp 0.42s var(--ease-out-expo) forwards;
-    }
-
-    .animate-reveal {
-      animation: gentleScale 0.32s var(--ease-out-expo) both;
-    }
+    .animate-view { animation: fadeSlideUp 0.36s var(--ease-out-expo) both; }
+    .animate-card { opacity: 0; animation: fadeSlideUp 0.4s var(--ease-out-expo) forwards; }
+    .animate-reveal { animation: gentleScale 0.3s var(--ease-out-expo) both; }
 
     .chalk-ring-path {
       stroke-dasharray: 820;
@@ -235,54 +313,42 @@
       animation: drawChalkStroke 0.65s var(--ease-out-expo) forwards;
     }
 
-    /* Transisi interaktif tombol & kartu */
     .btn-tactile {
       transition:
         transform 0.16s var(--ease-out-expo),
         background-color 0.2s ease,
         color 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        border-color 0.2s ease;
     }
-
     .btn-tactile:active:not(:disabled) {
       transform: scale(0.98);
     }
 
     .progress-fill {
+      background-color: var(--fg-main);
       transition: width 0.45s var(--ease-out-expo);
     }
 
-    /* Scrollbar ramping */
-    ::-webkit-scrollbar {
-      width: 5px;
-      height: 5px;
-    }
-    ::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.28);
-      border-radius: 9999px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #ffffff;
-    }
+    /* Scrollbar Ramping */
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border-soft); border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--fg-main); }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-white selection:text-black">
+<body class="min-h-screen flex flex-col justify-between">
 
   <!-- Wrapper Utama Sederhana & Mobile-First -->
   <div id="main-wrapper" class="w-full max-w-3xl mx-auto flex-1 flex flex-col px-4 py-3.5 sm:px-6 sm:py-6">
 
     <!-- Header Standar (Beranda, Pilih Paket & Rekap) -->
-    <header id="header-standard" class="flex items-center justify-between gap-3 pb-3.5 mb-5 border-b-2 border-white/60">
+    <header id="header-standard" class="flex items-center justify-between gap-2.5 pb-3.5 mb-5 border-b-2 border-mid">
       <button
         onclick="goHome()"
-        class="flex items-center gap-3 text-left group cursor-pointer"
+        class="flex items-center gap-3 text-left group cursor-pointer min-w-0"
         title="Kembali ke Beranda"
       >
-        <div class="w-10 h-10 rounded-xl bg-white text-black flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:rotate-[-4deg]">
+        <div class="w-10 h-10 rounded-xl surface-inv flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:rotate-[-4deg]">
           <svg class="w-5 h-5" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
             <rect x="4" y="5" width="24" height="17" rx="2.5" />
             <path d="M10 13.5h5M12.5 11v5" />
@@ -290,23 +356,32 @@
             <path d="M10 26l6-4 6 4" />
           </svg>
         </div>
-        <div>
-          <h1 class="font-display text-2xl sm:text-[28px] font-bold text-white leading-none">
+        <div class="truncate">
+          <h1 class="font-display text-2xl sm:text-[28px] font-bold text-main leading-none truncate">
             Jago KMNR SD
           </h1>
-          <p class="text-xs sm:text-sm text-white/75 mt-1 font-medium">
+          <p class="text-xs sm:text-sm text-muted mt-1 font-medium truncate">
             Matematika Nalaria Realistik • Kelas 1–6
           </p>
         </div>
       </button>
 
-      <!-- Kontrol Ringkas -->
-      <div class="flex items-center gap-2">
+      <!-- Kontrol Pojok Kanan Atas (Tema, Suara & Navigasi) -->
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
         <button
-          id="btn-sound"
+          onclick="toggleTheme()"
+          aria-label="Ganti Tema Latar"
+          title="Ganti Tema Hitam / Putih"
+          class="btn-tactile btn-outline h-9 px-2.5 sm:px-3 rounded-xl border-2 flex items-center justify-center gap-1.5 text-xs sm:text-sm font-extrabold cursor-pointer"
+        >
+          <span class="theme-icon-el">☀</span>
+          <span class="theme-label-el hidden sm:inline">Putih</span>
+        </button>
+
+        <button
           onclick="toggleSound()"
           aria-label="Pengaturan Suara"
-          class="btn-tactile w-9 h-9 sm:w-auto sm:px-3 sm:py-1.5 rounded-xl border-2 border-white/55 text-white hover:bg-white hover:text-black flex items-center justify-center gap-1.5 text-sm font-bold cursor-pointer"
+          class="btn-tactile btn-outline w-9 h-9 sm:w-auto sm:px-3 rounded-xl border-2 flex items-center justify-center gap-1.5 text-sm font-bold cursor-pointer"
         >
           <span class="sound-icon-el">🔊</span>
           <span class="sound-label-el hidden sm:inline">Suara</span>
@@ -315,27 +390,27 @@
         <button
           id="btn-home"
           onclick="goHome()"
-          class="btn-tactile hidden px-3.5 py-1.5 rounded-xl bg-white text-black hover:bg-white/90 text-sm font-extrabold cursor-pointer"
+          class="btn-tactile surface-inv hidden h-9 px-3 sm:px-3.5 rounded-xl text-xs sm:text-sm font-extrabold cursor-pointer"
         >
           ← Kelas
         </button>
       </div>
     </header>
 
-    <!-- Header Super Tipis Saat Kuis Berjalan (Memaksimalkan Layar HP) -->
-    <header id="header-compact" class="hidden sticky top-0 z-20 -mx-4 px-4 sm:mx-0 sm:px-0 pt-1 pb-2.5 mb-4 bg-[#0a0a0a]/95 backdrop-blur-md">
+    <!-- Header Super Tipis Saat Kuis Berjalan -->
+    <header id="header-compact" class="hidden sticky top-0 z-20 -mx-4 px-4 sm:mx-0 sm:px-0 pt-1 pb-2.5 mb-4 surface-sticky backdrop-blur-md">
       <div class="flex items-center justify-between gap-2 mb-2">
-        <div class="flex items-center gap-2 min-w-0">
+        <div class="flex items-center gap-1.5 sm:gap-2 min-w-0">
           <button
             onclick="goToPacks(state.selectedGrade)"
-            class="btn-tactile px-2.5 py-1 rounded-lg border-2 border-white/55 hover:border-white text-xs sm:text-sm font-bold text-white shrink-0 cursor-pointer"
+            class="btn-tactile btn-subtle px-2.5 py-1 rounded-lg border-2 text-xs sm:text-sm font-bold shrink-0 cursor-pointer"
             title="Kembali ke Daftar Paket"
           >
             ← Paket
           </button>
           <button
             onclick="openQuestionMap()"
-            class="btn-tactile px-2.5 py-1 rounded-lg border-2 border-dashed border-white/50 bg-white/10 hover:bg-white/20 text-xs sm:text-sm font-bold text-white truncate flex items-center gap-1 cursor-pointer"
+            class="btn-tactile btn-subtle surface-tint-strong px-2.5 py-1 rounded-lg border-2 border-dashed text-xs sm:text-sm font-bold truncate flex items-center gap-1 cursor-pointer"
             title="Buka Peta Nomor Soal"
           >
             <span id="compact-title" class="truncate">Kls 1 • Pkt 1</span>
@@ -343,10 +418,11 @@
           </button>
         </div>
 
+        <!-- Kontrol Pojok Kanan Atas Saat Kuis (Coretan, Tema & Suara) -->
         <div class="flex items-center gap-1.5 shrink-0">
           <button
             onclick="openScratchpad()"
-            class="btn-tactile px-2.5 py-1 rounded-lg border-2 border-white/65 hover:bg-white hover:text-black text-xs sm:text-sm font-bold text-white flex items-center gap-1 cursor-pointer"
+            class="btn-tactile btn-outline px-2.5 py-1 rounded-lg border-2 text-xs sm:text-sm font-bold flex items-center gap-1 cursor-pointer"
             title="Buka Papan Coret-Coretan"
           >
             <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
@@ -357,9 +433,18 @@
           </button>
 
           <button
+            onclick="toggleTheme()"
+            aria-label="Ganti Tema Latar"
+            title="Ganti Tema Hitam / Putih"
+            class="btn-tactile btn-outline w-8 h-8 rounded-lg border-2 flex items-center justify-center text-xs font-extrabold cursor-pointer"
+          >
+            <span class="theme-icon-el">☀</span>
+          </button>
+
+          <button
             onclick="toggleSound()"
             aria-label="Pengaturan Suara"
-            class="btn-tactile w-8 h-8 rounded-lg border-2 border-white/50 text-white hover:bg-white hover:text-black flex items-center justify-center text-xs cursor-pointer"
+            class="btn-tactile btn-outline w-8 h-8 rounded-lg border-2 flex items-center justify-center text-xs cursor-pointer"
           >
             <span class="sound-icon-el">🔊</span>
           </button>
@@ -367,20 +452,20 @@
       </div>
 
       <!-- Garis Progres Tebal -->
-      <div class="w-full h-[5px] rounded-full bg-white/20 border border-white/30 overflow-hidden">
-        <div id="compact-progress-bar" class="h-full bg-white progress-fill" style="width: 0%"></div>
+      <div class="w-full h-[5px] rounded-full surface-track border border-soft overflow-hidden">
+        <div id="compact-progress-bar" class="h-full progress-fill" style="width: 0%"></div>
       </div>
     </header>
 
     <!-- Area Konten Utama -->
     <main id="app-content" class="flex-1 flex flex-col">
-      <!-- Konten Semantik untuk Perayap Mesin Pencari & Fallback Tanpa JavaScript -->
-      <section class="p-5 rounded-2xl border-2 border-white/70 space-y-3">
-        <h2 class="font-display text-2xl font-bold text-white">Kumpulan Soal &amp; Pembahasan KMNR SD (Kelas 1–6)</h2>
-        <p class="text-sm text-white/85">
+      <!-- Konten Semantik Awal untuk Perayap Mesin Pencari & Fallback Non-JS -->
+      <section class="p-5 rounded-2xl border-2 border-mid space-y-3">
+        <h2 class="font-display text-2xl font-bold text-main">Kumpulan Soal &amp; Pembahasan KMNR SD (Kelas 1–6)</h2>
+        <p class="text-sm text-muted">
           Aplikasi latihan interaktif Kompetisi Matematika Nalaria Realistik (KMNR) mengacu pada standar internasional Kangaroo Math, SASMO, TIMSS, dan Realistic Mathematics Education (RME).
         </p>
-        <ul class="text-sm text-white/85 list-disc pl-5 space-y-1">
+        <ul class="text-sm text-muted list-disc pl-5 space-y-1">
           <li><strong>Kelas 1 SD (30 Soal):</strong> Logika Antrean, Timbangan Seimbang, Pola Berulang, Susunan Kubus, dan Berhitung Realistik.</li>
           <li><strong>Kelas 2 SD (50 Soal):</strong> Penalaran Kalender, Kombinasi Uang, Logika Pemotongan, Berpikir Mundur, dan Garis Bilangan.</li>
           <li><strong>Kelas 3 SD (75 Soal):</strong> Keliling Bangun Gabungan, Pecahan Kontekstual, Kombinatorika Dasar, dan Jarak Interval.</li>
@@ -391,22 +476,22 @@
       </section>
     </main>
 
-    <!-- Footer Bersih & Sederhana dengan Garis Strip Tebal -->
-    <footer id="app-footer" class="mt-8 pt-4 border-t-2 border-dashed border-white/50 flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs sm:text-sm text-white/75">
+    <!-- Footer Bersih & Sederhana -->
+    <footer id="app-footer" class="mt-8 pt-4 border-t-2 border-dashed border-soft flex flex-col sm:flex-row items-center justify-between gap-2.5 text-xs sm:text-sm text-muted">
       <p class="text-center sm:text-left">
-        © 2026 <strong class="text-white font-bold">Jago KMNR SD</strong> by <span class="text-white font-semibold underline decoration-white/50">Adnan Jogja</span>
+        © 2026 <strong class="text-main font-bold">Jago KMNR SD</strong> by <span class="text-main font-semibold underline decoration-current">Adnan Jogja</span>
       </p>
 
       <div class="flex items-center gap-2">
         <a
           href="mailto:adnanjogja@gmail.com"
-          class="hover:text-white transition underline decoration-white/45"
+          class="hover:text-main transition underline decoration-current"
         >
           adnanjogja@gmail.com
         </a>
         <button
           onclick="copyEmail()"
-          class="btn-tactile px-2.5 py-1 rounded-lg bg-white text-black font-extrabold text-xs cursor-pointer"
+          class="btn-tactile surface-inv px-2.5 py-1 rounded-lg font-extrabold text-xs cursor-pointer"
         >
           Salin Email
         </button>
@@ -414,63 +499,57 @@
     </footer>
   </div>
 
-  <!-- Overlay Papan Coret-Coretan Mini (Canvas Kapur Jari/Mouse) -->
+  <!-- Overlay Papan Coret-Coretan Mini (Canvas Jari/Mouse) -->
   <div
     id="scratchpad-overlay"
-    class="fixed inset-0 z-40 hidden bg-black/92 backdrop-blur-[1.5px] flex flex-col justify-between select-none"
+    class="fixed inset-0 z-40 hidden surface-overlay backdrop-blur-sm flex flex-col justify-between select-none"
   >
-    <!-- Toolbar Coretan Atas Responsif -->
-    <div class="relative z-10 flex flex-wrap items-center justify-between gap-2 px-3.5 py-2.5 sm:px-5 sm:py-3 bg-[#0a0a0a] border-b-2 border-white/65">
+    <div class="relative z-10 flex flex-wrap items-center justify-between gap-2 px-3.5 py-2.5 sm:px-5 sm:py-3 surface-page border-b-2 border-mid">
       <div class="flex items-center gap-2">
-        <span class="font-display text-lg sm:text-xl font-bold text-white">Papan Coretan</span>
-        <span class="hidden md:inline text-xs sm:text-sm text-white/70">• Coret langsung di layar untuk menghitung</span>
+        <span class="font-display text-lg sm:text-xl font-bold text-main">Papan Coretan</span>
+        <span class="hidden md:inline text-xs sm:text-sm text-muted">• Coret langsung di layar untuk menghitung</span>
       </div>
 
       <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
         <button
           id="btn-pen-thin"
           onclick="setPenSize(2.5)"
-          class="btn-tactile min-h-[34px] px-2.5 py-1 rounded-lg bg-white text-black text-xs sm:text-sm font-extrabold cursor-pointer"
-          title="Kapur Tipis"
+          class="btn-tactile surface-inv min-h-[34px] px-2.5 py-1 rounded-lg text-xs sm:text-sm font-extrabold cursor-pointer"
         >
           Tipis
         </button>
         <button
           id="btn-pen-thick"
           onclick="setPenSize(5.5)"
-          class="btn-tactile min-h-[34px] px-2.5 py-1 rounded-lg border-2 border-white/55 text-white text-xs sm:text-sm font-bold cursor-pointer"
-          title="Kapur Tebal"
+          class="btn-tactile btn-subtle min-h-[34px] px-2.5 py-1 rounded-lg border-2 text-xs sm:text-sm font-bold cursor-pointer"
         >
           Tebal
         </button>
         <button
           onclick="undoScratchpad()"
-          class="btn-tactile min-h-[34px] px-2.5 py-1 rounded-lg border-2 border-white/55 text-white hover:bg-white/10 text-xs sm:text-sm font-bold cursor-pointer"
-          title="Urungkan Goresan Terakhir"
+          class="btn-tactile btn-subtle min-h-[34px] px-2.5 py-1 rounded-lg border-2 text-xs sm:text-sm font-bold cursor-pointer"
         >
           ↶ Undo
         </button>
         <button
           onclick="clearScratchpad()"
-          class="btn-tactile min-h-[34px] px-2.5 py-1 rounded-lg border-2 border-dashed border-white/60 text-white hover:bg-white/10 text-xs sm:text-sm font-bold cursor-pointer"
-          title="Bersihkan Papan"
+          class="btn-tactile btn-subtle min-h-[34px] px-2.5 py-1 rounded-lg border-2 border-dashed text-xs sm:text-sm font-bold cursor-pointer"
         >
           Hapus
         </button>
         <button
           onclick="closeScratchpad()"
-          class="btn-tactile min-h-[34px] px-3 py-1 rounded-lg bg-white text-black hover:bg-white/90 text-xs sm:text-sm font-extrabold cursor-pointer"
+          class="btn-tactile surface-inv min-h-[34px] px-3 py-1 rounded-lg text-xs sm:text-sm font-extrabold cursor-pointer"
         >
           Selesai ✕
         </button>
       </div>
     </div>
 
-    <!-- Area Kanvas Gambar + Petunjuk Tengah -->
     <div class="relative flex-1 w-full h-full overflow-hidden">
       <div
         id="scratch-hint"
-        class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center text-center px-6 text-white/35"
+        class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center text-center px-6 text-subtle"
       >
         <span class="font-display text-xl sm:text-2xl mb-1">Coret Hitunganmu di Sini</span>
         <span class="text-xs sm:text-sm">Gunakan jari atau mouse sebagai papan tulis coretan</span>
@@ -479,72 +558,67 @@
     </div>
   </div>
 
-  <!-- Drawer / Modal Peta Nomor Soal dengan Filter (Mobile-Friendly) -->
+  <!-- Drawer / Modal Peta Nomor Soal dengan Filter -->
   <div
     id="map-modal"
     onclick="if(event.target === this) closeQuestionMap()"
-    class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4"
+    class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4"
   >
-    <div class="bg-[#0f0f0f] border-t-[3px] sm:border-[3px] border-white rounded-t-2xl sm:rounded-2xl w-full max-w-lg max-h-[84vh] flex flex-col p-5 text-white animate-view">
-      <div class="flex items-center justify-between pb-3 mb-3 border-b-2 border-dashed border-white/45">
+    <div class="surface-elevated border-t-[3px] sm:border-[3px] border-main rounded-t-2xl sm:rounded-2xl w-full max-w-lg max-h-[84vh] flex flex-col p-5 animate-view">
+      <div class="flex items-center justify-between pb-3 mb-3 border-b-2 border-dashed border-soft">
         <div>
-          <h3 id="map-modal-title" class="font-display text-xl font-bold">Peta Soal</h3>
-          <p id="map-modal-sub" class="text-xs sm:text-sm text-white/75">Ketuk nomor untuk melompat ke soal</p>
+          <h3 id="map-modal-title" class="font-display text-xl font-bold text-main">Peta Soal</h3>
+          <p id="map-modal-sub" class="text-xs sm:text-sm text-muted">Ketuk nomor untuk melompat ke soal</p>
         </div>
         <button
           onclick="closeQuestionMap()"
-          class="btn-tactile w-8 h-8 rounded-lg border-2 border-white/65 flex items-center justify-center text-sm font-extrabold hover:bg-white hover:text-black cursor-pointer"
+          class="btn-tactile btn-outline w-8 h-8 rounded-lg border-2 flex items-center justify-center text-sm font-extrabold cursor-pointer"
         >
           ✕
         </button>
       </div>
 
-      <!-- Filter Tab Singkat Responsif -->
-      <div id="map-filters" class="flex flex-wrap items-center gap-1.5 mb-3">
-        <!-- Dirender dinamis -->
+      <div id="map-filters" class="flex flex-wrap items-center gap-1.5 mb-3"></div>
+
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted font-semibold mb-3">
+        <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded-sm surface-inv border-2 border-main inline-block"></span> Benar</span>
+        <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded-sm border-2 border-dashed border-main inline-block"></span> Salah</span>
+        <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded-sm border-2 border-soft inline-block"></span> Belum</span>
       </div>
 
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-white/85 font-semibold mb-3">
-        <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded-xs bg-white border-2 border-white inline-block"></span> Benar</span>
-        <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded-xs border-2 border-dashed border-white inline-block"></span> Salah</span>
-        <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded-xs border-2 border-white/50 inline-block"></span> Belum</span>
-      </div>
-
-      <div id="map-grid" class="grid grid-cols-5 sm:grid-cols-6 gap-2 overflow-y-auto pr-1 py-1">
-        <!-- Nomor soal dirender di sini -->
-      </div>
+      <div id="map-grid" class="grid grid-cols-5 sm:grid-cols-6 gap-2 overflow-y-auto pr-1 py-1"></div>
     </div>
   </div>
 
   <!-- Toast Notifikasi -->
   <div
     id="chalk-toast"
-    class="fixed top-14 left-1/2 -translate-x-1/2 z-50 hidden px-4 py-1.5 rounded-full bg-white text-black font-extrabold text-xs sm:text-sm border-2 border-black animate-reveal"
+    class="fixed top-14 left-1/2 -translate-x-1/2 z-50 hidden px-4 py-1.5 rounded-full surface-inv font-extrabold text-xs sm:text-sm border-2 border-main animate-reveal"
   >
     Notifikasi
   </div>
 
-  <!-- Modal Konfirmasi Reset (Pengganti confirm()) -->
+  <!-- Modal Konfirmasi Reset -->
   <div
     id="reset-modal"
     onclick="if(event.target === this) closeResetModal()"
-    class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-xs flex items-center justify-center p-4"
+    class="fixed inset-0 z-50 hidden bg-black/75 backdrop-blur-sm flex items-center justify-center p-4"
   >
-    <div class="bg-[#0f0f0f] border-[3px] border-white rounded-2xl max-w-sm w-full p-5 text-white animate-reveal">
-      <h3 class="font-display text-xl font-bold mb-1.5">Atur Ulang Semua Progres?</h3>
-      <p class="text-sm text-white/80 mb-5 leading-relaxed">
+    <div class="surface-elevated border-[3px] border-main rounded-2xl max-w-sm w-full p-5 animate-reveal">
+      <h3 class="font-display text-xl font-bold text-main mb-1.5">Atur Ulang Semua Progres?</h3>
+      <p class="text-sm text-muted mb-5 leading-relaxed">
         Catatan jawaban dan skor untuk Kelas 1 sampai Kelas 6 akan dikosongkan kembali.
       </p>
       <div class="flex justify-end gap-2">
         <button
           onclick="closeResetModal()"
-          class="btn-tactile px-4 py-1.5 rounded-xl border-2 border-white/60 text-sm font-bold hover:bg-white/10 cursor-pointer"
+          class="btn-tactile btn-subtle px-4 py-1.5 rounded-xl border-2 text-sm font-bold cursor-pointer"
         >
           Batal
         </button>
         <button
           onclick="confirmResetProgress()"
-          class="btn-tactile px-4 py-1.5 rounded-xl bg-white text-black text-sm font-extrabold hover:bg-white/90 cursor-pointer"
+          class="btn-tactile surface-inv px-4 py-1.5 rounded-xl text-sm font-extrabold cursor-pointer"
         >
           Ya, Hapus
         </button>
@@ -555,7 +629,7 @@
   <script>
     /**
      * =========================================================================
-     * JAGO KMNR SD — ENGINE PEMBANGKIT BANK SOAL STANDAR INTERNASIONAL
+     * JAGO KMNR SD — ENGINE BANK SOAL, ANALYTICS & KUIS INTERAKTIF
      * =========================================================================
      */
     const PACK_SIZE = 15;
@@ -565,6 +639,15 @@
       "Rafa", "Tari", "Bagas", "Maya", "Gilang", "Citra", "Zaki", "Hana",
       "Andi", "Putri", "Alif", "Nadia", "Fajar", "Laras", "Arga", "Wulan"
     ];
+
+    // Helper Pelacakan Event Vercel Web Analytics
+    function trackVercelEvent(eventName, payload = {}) {
+      try {
+        if (typeof window.va === "function") {
+          window.va("event", { name: eventName, data: payload });
+        }
+      } catch (e) {}
+    }
 
     function pickName(seed, offset = 0) {
       return NAMES[(seed + offset) % NAMES.length];
@@ -583,13 +666,10 @@
       return (a * b) / gcd(a, b);
     }
 
-    // Menyusun 4 pilihan jawaban unik secara deterministik agar tidak ada duplikat
     function buildChoices(correctText, distractorTexts, seed) {
       const unique = [correctText];
       for (const d of distractorTexts) {
-        if (d !== correctText && !unique.includes(d)) {
-          unique.push(d);
-        }
+        if (d !== correctText && !unique.includes(d)) unique.push(d);
         if (unique.length === 4) break;
       }
       let pad = 1;
@@ -600,7 +680,6 @@
       }
       const answerIndex = seed % 4;
       const ordered = [...unique];
-      // Tukar posisi jawaban benar ke answerIndex
       const temp = ordered[0];
       ordered[0] = ordered[answerIndex];
       ordered[answerIndex] = temp;
@@ -614,17 +693,12 @@
       const list = [];
       let s = 1;
 
-      // 1. Logika Antrean (5 soal)
       for (let i = 0; i < 5; i++) {
         const total = 7 + i * 2;
         const pos = 2 + (i % 4);
         const ans = total - pos;
         const name = pickName(s);
-        const { options, answer } = buildChoices(
-          `${ans} anak`,
-          [`${ans - 1} anak`, `${ans + 1} anak`, `${pos} anak`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} anak`, [`${ans - 1} anak`, `${ans + 1} anak`, `${pos} anak`], s);
         list.push({
           topic: "Logika Antrean",
           standard: "Kangaroo Pre-Ecolier",
@@ -641,30 +715,25 @@
         s++;
       }
 
-      // 2. Timbangan Kesetaraan (4 soal)
       for (let i = 0; i < 4; i++) {
         const ratio = 2 + (i % 3);
         const countLeft = 2 + Math.floor(i / 2);
         const ans = ratio * countLeft;
-        const { options, answer } = buildChoices(
-          `${ans} apel`,
-          [`${ans - 1} apel`, `${ans + 2} apel`, `${ratio + countLeft} apel`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} apel`, [`${ans - 1} apel`, `${ans + 2} apel`, `${ratio + countLeft} apel`], s);
         list.push({
           topic: "Timbangan Seimbang",
           standard: "Realistic Mathematics (RME)",
           question: `Pada timbangan seimbang, 1 buah semangka sama beratnya dengan ${ratio} buah apel. Jika di piring kiri diletakkan ${countLeft} buah semangka, berapa buah apel yang diperlukan di piring kanan agar seimbang?`,
           svg: `
-            <svg viewBox="0 0 280 86" class="w-full max-w-[250px] mx-auto my-2 stroke-white fill-none" stroke-width="2.4">
+            <svg viewBox="0 0 280 86" class="w-full max-w-[250px] mx-auto my-2 text-main" stroke="currentColor" fill="none" stroke-width="2.4">
               <line x1="55" y1="76" x2="225" y2="76" />
               <polygon points="140,44 128,76 152,76" />
               <line x1="70" y1="44" x2="210" y2="44" />
               <line x1="45" y1="36" x2="95" y2="36" />
               <circle cx="70" cy="23" r="11" />
-              <text x="70" y="27" text-anchor="middle" fill="#fff" stroke="none" font-size="10" font-weight="bold">S</text>
+              <text x="70" y="27" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="bold">S</text>
               <line x1="180" y1="36" x2="240" y2="36" />
-              <text x="210" y="27" text-anchor="middle" fill="#fff" stroke="none" font-size="11" font-weight="bold">${ratio} Apel</text>
+              <text x="210" y="27" text-anchor="middle" fill="currentColor" stroke="none" font-size="11" font-weight="bold">${ratio} Apel</text>
             </svg>
           `,
           options,
@@ -678,20 +747,15 @@
         s++;
       }
 
-      // 3. Pola Manik-Manik (4 soal)
       for (let i = 0; i < 4; i++) {
-        const blackCount = 2 + (i % 3); // 1 Putih, blackCount Hitam
+        const blackCount = 2 + (i % 3);
         const cycle = 1 + blackCount;
         const target = cycle * 2 + 1 + (i % 2);
         const rem = (target - 1) % cycle;
         const ans = rem === 0 ? "Putih" : "Hitam";
         const wrong = ans === "Putih" ? "Hitam" : "Putih";
         const name = pickName(s);
-        const { options, answer } = buildChoices(
-          ans,
-          [wrong, "Putih dan Hitam", "Tidak berwarna"],
-          s
-        );
+        const { options, answer } = buildChoices(ans, [wrong, "Putih dan Hitam", "Tidak berwarna"], s);
         list.push({
           topic: "Pola Berulang",
           standard: "TIMSS Grade 1",
@@ -708,16 +772,11 @@
         s++;
       }
 
-      // 4. Tangga Kubus (4 soal)
       for (let i = 0; i < 4; i++) {
         const steps = 3 + i;
         const ans = (steps * (steps + 1)) / 2;
         const name = pickName(s);
-        const { options, answer } = buildChoices(
-          `${ans} kubus`,
-          [`${ans - 1} kubus`, `${ans + 2} kubus`, `${steps * 2} kubus`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} kubus`, [`${ans - 1} kubus`, `${ans + 2} kubus`, `${steps * 2} kubus`], s);
         list.push({
           topic: "Susunan Kubus",
           standard: "Kangaroo Pre-Ecolier",
@@ -734,17 +793,12 @@
         s++;
       }
 
-      // 5. Selisih Umur (4 soal)
       for (let i = 0; i < 4; i++) {
         const kakak = 9 + i * 2;
         const adik = 4 + i;
         const yearsLater = 3 + i;
         const ans = kakak - adik;
-        const { options, answer } = buildChoices(
-          `${ans} tahun`,
-          [`${ans + yearsLater} tahun`, `${ans - 1} tahun`, `${kakak + adik} tahun`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} tahun`, [`${ans + yearsLater} tahun`, `${ans - 1} tahun`, `${kakak + adik} tahun`], s);
         list.push({
           topic: "Penalaran Selisih",
           standard: "KMNR Kelas 1",
@@ -761,16 +815,11 @@
         s++;
       }
 
-      // 6. Menghitung Kaki Hewan (5 soal)
       for (let i = 0; i < 5; i++) {
         const chickens = 2 + i;
         const goats = 1 + (i % 3);
         const ans = chickens * 2 + goats * 4;
-        const { options, answer } = buildChoices(
-          `${ans} kaki`,
-          [`${ans - 2} kaki`, `${ans + 2} kaki`, `${(chickens + goats) * 2} kaki`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} kaki`, [`${ans - 2} kaki`, `${ans + 2} kaki`, `${(chickens + goats) * 2} kaki`], s);
         list.push({
           topic: "Berhitung Realistik",
           standard: "Realistic Mathematics (RME)",
@@ -787,18 +836,13 @@
         s++;
       }
 
-      // 7. Berbagi & Sisa Kue (4 soal)
       for (let i = 0; i < 4; i++) {
         const total = 10 + i * 4;
         const eaten = 1 + (i % 3);
         const half = total / 2;
         const ans = half - eaten;
         const name = pickName(s);
-        const { options, answer } = buildChoices(
-          `${ans} biskuit`,
-          [`${half} biskuit`, `${ans + 1} biskuit`, `${total - eaten} biskuit`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} biskuit`, [`${half} biskuit`, `${ans + 1} biskuit`, `${total - eaten} biskuit`], s);
         list.push({
           topic: "Separuh & Sisa",
           standard: "KMNR Kelas 1",
@@ -825,7 +869,6 @@
       const days = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
       let s = 10;
 
-      // 1. Penalaran Hari (7 soal)
       for (let i = 0; i < 7; i++) {
         const yesterdayIdx = i % 7;
         const shift = 2 + (i % 5);
@@ -833,11 +876,7 @@
         const tomorrowIdx = (todayIdx + 1) % 7;
         const targetIdx = (tomorrowIdx + shift) % 7;
         const ans = days[targetIdx];
-        const { options, answer } = buildChoices(
-          ans,
-          [days[(targetIdx + 1) % 7], days[(targetIdx + 6) % 7], days[(targetIdx + 2) % 7]],
-          s
-        );
+        const { options, answer } = buildChoices(ans, [days[(targetIdx + 1) % 7], days[(targetIdx + 6) % 7], days[(targetIdx + 2) % 7]], s);
         list.push({
           topic: "Penalaran Kalender",
           standard: "Kangaroo Ecolier",
@@ -854,18 +893,13 @@
         s++;
       }
 
-      // 2. Kombinasi Uang Logam (7 soal)
       for (let i = 0; i < 7; i++) {
         const totalCoins = 4 + (i % 4);
         const k500 = 1 + (i % (totalCoins - 1));
         const k200 = totalCoins - k500;
         const totalMoney = k500 * 500 + k200 * 200;
         const name = pickName(s);
-        const { options, answer } = buildChoices(
-          `${k500} keping`,
-          [`${k200} keping`, `${k500 + 1} keping`, `${totalCoins} keping`],
-          s
-        );
+        const { options, answer } = buildChoices(`${k500} keping`, [`${k200} keping`, `${k500 + 1} keping`, `${totalCoins} keping`], s);
         list.push({
           topic: "Kombinasi Uang",
           standard: "Realistic Mathematics (RME)",
@@ -882,15 +916,10 @@
         s++;
       }
 
-      // 3. Logika Pemotongan Pita (6 soal)
       for (let i = 0; i < 6; i++) {
         const cuts = 3 + i;
         const ans = cuts + 1;
-        const { options, answer } = buildChoices(
-          `${ans} potongan`,
-          [`${cuts} potongan`, `${cuts - 1} potongan`, `${cuts + 2} potongan`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} potongan`, [`${cuts} potongan`, `${cuts - 1} potongan`, `${cuts + 2} potongan`], s);
         list.push({
           topic: "Logika Pemotongan",
           standard: "SASMO Grade 2",
@@ -906,17 +935,12 @@
         s++;
       }
 
-      // 4. Berpikir Mundur (8 soal)
       for (let i = 0; i < 8; i++) {
         const start = 8 + i * 2;
         const add = 5 + (i % 6);
         const sub = 2 + (i % 4);
         const res = start + add - sub;
-        const { options, answer } = buildChoices(
-          `${start}`,
-          [`${start + 2}`, `${start - 2}`, `${res + add - sub}`],
-          s
-        );
+        const { options, answer } = buildChoices(`${start}`, [`${start + 2}`, `${start - 2}`, `${res + add - sub}`], s);
         list.push({
           topic: "Berpikir Mundur",
           standard: "Kangaroo Ecolier",
@@ -933,17 +957,12 @@
         s++;
       }
 
-      // 5. Kesetaraan Bertingkat (7 soal)
       for (let i = 0; i < 7; i++) {
         const a = 2 + (i % 2);
         const b = 2 + (i % 3);
         const books = 2 + (i % 4);
         const ans = books * a * b;
-        const { options, answer } = buildChoices(
-          `${ans} penghapus`,
-          [`${ans - b} penghapus`, `${ans + a} penghapus`, `${books * (a + b)} penghapus`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} penghapus`, [`${ans - b} penghapus`, `${ans + a} penghapus`, `${books * (a + b)} penghapus`], s);
         list.push({
           topic: "Kesetaraan Bertingkat",
           standard: "KMNR Kelas 2",
@@ -959,17 +978,12 @@
         s++;
       }
 
-      // 6. Halaman Buku (8 soal)
       for (let i = 0; i < 8; i++) {
         const p1 = 5 + i;
         const p2 = p1 + 9 + (i % 7);
         const ans = p2 - p1 + 1;
         const name = pickName(s);
-        const { options, answer } = buildChoices(
-          `${ans} halaman`,
-          [`${ans - 1} halaman`, `${ans + 1} halaman`, `${p2 + p1} halaman`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} halaman`, [`${ans - 1} halaman`, `${ans + 1} halaman`, `${p2 + p1} halaman`], s);
         list.push({
           topic: "Penalaran Bilangan",
           standard: "TIMSS Grade 2",
@@ -985,18 +999,13 @@
         s++;
       }
 
-      // 7. Lompatan Katak pada Garis Bilangan (7 soal)
       for (let i = 0; i < 7; i++) {
         const start = 2 + i;
         const fwd = 5 + (i % 4);
         const back = 2;
         const rounds = 2 + (i % 3);
         const ans = start + rounds * (fwd - back);
-        const { options, answer } = buildChoices(
-          `Titik ${ans}`,
-          [`Titik ${ans + back}`, `Titik ${ans - back}`, `Titik ${start + rounds * fwd}`],
-          s
-        );
+        const { options, answer } = buildChoices(`Titik ${ans}`, [`Titik ${ans + back}`, `Titik ${ans - back}`, `Titik ${start + rounds * fwd}`], s);
         list.push({
           topic: "Garis Bilangan",
           standard: "Realistic Mathematics (RME)",
@@ -1022,26 +1031,21 @@
       const list = [];
       let s = 30;
 
-      // 1. Keliling Barisan Persegi (10 soal)
       for (let i = 0; i < 10; i++) {
         const count = 2 + (i % 4);
         const side = 3 + (i % 7);
         const ans = 2 * (count * side + side);
-        const { options, answer } = buildChoices(
-          `${ans} cm`,
-          [`${count * 4 * side} cm`, `${ans - side} cm`, `${ans + side} cm`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} cm`, [`${count * 4 * side} cm`, `${ans - side} cm`, `${ans + side} cm`], s);
         list.push({
           topic: "Keliling Bangun Gabungan",
           standard: "Kangaroo Ecolier",
           question: `Sebanyak ${count} buah persegi identik dengan panjang sisi ${side} cm disusun berderet memanjang saling berhimpit pada sisinya. Berapa keliling persegi panjang baru yang terbentuk?`,
           svg: `
-            <svg viewBox="0 0 240 80" class="w-full max-w-[220px] mx-auto my-2 stroke-white fill-none" stroke-width="2.4">
+            <svg viewBox="0 0 240 80" class="w-full max-w-[220px] mx-auto my-2 text-main" stroke="currentColor" fill="none" stroke-width="2.4">
               <rect x="45" y="22" width="45" height="45" />
               <rect x="90" y="22" width="45" height="45" />
               <rect x="135" y="22" width="45" height="45" stroke-dasharray="4 3" />
-              <text x="112" y="15" text-anchor="middle" fill="#fff" stroke="none" font-size="10" font-weight="bold">Sisi = ${side} cm (${count} persegi)</text>
+              <text x="112" y="15" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="bold">Sisi = ${side} cm (${count} persegi)</text>
             </svg>
           `,
           options,
@@ -1054,7 +1058,6 @@
         s++;
       }
 
-      // 2. Pecahan Sisa Kue (9 soal)
       for (let i = 0; i < 9; i++) {
         const total = i % 2 === 0 ? 8 : 12;
         const a = 1 + (i % 3);
@@ -1062,11 +1065,7 @@
         const c = 1 + ((i + 1) % 3);
         const rem = total - (a + b + c);
         const ans = `${rem}/${total} bagian`;
-        const { options, answer } = buildChoices(
-          ans,
-          [`${a + b + c}/${total} bagian`, `${rem + 1}/${total} bagian`, `${rem - 1}/${total} bagian`],
-          s
-        );
+        const { options, answer } = buildChoices(ans, [`${a + b + c}/${total} bagian`, `${rem + 1}/${total} bagian`, `${rem - 1}/${total} bagian`], s);
         list.push({
           topic: "Pecahan Kontekstual",
           standard: "Realistic Mathematics (RME)",
@@ -1082,18 +1081,13 @@
         s++;
       }
 
-      // 3. Kombinatorika Pakaian (9 soal)
       for (let i = 0; i < 9; i++) {
         const shirts = 3 + (i % 5);
         const pants = 2 + (i % 4);
         const hats = 1 + (i % 3);
         const ans = shirts * pants * hats;
         const name = pickName(s);
-        const { options, answer } = buildChoices(
-          `${ans} pasang`,
-          [`${shirts + pants + hats} pasang`, `${shirts * pants + hats} pasang`, `${ans + pants} pasang`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} pasang`, [`${shirts + pants + hats} pasang`, `${shirts * pants + hats} pasang`, `${ans + pants} pasang`], s);
         list.push({
           topic: "Kombinatorika Dasar",
           standard: "SASMO Grade 3",
@@ -1109,16 +1103,11 @@
         s++;
       }
 
-      // 4. Interval Pohon & Tiang (10 soal)
       for (let i = 0; i < 10; i++) {
         const trees = 5 + i;
         const dist = 3 + (i % 6);
         const ans = (trees - 1) * dist;
-        const { options, answer } = buildChoices(
-          `${ans} meter`,
-          [`${trees * dist} meter`, `${ans - dist} meter`, `${ans + dist} meter`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} meter`, [`${trees * dist} meter`, `${ans - dist} meter`, `${ans + dist} meter`], s);
         list.push({
           topic: "Jarak & Interval",
           standard: "KMNR Kelas 3",
@@ -1134,17 +1123,12 @@
         s++;
       }
 
-      // 5. Jumlah dan Selisih (10 soal)
       for (let i = 0; i < 10; i++) {
         const big = 14 + i * 2;
         const small = 6 + i;
         const sum = big + small;
         const diff = big - small;
-        const { options, answer } = buildChoices(
-          `${big}`,
-          [`${small}`, `${big + 2}`, `${sum - diff}`],
-          s
-        );
+        const { options, answer } = buildChoices(`${big}`, [`${small}`, `${big + 2}`, `${sum - diff}`], s);
         list.push({
           topic: "Jumlah & Selisih",
           standard: "Bebras & SASMO",
@@ -1160,18 +1144,13 @@
         s++;
       }
 
-      // 6. Pembagian Bersisa (9 soal)
       for (let i = 0; i < 9; i++) {
         const kids = 4 + (i % 5);
         const each = 3 + (i % 6);
         const rem = 1 + (i % (kids - 1));
         const ans = kids * each + rem;
         const name = pickName(s);
-        const { options, answer } = buildChoices(
-          `${ans} kelereng`,
-          [`${kids * each} kelereng`, `${ans + 1} kelereng`, `${ans - rem} kelereng`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} kelereng`, [`${kids * each} kelereng`, `${ans + 1} kelereng`, `${ans - rem} kelereng`], s);
         list.push({
           topic: "Pembagian Bersisa",
           standard: "KMNR Kelas 3",
@@ -1187,16 +1166,11 @@
         s++;
       }
 
-      // 7. Menyusun Bilangan 2 Angka (9 soal)
       for (let i = 0; i < 9; i++) {
-        const digitsCount = 3 + (i % 4); // 3, 4, 5, 6 digits (non-zero)
+        const digitsCount = 3 + (i % 4);
         const digitList = Array.from({ length: digitsCount }, (_, idx) => idx + 1).join(", ");
         const ans = digitsCount * (digitsCount - 1);
-        const { options, answer } = buildChoices(
-          `${ans} bilangan`,
-          [`${digitsCount * digitsCount} bilangan`, `${ans - 2} bilangan`, `${digitsCount * 2} bilangan`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} bilangan`, [`${digitsCount * digitsCount} bilangan`, `${ans - 2} bilangan`, `${digitsCount * 2} bilangan`], s);
         list.push({
           topic: "Pencacahan Angka",
           standard: "Kangaroo Ecolier",
@@ -1213,7 +1187,6 @@
         s++;
       }
 
-      // 8. Jumlah Berpasangan (9 soal)
       for (let i = 0; i < 9; i++) {
         const x = 4 + i;
         const y = 6 + (i % 5);
@@ -1222,11 +1195,7 @@
         const bc = y + z;
         const ac = x + z;
         const ans = x + y + z;
-        const { options, answer } = buildChoices(
-          `${ans} kg`,
-          [`${ab + bc + ac} kg`, `${ans + 2} kg`, `${ans - 2} kg`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} kg`, [`${ab + bc + ac} kg`, `${ans + 2} kg`, `${ans - 2} kg`], s);
         list.push({
           topic: "Penalaran Paket Berat",
           standard: "SASMO Grade 3",
@@ -1253,18 +1222,13 @@
       const list = [];
       let s = 50;
 
-      // 1. KPK Lampu Berkedip (12 soal)
       const pairs4 = [[3, 4], [4, 6], [5, 6], [6, 8], [4, 10], [6, 9], [8, 12], [5, 8], [9, 12], [10, 15], [6, 10], [4, 14]];
       for (let i = 0; i < 12; i++) {
         const [a, b] = pairs4[i];
         const k = 2 + (i % 4);
         const step = lcm(a, b);
         const ans = step * k;
-        const { options, answer } = buildChoices(
-          `Detik ke-${ans}`,
-          [`Detik ke-${step}`, `Detik ke-${ans + step}`, `Detik ke-${a * b * k}`],
-          s
-        );
+        const { options, answer } = buildChoices(`Detik ke-${ans}`, [`Detik ke-${step}`, `Detik ke-${ans + step}`, `Detik ke-${a * b * k}`], s);
         list.push({
           topic: "KPK Kontekstual",
           standard: "TIMSS Grade 4",
@@ -1281,26 +1245,21 @@
         s++;
       }
 
-      // 2. Luas Bingkai Taman Persegi (12 soal)
       for (let i = 0; i < 12; i++) {
         const outer = 8 + i;
         const path = i % 2 === 0 ? 1 : 2;
         const inner = outer - 2 * path;
         const ans = inner * inner;
-        const { options, answer } = buildChoices(
-          `${ans} m²`,
-          [`${outer * outer} m²`, `${(outer - path) * (outer - path)} m²`, `${ans + 4} m²`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} m²`, [`${outer * outer} m²`, `${(outer - path) * (outer - path)} m²`, `${ans + 4} m²`], s);
         list.push({
           topic: "Luas Bingkai Persegi",
           standard: "Kangaroo Benjamin",
           question: `Sebuah taman persegi berukuran ${outer} m × ${outer} m. Di sekeliling bagian dalam taman dibuat jalan setapak selebar ${path} m, dan bagian tengahnya ditanami rumput. Berapa luas area rumput tersebut?`,
           svg: `
-            <svg viewBox="0 0 150 115" class="w-full max-w-[150px] mx-auto my-2 stroke-white fill-none" stroke-width="2.4">
+            <svg viewBox="0 0 150 115" class="w-full max-w-[150px] mx-auto my-2 text-main" stroke="currentColor" fill="none" stroke-width="2.4">
               <rect x="30" y="12" width="90" height="90" />
               <rect x="46" y="28" width="58" height="58" stroke-dasharray="4 3" />
-              <text x="75" y="61" text-anchor="middle" fill="#fff" stroke="none" font-size="10" font-weight="bold">Rumput</text>
+              <text x="75" y="61" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="bold">Rumput</text>
             </svg>
           `,
           options,
@@ -1313,16 +1272,11 @@
         s++;
       }
 
-      // 3. Prinsip Sarang Merpati (10 soal)
       for (let i = 0; i < 10; i++) {
         const colors = 2 + (i % 5);
         const perColor = 4 + (i % 6);
         const ans = colors + 1;
-        const { options, answer } = buildChoices(
-          `${ans} kaus kaki`,
-          [`2 kaus kaki`, `${colors} kaus kaki`, `${perColor + 1} kaus kaki`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} kaus kaki`, [`2 kaus kaki`, `${colors} kaus kaki`, `${perColor + 1} kaus kaki`], s);
         list.push({
           topic: "Prinsip Sarang Merpati",
           standard: "SASMO Grade 4",
@@ -1338,16 +1292,11 @@
         s++;
       }
 
-      // 4. Pola Bilangan Bertingkat (12 soal)
       for (let i = 0; i < 12; i++) {
         const c = 1 + i;
         const seq = [1, 2, 3, 4, 5].map((n) => n * n + c);
         const ans = 36 + c;
-        const { options, answer } = buildChoices(
-          `${ans}`,
-          [`${ans - 2}`, `${ans + 2}`, `${seq[4] + 9}`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans}`, [`${ans - 2}`, `${ans + 2}`, `${seq[4] + 9}`], s);
         list.push({
           topic: "Pola Bilangan",
           standard: "KMNR Kelas 4",
@@ -1363,18 +1312,13 @@
         s++;
       }
 
-      // 5. Penalaran Rata-Rata (12 soal)
       for (let i = 0; i < 12; i++) {
         const n = 4 + (i % 5);
         const avg = 75 + (i % 10);
         const bump = 1 + (i % 3);
         const ans = avg + (n + 1) * bump;
         const name = pickName(s);
-        const { options, answer } = buildChoices(
-          `${ans}`,
-          [`${avg + bump}`, `${ans - bump}`, `${ans + n}`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans}`, [`${avg + bump}`, `${ans - bump}`, `${ans + n}`], s);
         list.push({
           topic: "Penalaran Rata-Rata",
           standard: "Realistic Mathematics (RME)",
@@ -1391,25 +1335,20 @@
         s++;
       }
 
-      // 6. Keliling Huruf L (10 soal)
       for (let i = 0; i < 10; i++) {
         const base = 10 + i * 2;
         const height = 7 + i;
         const ans = 2 * (base + height);
-        const { options, answer } = buildChoices(
-          `${ans} cm`,
-          [`${base + height} cm`, `${ans - 4} cm`, `${ans + 6} cm`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} cm`, [`${base + height} cm`, `${ans - 4} cm`, `${ans + 6} cm`], s);
         list.push({
           topic: "Keliling Proyeksi",
           standard: "Kangaroo Benjamin",
           question: `Sebuah bangun datar berbentuk huruf 'L' memiliki panjang alas bawah ${base} cm dan tinggi sisi tegak kiri ${height} cm. Berapa keliling bangun huruf 'L' tersebut?`,
           svg: `
-            <svg viewBox="0 0 180 105" class="w-full max-w-[180px] mx-auto my-2 stroke-white fill-none" stroke-width="2.4">
+            <svg viewBox="0 0 180 105" class="w-full max-w-[180px] mx-auto my-2 text-main" stroke="currentColor" fill="none" stroke-width="2.4">
               <polygon points="40,15 75,15 75,60 140,60 140,85 40,85" />
-              <text x="90" y="99" text-anchor="middle" fill="#fff" stroke="none" font-size="10" font-weight="bold">${base} cm</text>
-              <text x="23" y="54" text-anchor="middle" fill="#fff" stroke="none" font-size="10" font-weight="bold">${height} cm</text>
+              <text x="90" y="99" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="bold">${base} cm</text>
+              <text x="23" y="54" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="bold">${height} cm</text>
             </svg>
           `,
           options,
@@ -1422,18 +1361,13 @@
         s++;
       }
 
-      // 7. Bilangan Bersisa KPK (10 soal)
       const remPairs = [[3, 4], [4, 5], [3, 5], [4, 6], [5, 6], [6, 8], [3, 7], [4, 7], [5, 8], [6, 9]];
       for (let i = 0; i < 10; i++) {
         const [a, b] = remPairs[i];
         const r = 1 + (i % 2);
         const step = lcm(a, b);
         const ans = step + r;
-        const { options, answer } = buildChoices(
-          `${ans} permen`,
-          [`${step} permen`, `${a * b + r} permen`, `${ans + step} permen`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} permen`, [`${step} permen`, `${a * b + r} permen`, `${ans + step} permen`], s);
         list.push({
           topic: "Bilangan Bersisa",
           standard: "SASMO Grade 4",
@@ -1449,15 +1383,10 @@
         s++;
       }
 
-      // 8. Jabat Tangan (11 soal)
       for (let i = 0; i < 11; i++) {
         const n = 5 + i;
         const ans = (n * (n - 1)) / 2;
-        const { options, answer } = buildChoices(
-          `${ans} jabat tangan`,
-          [`${n * (n - 1)} jabat tangan`, `${n * 2} jabat tangan`, `${ans + n} jabat tangan`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} jabat tangan`, [`${n * (n - 1)} jabat tangan`, `${n * 2} jabat tangan`, `${ans + n} jabat tangan`], s);
         list.push({
           topic: "Kombinatorika",
           standard: "KMNR Kelas 4",
@@ -1473,17 +1402,12 @@
         s++;
       }
 
-      // 9. Banyak Faktor Positif (11 soal)
       const factorNums = [12, 18, 20, 24, 28, 30, 32, 36, 40, 45, 48];
       const factorCounts = [6, 6, 6, 8, 6, 8, 6, 9, 8, 6, 10];
       for (let i = 0; i < 11; i++) {
         const num = factorNums[i];
         const ans = factorCounts[i];
-        const { options, answer } = buildChoices(
-          `${ans} faktor`,
-          [`${ans - 2} faktor`, `${ans + 2} faktor`, `${ans + 4} faktor`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} faktor`, [`${ans - 2} faktor`, `${ans + 2} faktor`, `${ans + 4} faktor`], s);
         list.push({
           topic: "Faktor Bilangan",
           standard: "TIMSS Grade 4",
@@ -1509,18 +1433,13 @@
       const list = [];
       let s = 80;
 
-      // 1. Rasio Selisih & Jumlah (13 soal)
       const ratios = [[5, 3], [5, 4], [7, 4], [7, 5], [8, 5], [9, 4], [9, 5], [6, 5], [7, 3], [8, 3], [11, 7], [9, 7], [10, 7]];
       for (let i = 0; i < 13; i++) {
         const [a, b] = ratios[i];
         const unit = 3 + (i % 7);
         const diff = (a - b) * unit;
         const ans = (a + b) * unit;
-        const { options, answer } = buildChoices(
-          `${ans} tahun`,
-          [`${a * unit} tahun`, `${b * unit} tahun`, `${ans + unit} tahun`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} tahun`, [`${a * unit} tahun`, `${b * unit} tahun`, `${ans + unit} tahun`], s);
         list.push({
           topic: "Perbandingan Rasio",
           standard: "SASMO Grade 5",
@@ -1536,7 +1455,6 @@
         s++;
       }
 
-      // 2. Diskon Bertingkat (12 soal)
       for (let i = 0; i < 12; i++) {
         const basePrice = (1 + (i % 5)) * 100000;
         const d1 = i % 2 === 0 ? 20 : 10;
@@ -1544,11 +1462,7 @@
         const after1 = basePrice * (100 - d1) / 100;
         const ans = after1 * (100 - d2) / 100;
         const naive = basePrice * (100 - (d1 + d2)) / 100;
-        const { options, answer } = buildChoices(
-          `Rp${ans.toLocaleString("id-ID")}`,
-          [`Rp${naive.toLocaleString("id-ID")}`, `Rp${after1.toLocaleString("id-ID")}`, `Rp${(ans + 10000).toLocaleString("id-ID")}`],
-          s
-        );
+        const { options, answer } = buildChoices(`Rp${ans.toLocaleString("id-ID")}`, [`Rp${naive.toLocaleString("id-ID")}`, `Rp${after1.toLocaleString("id-ID")}`, `Rp${(ans + 10000).toLocaleString("id-ID")}`], s);
         list.push({
           topic: "Diskon Bertingkat",
           standard: "Realistic Mathematics (RME)",
@@ -1564,10 +1478,9 @@
         s++;
       }
 
-      // 3. Kubus Besar Dicat (13 soal)
       for (let i = 0; i < 13; i++) {
         const n = 3 + (i % 5);
-        const mode = i % 3; // 0: 2 sisi, 1: 1 sisi, 2: 0 sisi
+        const mode = i % 3;
         let modeText = "";
         let ans = 0;
         let expDetail = "";
@@ -1584,17 +1497,13 @@
           ans = (n - 2) * (n - 2) * (n - 2);
           expDetail = `Kubus tanpa cat berada di inti dalam: (${n} - 2)³ = ${ans} kubus.`;
         }
-        const { options, answer } = buildChoices(
-          `${ans} kubus`,
-          [`8 kubus`, `${ans + 6} kubus`, `${n * n} kubus`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} kubus`, [`8 kubus`, `${ans + 6} kubus`, `${n * n} kubus`], s);
         list.push({
           topic: "Geometri Kubus Dicat",
           standard: "Kangaroo Cadet",
           question: `Sebuah kubus kayu berukuran ${n} × ${n} × ${n} dicat seluruh permukaan luarnya, lalu dipotong menjadi ${n * n * n} kubus satuan kecil. Berapa banyak kubus kecil yang terkena cat pada ${modeText}?`,
           svg: `
-            <svg viewBox="0 0 160 110" class="w-full max-w-[155px] mx-auto my-1 stroke-white fill-none" stroke-width="2.2" stroke-linejoin="round">
+            <svg viewBox="0 0 160 110" class="w-full max-w-[155px] mx-auto my-1 text-main" stroke="currentColor" fill="none" stroke-width="2.2" stroke-linejoin="round">
               <polygon points="45,35 95,35 95,85 45,85" />
               <polygon points="45,35 68,18 118,18 95,35" />
               <polygon points="95,35 118,18 118,68 95,85" />
@@ -1602,7 +1511,7 @@
               <line x1="78" y1="35" x2="78" y2="85" stroke-dasharray="3 2" />
               <line x1="45" y1="52" x2="95" y2="52" stroke-dasharray="3 2" />
               <line x1="45" y1="68" x2="95" y2="68" stroke-dasharray="3 2" />
-              <text x="80" y="103" text-anchor="middle" fill="#fff" stroke="none" font-size="10" font-weight="bold">Kubus ${n} × ${n} × ${n}</text>
+              <text x="80" y="103" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="bold">Kubus ${n} × ${n} × ${n}</text>
             </svg>
           `,
           options,
@@ -1615,7 +1524,6 @@
         s++;
       }
 
-      // 4. Kecepatan Berpapasan (12 soal)
       const meetCases = [
         [120, 35, 45, "08.00", "09.30"],
         [150, 40, 60, "08.00", "09.30"],
@@ -1632,11 +1540,7 @@
       ];
       for (let i = 0; i < 12; i++) {
         const [dist, v1, v2, startT, ans] = meetCases[i];
-        const { options, answer } = buildChoices(
-          `Pukul ${ans}`,
-          [`Pukul 08.45`, `Pukul 10.15`, `Pukul 10.45`],
-          s
-        );
+        const { options, answer } = buildChoices(`Pukul ${ans}`, [`Pukul 08.45`, `Pukul 10.15`, `Pukul 10.45`], s);
         list.push({
           topic: "Kecepatan & Berpapasan",
           standard: "TIMSS & KMNR",
@@ -1652,15 +1556,10 @@
         s++;
       }
 
-      // 5. Diagonal Segi-n (12 soal)
       for (let i = 0; i < 12; i++) {
         const n = 5 + i;
         const ans = (n * (n - 3)) / 2;
-        const { options, answer } = buildChoices(
-          `${ans} diagonal`,
-          [`${n * (n - 3)} diagonal`, `${ans + n} diagonal`, `${n * 2} diagonal`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} diagonal`, [`${n * (n - 3)} diagonal`, `${ans + n} diagonal`, `${n * 2} diagonal`], s);
         list.push({
           topic: "Geometri Segi Banyak",
           standard: "SASMO Grade 5",
@@ -1676,7 +1575,6 @@
         s++;
       }
 
-      // 6. Angka Satuan Pangkat (13 soal)
       const bases = [2, 3, 7, 8];
       for (let i = 0; i < 13; i++) {
         const base = bases[i % 4];
@@ -1690,11 +1588,7 @@
         const rem = exp % 4;
         const idx = rem === 0 ? 3 : rem - 1;
         const ans = `${cycleMap[base][idx]}`;
-        const { options, answer } = buildChoices(
-          ans,
-          cycleMap[base].map(String),
-          s
-        );
+        const { options, answer } = buildChoices(ans, cycleMap[base].map(String), s);
         list.push({
           topic: "Pola Angka Satuan",
           standard: "Kangaroo Cadet",
@@ -1710,7 +1604,6 @@
         s++;
       }
 
-      // 7. Strategi Pengandaian Skor (13 soal)
       for (let i = 0; i < 13; i++) {
         const totalQ = 25;
         const answered = 20 + (i % 5);
@@ -1718,11 +1611,7 @@
         const right = answered - wrong;
         const score = right * 4 - wrong * 1;
         const name = pickName(s);
-        const { options, answer } = buildChoices(
-          `${right} soal`,
-          [`${right - 1} soal`, `${right + 1} soal`, `${answered - 1} soal`],
-          s
-        );
+        const { options, answer } = buildChoices(`${right} soal`, [`${right - 1} soal`, `${right + 1} soal`, `${answered - 1} soal`], s);
         list.push({
           topic: "Strategi Pengandaian",
           standard: "KMNR Kelas 5",
@@ -1739,18 +1628,13 @@
         s++;
       }
 
-      // 8. Volume Akuarium (13 soal)
       for (let i = 0; i < 13; i++) {
         const p = 40 + (i % 4) * 10;
         const l = 25 + (i % 3) * 5;
         const t = 40;
-        const hWater = 30; // 3/4 dari 40 cm
+        const hWater = 30;
         const ans = (p * l * hWater) / 1000;
-        const { options, answer } = buildChoices(
-          `${ans} liter`,
-          [`${(p * l * t) / 1000} liter`, `${ans + 5} liter`, `${ans - 5} liter`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} liter`, [`${(p * l * t) / 1000} liter`, `${ans + 5} liter`, `${ans - 5} liter`], s);
         list.push({
           topic: "Volume & Liter",
           standard: "TIMSS Grade 5",
@@ -1766,7 +1650,6 @@
         s++;
       }
 
-      // 9. Kecepatan Rata-Rata Pergi-Pulang (12 soal)
       const harmPairs = [
         [20, 30, 24], [30, 60, 40], [40, 60, 48], [15, 30, 20],
         [10, 15, 12], [20, 60, 30], [30, 45, 36], [60, 90, 72],
@@ -1775,11 +1658,7 @@
       for (let i = 0; i < 12; i++) {
         const [v1, v2, ans] = harmPairs[i];
         const naive = (v1 + v2) / 2;
-        const { options, answer } = buildChoices(
-          `${ans} km/jam`,
-          [`${naive} km/jam`, `${ans - 2} km/jam`, `${ans + 4} km/jam`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} km/jam`, [`${naive} km/jam`, `${ans - 2} km/jam`, `${ans + 4} km/jam`], s);
         list.push({
           topic: "Kecepatan Rata-Rata",
           standard: "AMC 8 & KMNR",
@@ -1795,15 +1674,10 @@
         s++;
       }
 
-      // 10. Luas Segitiga dalam Persegi Panjang (12 soal)
       for (let i = 0; i < 12; i++) {
         const area = 36 + i * 8;
         const ans = area / 2;
-        const { options, answer } = buildChoices(
-          `${ans} cm²`,
-          [`${area / 4} cm²`, `${area} cm²`, `${ans + 6} cm²`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} cm²`, [`${area / 4} cm²`, `${area} cm²`, `${ans + 6} cm²`], s);
         list.push({
           topic: "Luas Bangun Datar",
           standard: "Realistic Mathematics (RME)",
@@ -1829,18 +1703,13 @@
       const list = [];
       let s = 120;
 
-      // 1. Aljabar Simetris (15 soal)
       for (let i = 0; i < 15; i++) {
         const book = 6000 + i * 1000;
         const pen = 3000 + (i % 4) * 1000;
         const p1 = 3 * book + 2 * pen;
         const p2 = 2 * book + 3 * pen;
         const ans = book + pen;
-        const { options, answer } = buildChoices(
-          `Rp${ans.toLocaleString("id-ID")}`,
-          [`Rp${(ans - 1000).toLocaleString("id-ID")}`, `Rp${(ans + 1000).toLocaleString("id-ID")}`, `Rp${(ans + 2000).toLocaleString("id-ID")}`],
-          s
-        );
+        const { options, answer } = buildChoices(`Rp${ans.toLocaleString("id-ID")}`, [`Rp${(ans - 1000).toLocaleString("id-ID")}`, `Rp${(ans + 1000).toLocaleString("id-ID")}`, `Rp${(ans + 2000).toLocaleString("id-ID")}`], s);
         list.push({
           topic: "Aljabar Simetris",
           standard: "Kangaroo Cadet",
@@ -1856,16 +1725,11 @@
         s++;
       }
 
-      // 2. Deret Teleskopik Pecahan (12 soal)
       for (let i = 0; i < 12; i++) {
         const n = 4 + i;
         const terms = Array.from({ length: n }, (_, k) => `1/${(k + 1) * (k + 2)}`).join(" + ");
         const ans = `${n}/${n + 1}`;
-        const { options, answer } = buildChoices(
-          ans,
-          [`${n - 1}/${n}`, `${n + 1}/${n + 2}`, `1/${n + 1}`],
-          s
-        );
+        const { options, answer } = buildChoices(ans, [`${n - 1}/${n}`, `${n + 1}/${n + 2}`, `1/${n + 1}`], s);
         list.push({
           topic: "Deret Teleskopik",
           standard: "SASMO Grade 6",
@@ -1881,7 +1745,6 @@
         s++;
       }
 
-      // 3. Lingkaran dalam Persegi (12 soal)
       for (let i = 0; i < 12; i++) {
         const side = 7 * (1 + (i % 6));
         const squareArea = side * side;
@@ -1889,22 +1752,18 @@
         const ansVal = isCirc ? 22 * (side / 7) : 22 * (side / 2) * (side / 2) / 7;
         const unit = isCirc ? "cm" : "cm²";
         const askText = isCirc ? "keliling lingkaran" : "luas lingkaran";
-        const { options, answer } = buildChoices(
-          `${ansVal} ${unit}`,
-          [`${ansVal * 2} ${unit}`, `${squareArea} ${unit}`, `${ansVal + 22} ${unit}`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ansVal} ${unit}`, [`${ansVal * 2} ${unit}`, `${squareArea} ${unit}`, `${ansVal + 22} ${unit}`], s);
         list.push({
           topic: "Geometri Lingkaran",
           standard: "KMNR Kelas 6",
           question: `Sebuah lingkaran berada tepat di dalam persegi sehingga keempat sisi persegi menyinggung lingkaran. Jika luas persegi adalah ${squareArea} cm², berapakah ${askText} tersebut? (π = 22/7)`,
           svg: `
-            <svg viewBox="0 0 150 112" class="w-full max-w-[145px] mx-auto my-1 stroke-white fill-none" stroke-width="2.3">
+            <svg viewBox="0 0 150 112" class="w-full max-w-[145px] mx-auto my-1 text-main" stroke="currentColor" fill="none" stroke-width="2.3">
               <rect x="37" y="10" width="76" height="76" />
               <circle cx="75" cy="48" r="38" stroke-dasharray="4 3" />
               <line x1="37" y1="48" x2="113" y2="48" stroke-width="1.6" />
-              <circle cx="75" cy="48" r="2.5" fill="#fff" />
-              <text x="75" y="102" text-anchor="middle" fill="#fff" stroke="none" font-size="10" font-weight="bold">Luas Persegi = ${squareArea} cm²</text>
+              <circle cx="75" cy="48" r="2.5" fill="currentColor" />
+              <text x="75" y="102" text-anchor="middle" fill="currentColor" stroke="none" font-size="10" font-weight="bold">Luas Persegi = ${squareArea} cm²</text>
             </svg>
           `,
           options,
@@ -1917,18 +1776,13 @@
         s++;
       }
 
-      // 4. Kerja Sama (Rate of Work) (12 soal)
       const workPairs = [
         [6, 3, 2], [12, 4, 3], [10, 15, 6], [12, 6, 4], [20, 5, 4], [15, 30, 10],
         [12, 24, 8], [18, 9, 6], [20, 30, 12], [24, 8, 6], [14, 14, 7], [30, 6, 5]
       ];
       for (let i = 0; i < 12; i++) {
         const [t1, t2, ans] = workPairs[i];
-        const { options, answer } = buildChoices(
-          `${ans} jam`,
-          [`${(t1 + t2) / 2} jam`, `${ans + 1} jam`, `${Math.abs(t1 - t2)} jam`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} jam`, [`${(t1 + t2) / 2} jam`, `${ans + 1} jam`, `${Math.abs(t1 - t2)} jam`], s);
         list.push({
           topic: "Kecepatan Kerja",
           standard: "Realistic Mathematics (RME)",
@@ -1944,17 +1798,12 @@
         s++;
       }
 
-      // 5. Pencacahan Bilangan Genap 3 Angka (12 soal)
       for (let i = 0; i < 12; i++) {
-        const maxDigit = 4 + (i % 5); // 4..8
+        const maxDigit = 4 + (i % 5);
         const digitArr = Array.from({ length: maxDigit }, (_, idx) => idx + 1);
         const evenCount = digitArr.filter((d) => d % 2 === 0).length;
         const ans = (maxDigit - 1) * (maxDigit - 2) * evenCount;
-        const { options, answer } = buildChoices(
-          `${ans} bilangan`,
-          [`${maxDigit * (maxDigit - 1) * (maxDigit - 2)} bilangan`, `${ans + evenCount} bilangan`, `${ans - evenCount} bilangan`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} bilangan`, [`${maxDigit * (maxDigit - 1) * (maxDigit - 2)} bilangan`, `${ans + evenCount} bilangan`, `${ans - evenCount} bilangan`], s);
         list.push({
           topic: "Kaidah Pencacahan",
           standard: "Kangaroo Cadet",
@@ -1970,18 +1819,13 @@
         s++;
       }
 
-      // 6. Perbandingan Luas Segitiga (12 soal)
       for (let i = 0; i < 12; i++) {
         const p = 2 + (i % 3);
         const q = 3 + (i % 4);
         const mult = 8 + i;
         const totalArea = (p + q) * mult;
         const ans = p * mult;
-        const { options, answer } = buildChoices(
-          `${ans} cm²`,
-          [`${q * mult} cm²`, `${totalArea / 2} cm²`, `${ans + mult} cm²`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} cm²`, [`${q * mult} cm²`, `${totalArea / 2} cm²`, `${ans + mult} cm²`], s);
         list.push({
           topic: "Perbandingan Luas",
           standard: "SASMO Grade 6",
@@ -1997,7 +1841,6 @@
         s++;
       }
 
-      // 7. Peluang Dua Dadu (12 soal)
       const diceSums = [
         [5, 4, "1/9"], [6, 5, "5/36"], [7, 6, "1/6"], [8, 5, "5/36"],
         [9, 4, "1/9"], [10, 3, "1/12"], [11, 2, "1/18"], [4, 3, "1/12"],
@@ -2005,11 +1848,7 @@
       ];
       for (let i = 0; i < 12; i++) {
         const [targetSum, ways, ans] = diceSums[i];
-        const { options, answer } = buildChoices(
-          ans,
-          ["1/6", "1/9", "1/12", "5/36", "1/18", "1/36"].filter((x) => x !== ans),
-          s
-        );
+        const { options, answer } = buildChoices(ans, ["1/6", "1/9", "1/12", "5/36", "1/18", "1/36"].filter((x) => x !== ans), s);
         list.push({
           topic: "Peluang",
           standard: "TIMSS & AMC 8",
@@ -2025,15 +1864,10 @@
         s++;
       }
 
-      // 8. Angka Nol di Akhir Faktorial (12 soal)
       for (let i = 0; i < 12; i++) {
         const n = 15 + i * 5;
         const zeros = Math.floor(n / 5) + Math.floor(n / 25);
-        const { options, answer } = buildChoices(
-          `${zeros} angka nol`,
-          [`${Math.floor(n / 5)} angka nol`, `${zeros + 1} angka nol`, `${zeros - 1} angka nol`],
-          s
-        );
+        const { options, answer } = buildChoices(`${zeros} angka nol`, [`${Math.floor(n / 5)} angka nol`, `${zeros + 1} angka nol`, `${zeros - 1} angka nol`], s);
         list.push({
           topic: "Teori Bilangan",
           standard: "KMNR Kelas 6",
@@ -2049,7 +1883,6 @@
         s++;
       }
 
-      // 9. Perubahan Persentase Luas (12 soal)
       const pctCases = [
         [10, 10, "Berkurang 1%"], [20, 20, "Berkurang 4%"], [30, 30, "Berkurang 9%"],
         [20, 10, "Bertambah 8%"], [25, 20, "Tetap sama"], [50, 20, "Bertambah 20%"],
@@ -2058,11 +1891,7 @@
       ];
       for (let i = 0; i < 12; i++) {
         const [inc, dec, ans] = pctCases[i];
-        const { options, answer } = buildChoices(
-          ans,
-          ["Tetap sama", "Berkurang 4%", "Bertambah 8%", "Berkurang 10%", "Bertambah 12%"].filter((x) => x !== ans),
-          s
-        );
+        const { options, answer } = buildChoices(ans, ["Tetap sama", "Berkurang 4%", "Bertambah 8%", "Berkurang 10%", "Bertambah 12%"].filter((x) => x !== ans), s);
         list.push({
           topic: "Persentase Perubahan",
           standard: "Kangaroo Cadet",
@@ -2078,18 +1907,13 @@
         s++;
       }
 
-      // 10. Sudut Jarum Jam (11 soal)
       for (let i = 0; i < 11; i++) {
         const hour = 1 + i;
         const diffSteps = Math.abs(6 - (hour + 0.5));
         const rawAngle = diffSteps * 30;
         const ans = rawAngle > 180 ? 360 - rawAngle : rawAngle;
         const hh = hour < 10 ? `0${hour}` : `${hour}`;
-        const { options, answer } = buildChoices(
-          `${ans}°`,
-          [`${ans + 15}°`, `${Math.max(15, ans - 15)}°`, `${ans + 30}°`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans}°`, [`${ans + 15}°`, `${Math.max(15, ans - 15)}°`, `${ans + 30}°`], s);
         list.push({
           topic: "Sudut Jarum Jam",
           standard: "SASMO & KMNR",
@@ -2105,17 +1929,12 @@
         s++;
       }
 
-      // 11. Strategi Permainan Nim (14 soal)
       for (let i = 0; i < 14; i++) {
-        const maxTake = 2 + (i % 3); // ambil 1..maxTake
+        const maxTake = 2 + (i % 3);
         const mod = maxTake + 1;
         const rem = 1 + (i % maxTake);
         const sticks = mod * (4 + (i % 5)) + rem;
-        const { options, answer } = buildChoices(
-          `${rem} batang`,
-          [`${rem === 1 ? 2 : 1} batang`, `${maxTake} batang`, `Tidak bisa dipastikan`],
-          s
-        );
+        const { options, answer } = buildChoices(`${rem} batang`, [`${rem === 1 ? 2 : 1} batang`, `${maxTake} batang`, `Tidak bisa dipastikan`], s);
         list.push({
           topic: "Strategi Permainan",
           standard: "KMNR & Bebras",
@@ -2131,18 +1950,13 @@
         s++;
       }
 
-      // 12. Diagram Venn Dua Himpunan (14 soal)
       for (let i = 0; i < 14; i++) {
         const total = 30 + (i % 10);
         const math = 18 + (i % 7);
         const sci = 16 + (i % 6);
         const neither = 3 + (i % 4);
         const ans = math + sci + neither - total;
-        const { options, answer } = buildChoices(
-          `${ans} siswa`,
-          [`${ans + 2} siswa`, `${Math.max(1, ans - 2)} siswa`, `${neither} siswa`],
-          s
-        );
+        const { options, answer } = buildChoices(`${ans} siswa`, [`${ans + 2} siswa`, `${Math.max(1, ans - 2)} siswa`, `${neither} siswa`], s);
         list.push({
           topic: "Himpunan & Diagram Venn",
           standard: "AMC 8 & SASMO",
@@ -2179,7 +1993,6 @@
       return BANK_CACHE[grade];
     }
 
-    // Menghitung daftar paket (@ 15 soal) untuk setiap jenjang kelas
     function getPacksForGrade(grade) {
       const meta = GRADE_META.find((m) => m.grade === grade);
       const total = meta ? meta.count : 0;
@@ -2217,6 +2030,7 @@
     // State Aplikasi
     let state = {
       view: "home", // 'home' | 'packs' | 'quiz' | 'result'
+      theme: "dark", // 'dark' | 'light'
       selectedGrade: null,
       selectedPack: 0,
       currentIndex: 0,
@@ -2226,13 +2040,49 @@
       progress: {}
     };
 
+    // =========================================================================
+    // PENGATURAN TEMA (HITAM PAPAN TULIS / PUTIH POLOS)
+    // =========================================================================
+    function applyTheme(theme) {
+      state.theme = theme === "light" ? "light" : "dark";
+      const isLight = state.theme === "light";
+      document.documentElement.classList.toggle("theme-light", isLight);
+
+      const metaTheme = document.getElementById("meta-theme-color");
+      if (metaTheme) metaTheme.setAttribute("content", isLight ? "#ffffff" : "#0a0a0a");
+
+      document.querySelectorAll(".theme-icon-el").forEach((el) => {
+        el.textContent = isLight ? "◐" : "☀";
+      });
+      document.querySelectorAll(".theme-label-el").forEach((el) => {
+        el.textContent = isLight ? "Hitam" : "Putih";
+      });
+
+      if (scratchCtx) {
+        scratchCtx.strokeStyle = isLight ? "#0a0a0a" : "#ffffff";
+      }
+    }
+
+    function toggleTheme() {
+      playTone("tap");
+      const nextTheme = state.theme === "dark" ? "light" : "dark";
+      applyTheme(nextTheme);
+      try {
+        localStorage.setItem("jago_kmnr_sd_theme", nextTheme);
+      } catch (e) {}
+      trackVercelEvent("toggle_theme", { theme: nextTheme });
+      showToast(nextTheme === "light" ? "Tema putih polos aktif" : "Tema papan hitam aktif");
+    }
+
     function loadProgress() {
       try {
+        const savedTheme = localStorage.getItem("jago_kmnr_sd_theme");
+        if (savedTheme) applyTheme(savedTheme);
+
         const saved = localStorage.getItem("jago_kmnr_sd_v3");
         if (saved) {
           state.progress = JSON.parse(saved);
         } else {
-          // Migrasi otomatis dari versi sebelumnya jika ada
           const legacy = localStorage.getItem("jago_kmnr_sd_v2");
           if (legacy) {
             state.progress = JSON.parse(legacy);
@@ -2254,16 +2104,14 @@
       const meta = GRADE_META.find((m) => m.grade === grade);
       const ansMap = state.progress[grade]?.answers || {};
       const entries = Object.values(ansMap);
-      const answeredCount = entries.length;
-      const correctCount = entries.filter((x) => x.isCorrect).length;
       return {
         total: meta.count,
-        answered: answeredCount,
-        correct: correctCount
+        answered: entries.length,
+        correct: entries.filter((x) => x.isCorrect).length
       };
     }
 
-    // Web Audio API (efek suara lembut)
+    // Web Audio API (Efek suara ringan)
     function playTone(type) {
       if (!state.soundEnabled) return;
       try {
@@ -2357,6 +2205,7 @@
       closeScratchpad(true);
       state.selectedGrade = grade;
       state.view = "packs";
+      trackVercelEvent("select_grade", { grade });
       render();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -2389,6 +2238,7 @@
       }
 
       state.view = "quiz";
+      trackVercelEvent("start_pack", { grade, pack: packIndex + 1, restart: restartPack });
       render();
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
@@ -2414,7 +2264,6 @@
       render();
     }
 
-    // Mengulang satu soal yang salah dijawab
     function retrySingleQuestion(idx) {
       playTone("tap");
       const grade = state.selectedGrade;
@@ -2445,6 +2294,12 @@
         window.scrollTo({ top: 0, behavior: "smooth" });
       } else {
         state.view = "result";
+        trackVercelEvent("complete_pack", {
+          grade: state.selectedGrade,
+          pack: pack.number,
+          correct: pack.correct,
+          total: pack.count
+        });
         render();
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
@@ -2476,10 +2331,7 @@
 
       const getPos = (e) => {
         const rect = canvas.getBoundingClientRect();
-        return {
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top
-        };
+        return { x: e.clientX - rect.left, y: e.clientY - rect.top };
       };
 
       canvas.addEventListener("pointerdown", (e) => {
@@ -2487,7 +2339,6 @@
         canvas.setPointerCapture(e.pointerId);
         const hint = document.getElementById("scratch-hint");
         if (hint) hint.classList.add("hidden");
-        // Simpan snapshot sebelum goresan baru untuk fitur Undo
         if (scratchCtx) {
           if (scratchHistory.length > 15) scratchHistory.shift();
           scratchHistory.push(scratchCtx.getImageData(0, 0, canvas.width, canvas.height));
@@ -2525,22 +2376,20 @@
       scratchCtx.scale(dpr, dpr);
       scratchCtx.lineCap = "round";
       scratchCtx.lineJoin = "round";
-      scratchCtx.strokeStyle = "#ffffff";
+      scratchCtx.strokeStyle = state.theme === "light" ? "#0a0a0a" : "#ffffff";
       scratchCtx.lineWidth = penWidth;
     }
 
     function openScratchpad() {
       playTone("tap");
       state.scratchpadOpen = true;
-      const overlay = document.getElementById("scratchpad-overlay");
-      overlay.classList.remove("hidden");
+      document.getElementById("scratchpad-overlay").classList.remove("hidden");
       const hint = document.getElementById("scratch-hint");
       if (hint) hint.classList.remove("hidden");
       initScratchpadEvents();
       scratchHistory = [];
-      requestAnimationFrame(() => {
-        resizeScratchCanvas();
-      });
+      trackVercelEvent("open_scratchpad", { grade: state.selectedGrade });
+      requestAnimationFrame(() => resizeScratchCanvas());
     }
 
     function closeScratchpad(silent = false) {
@@ -2556,21 +2405,16 @@
       if (scratchCtx) scratchCtx.lineWidth = penWidth;
       const thinBtn = document.getElementById("btn-pen-thin");
       const thickBtn = document.getElementById("btn-pen-thick");
-      if (size <= 3) {
-        thinBtn.className = "btn-tactile px-2.5 py-1 rounded-lg bg-white text-black text-xs sm:text-sm font-extrabold cursor-pointer";
-        thickBtn.className = "btn-tactile px-2.5 py-1 rounded-lg border-2 border-white/55 text-white text-xs sm:text-sm font-bold cursor-pointer";
-      } else {
-        thickBtn.className = "btn-tactile px-2.5 py-1 rounded-lg bg-white text-black text-xs sm:text-sm font-extrabold cursor-pointer";
-        thinBtn.className = "btn-tactile px-2.5 py-1 rounded-lg border-2 border-white/55 text-white text-xs sm:text-sm font-bold cursor-pointer";
-      }
+      const activeCls = "btn-tactile surface-inv min-h-[34px] px-2.5 py-1 rounded-lg text-xs sm:text-sm font-extrabold cursor-pointer";
+      const idleCls = "btn-tactile btn-subtle min-h-[34px] px-2.5 py-1 rounded-lg border-2 text-xs sm:text-sm font-bold cursor-pointer";
+      thinBtn.className = size <= 3 ? activeCls : idleCls;
+      thickBtn.className = size > 3 ? activeCls : idleCls;
     }
 
     function undoScratchpad() {
       playTone("tap");
-      const canvas = document.getElementById("scratch-canvas");
       if (!scratchCtx || scratchHistory.length === 0) return;
-      const prevImg = scratchHistory.pop();
-      scratchCtx.putImageData(prevImg, 0, 0);
+      scratchCtx.putImageData(scratchHistory.pop(), 0, 0);
     }
 
     function clearScratchpad() {
@@ -2607,18 +2451,14 @@
       const dx = t.clientX - touchStartX;
       const dy = t.clientY - touchStartY;
 
-      // Pastikan geseran dominan horizontal (> 60px) dan bukan gulir vertikal
       if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.6) {
-        if (dx < 0) {
-          nextQuestion();
-        } else {
-          prevQuestion();
-        }
+        if (dx < 0) nextQuestion();
+        else prevQuestion();
       }
     }, { passive: true });
 
     // =========================================================================
-    // DRAWER PETA SOAL DENGAN FILTER (SEMUA / BELUM DIJAWAB / PERLU DIULANG)
+    // DRAWER PETA SOAL DENGAN FILTER
     // =========================================================================
     function setMapFilter(filterKey) {
       playTone("tap");
@@ -2656,8 +2496,8 @@
               onclick="setMapFilter('${f.key}')"
               class="btn-tactile px-2.5 py-1 rounded-lg text-xs font-extrabold cursor-pointer ${
                 active
-                  ? "bg-white text-black border-2 border-white"
-                  : "border-2 border-white/45 text-white/85 hover:border-white"
+                  ? "surface-inv border-2 border-main"
+                  : "btn-subtle border-2"
               }"
             >
               ${f.label}
@@ -2676,7 +2516,7 @@
 
       if (indices.length === 0) {
         document.getElementById("map-grid").innerHTML = `
-          <div class="col-span-full py-6 text-center text-sm text-white/65">
+          <div class="col-span-full py-6 text-center text-sm text-muted">
             Tidak ada soal pada kategori filter ini.
           </div>
         `;
@@ -2687,14 +2527,14 @@
         .map((idx) => {
           const rec = ansMap[idx];
           const isCurrent = idx === state.currentIndex;
-          let cls = "border-2 border-white/50 text-white/85 hover:border-white font-bold";
+          let cls = "btn-subtle border-2 font-bold";
           if (rec) {
             cls = rec.isCorrect
-              ? "bg-white text-black border-2 border-white font-extrabold"
-              : "border-2 border-dashed border-white text-white font-extrabold";
+              ? "surface-inv border-2 border-main font-extrabold"
+              : "border-2 border-dashed border-main text-main font-extrabold";
           }
           if (isCurrent) {
-            cls += " ring-2 ring-white ring-offset-2 ring-offset-[#0f0f0f]";
+            cls += " ring-current-node";
           }
           return `
             <button
@@ -2748,28 +2588,23 @@
         const packCount = Math.ceil(m.count / PACK_SIZE);
         const hasProgress = stats.answered > 0;
 
-        // Indikator level kesulitan geometris (1 s.d. 6 titik kapur)
         const levelPips = Array.from({ length: 6 }, (_, i) => {
           const filled = i < m.grade;
-          return `<span class="w-1.5 h-1.5 rounded-full ${
-            filled
-              ? "bg-white group-hover:bg-black"
-              : "border border-white/45 group-hover:border-black/40"
-          } transition-colors"></span>`;
+          return `<span class="w-1.5 h-1.5 rounded-full transition-colors ${filled ? "pip-filled" : "pip-empty"}"></span>`;
         }).join("");
 
         return `
           <button
             onclick="goToPacks(${m.grade})"
             style="animation-delay: ${idx * 45}ms"
-            class="animate-card btn-tactile group text-left p-3.5 sm:p-5 rounded-2xl border-2 border-white/70 hover:border-white bg-white/[0.03] hover:bg-white hover:text-black flex flex-col justify-between cursor-pointer"
+            class="animate-card btn-tactile card-interactive group text-left p-3.5 sm:p-5 rounded-2xl border-2 flex flex-col justify-between cursor-pointer"
           >
             <div>
               <div class="flex items-center justify-between gap-1.5 mb-2">
                 <div class="flex items-center gap-1" title="Tingkat Kesulitan ${m.grade}/6">
                   ${levelPips}
                 </div>
-                <span class="text-[11px] sm:text-xs font-extrabold px-2 py-0.5 rounded-md bg-white text-black group-hover:bg-black group-hover:text-white transition-colors shrink-0">
+                <span class="card-badge surface-inv text-[11px] sm:text-xs font-extrabold px-2 py-0.5 rounded-md transition-colors shrink-0">
                   ${packCount} Paket
                 </span>
               </div>
@@ -2787,13 +2622,13 @@
               </p>
             </div>
 
-            <div class="w-full pt-2.5 border-t border-dashed border-white/30 group-hover:border-black/25">
+            <div class="card-divider w-full pt-2.5 border-t border-dashed border-soft">
               <div class="flex items-center justify-between text-[11px] sm:text-xs font-bold opacity-90 mb-1.5">
                 <span>${hasProgress ? `${stats.answered}/${stats.total} soal` : "Siap mulai"}</span>
                 <span>${hasProgress ? `✓ ${stats.correct}` : "Buka →"}</span>
               </div>
-              <div class="w-full h-1.5 rounded-full bg-white/20 group-hover:bg-black/20 overflow-hidden">
-                <div class="h-full bg-white group-hover:bg-black progress-fill" style="width: ${pct}%"></div>
+              <div class="card-track w-full h-1.5 rounded-full surface-track overflow-hidden">
+                <div class="card-fill h-full progress-fill" style="width: ${pct}%"></div>
               </div>
             </div>
           </button>
@@ -2802,29 +2637,28 @@
 
       return `
         <section class="animate-view">
-          <!-- Ringkasan Papan Latihan -->
-          <div class="p-4 sm:p-5 mb-5 rounded-2xl border-2 border-dashed border-white/60 bg-white/[0.025] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="p-4 sm:p-5 mb-5 rounded-2xl border-2 border-dashed border-mid surface-tint flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <h2 class="font-display text-xl sm:text-2xl font-bold text-white">
+              <h2 class="font-display text-xl sm:text-2xl font-bold text-main">
                 Pilih Jenjang Kelas SD
               </h2>
-              <p class="text-xs sm:text-sm text-white/80 mt-0.5 leading-relaxed">
-                Bank soal KMNR, Kangaroo, SASMO & TIMSS dibagi menjadi paket ringan @ ${PACK_SIZE} soal.
+              <p class="text-xs sm:text-sm text-muted mt-0.5 leading-relaxed">
+                Bank soal KMNR, Kangaroo, SASMO &amp; TIMSS dibagi menjadi paket ringan @ ${PACK_SIZE} soal.
               </p>
             </div>
 
-            <div class="flex items-center justify-between sm:justify-end gap-3 pt-2.5 sm:pt-0 border-t sm:border-t-0 border-dashed border-white/30 shrink-0">
+            <div class="flex items-center justify-between sm:justify-end gap-3 pt-2.5 sm:pt-0 border-t sm:border-t-0 border-dashed border-soft shrink-0">
               <div class="text-left sm:text-right">
-                <div class="text-xs font-extrabold text-white">
+                <div class="text-xs font-extrabold text-main">
                   ${totalAnsweredAll} / ${totalAll} Terjawab (${overallPct}%)
                 </div>
-                <div class="text-[11px] text-white/70">
+                <div class="text-[11px] text-muted">
                   Total Benar: ${totalCorrectAll} soal
                 </div>
               </div>
               ${
                 totalAnsweredAll > 0
-                  ? `<button onclick="openResetModal()" class="btn-tactile px-3 py-1.5 rounded-xl border-2 border-white/55 hover:bg-white hover:text-black text-xs font-extrabold cursor-pointer">
+                  ? `<button onclick="openResetModal()" class="btn-tactile btn-outline px-3 py-1.5 rounded-xl border-2 text-xs font-extrabold cursor-pointer">
                       Reset
                     </button>`
                   : ""
@@ -2847,8 +2681,6 @@
       const meta = GRADE_META.find((m) => m.grade === grade);
       const stats = getGradeStats(grade);
       const packs = getPacksForGrade(grade);
-
-      // Cari paket pertama yang belum tuntas untuk tombol lanjut cepat
       const nextPack = packs.find((p) => p.answered < p.count) || packs[0];
 
       const packCardsHtml = packs
@@ -2871,11 +2703,9 @@
             <button
               onclick="startPack(${grade}, ${p.packIndex}, false)"
               style="animation-delay: ${idx * 35}ms"
-              class="animate-card btn-tactile group text-left p-3.5 sm:p-4 rounded-2xl border-2 ${
-                isCompleted
-                  ? "border-solid border-white bg-white/[0.07]"
-                  : "border-dashed border-white/65 bg-white/[0.03]"
-              } hover:border-solid hover:border-white hover:bg-white hover:text-black flex flex-col justify-between cursor-pointer"
+              class="animate-card btn-tactile card-interactive group text-left p-3.5 sm:p-4 rounded-2xl border-2 ${
+                isCompleted ? "border-solid border-main surface-tint-strong" : "border-dashed"
+              } flex flex-col justify-between cursor-pointer"
             >
               <div>
                 <div class="flex items-center justify-between gap-1.5 mb-1.5">
@@ -2893,8 +2723,8 @@
                 </p>
               </div>
 
-              <div class="w-full h-1.5 rounded-full bg-white/20 group-hover:bg-black/20 overflow-hidden">
-                <div class="h-full bg-white group-hover:bg-black progress-fill" style="width: ${pct}%"></div>
+              <div class="card-track w-full h-1.5 rounded-full surface-track overflow-hidden">
+                <div class="card-fill h-full progress-fill" style="width: ${pct}%"></div>
               </div>
             </button>
           `;
@@ -2903,24 +2733,24 @@
 
       return `
         <section class="animate-view">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 sm:p-5 mb-5 rounded-2xl border-2 border-white/75 bg-white/[0.03]">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 sm:p-5 mb-5 rounded-2xl border-2 border-mid surface-tint">
             <div>
               <div class="flex items-center gap-2">
-                <h2 class="font-display text-2xl sm:text-[26px] font-bold text-white">
+                <h2 class="font-display text-2xl sm:text-[26px] font-bold text-main">
                   ${meta.title} SD
                 </h2>
-                <span class="text-xs px-2.5 py-0.5 rounded-full bg-white text-black font-extrabold">
+                <span class="text-xs px-2.5 py-0.5 rounded-full surface-inv font-extrabold">
                   ${packs.length} Paket
                 </span>
               </div>
-              <p class="text-xs sm:text-sm text-white/80 mt-1">
+              <p class="text-xs sm:text-sm text-muted mt-1">
                 ${meta.focus} • Selesai ${stats.answered}/${stats.total} soal (${stats.correct} benar)
               </p>
             </div>
 
             <button
               onclick="startPack(${grade}, ${nextPack.packIndex}, false)"
-              class="btn-tactile self-start sm:self-auto px-4 py-2 rounded-xl bg-white text-black hover:bg-white/90 text-xs sm:text-sm font-extrabold cursor-pointer shrink-0"
+              class="btn-tactile surface-inv self-start sm:self-auto px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold cursor-pointer shrink-0"
             >
               ${stats.answered > 0 ? `Lanjut Paket ${nextPack.number} →` : "Mulai Paket 1 →"}
             </button>
@@ -2947,38 +2777,36 @@
       const progressPct = Math.round((localNum / pack.count) * 100);
       const letters = ["A", "B", "C", "D"];
 
-      // Perbarui header ultra-tipis
       document.getElementById("compact-title").textContent = `Kls ${grade} • Pkt ${pack.number} (${localNum}/${pack.count})`;
       document.getElementById("compact-progress-bar").style.width = `${progressPct}%`;
 
       const optionsHtml = q.options
         .map((opt, idx) => {
-          let style = "border-2 border-white/60 text-white hover:border-white hover:bg-white/[0.08]";
+          let style = "btn-subtle border-2";
           let badge = "";
           let chalkCircleSvg = "";
 
           if (ansRecord) {
             if (idx === q.answer) {
-              style = "bg-white text-black border-2 border-white font-extrabold";
-              badge = `<span class="text-xs font-extrabold px-2 py-0.5 rounded bg-black text-white shrink-0">✓ Benar</span>`;
-              // Animasi lingkaran kapur presisi di tepi luar kartu jawaban benar
+              style = "surface-inv border-2 border-main font-extrabold";
+              badge = `<span class="text-xs font-extrabold px-2 py-0.5 rounded surface-page shrink-0">✓ Benar</span>`;
               chalkCircleSvg = `
-                <svg class="absolute -inset-[4px] w-[calc(100%+8px)] h-[calc(100%+8px)] pointer-events-none" viewBox="0 0 320 72" preserveAspectRatio="none">
+                <svg class="absolute -inset-[4px] w-[calc(100%+8px)] h-[calc(100%+8px)] text-main pointer-events-none" viewBox="0 0 320 72" preserveAspectRatio="none">
                   <path
                     class="chalk-ring-path"
                     d="M 14,4 C 95,1 225,1 306,5 C 317,8 318,64 305,67 C 225,71 95,71 14,67 C 3,64 3,8 16,4"
                     fill="none"
-                    stroke="#ffffff"
+                    stroke="currentColor"
                     stroke-width="2.6"
                     stroke-linecap="round"
                   />
                 </svg>
               `;
             } else if (idx === ansRecord.chosen) {
-              style = "border-2 border-dashed border-white text-white/95 bg-white/[0.06]";
-              badge = `<span class="text-xs font-bold px-2 py-0.5 rounded border-[1.5px] border-white/75 text-white/95 shrink-0">✗ Pilihanmu</span>`;
+              style = "border-2 border-dashed border-main text-main surface-tint-strong";
+              badge = `<span class="text-xs font-bold px-2 py-0.5 rounded border-[1.5px] border-main text-main shrink-0">✗ Pilihanmu</span>`;
             } else {
-              style = "border-2 border-white/25 text-white/45";
+              style = "border-2 border-soft text-subtle";
             }
           }
 
@@ -3003,14 +2831,13 @@
         })
         .join("");
 
-      // Penjelasan Langsung dengan bingkai garis putus-putus kapur tebal
       let explanationHtml = "";
       if (ansRecord) {
         const steps = q.explanation
           .map(
             (step, i) => `
-              <li class="flex items-start gap-2.5 text-sm sm:text-[15px] text-white/95 leading-relaxed">
-                <span class="w-5 h-5 rounded-full bg-white text-black font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">
+              <li class="flex items-start gap-2.5 text-sm sm:text-[15px] text-main leading-relaxed">
+                <span class="w-5 h-5 rounded-full surface-inv font-extrabold text-xs flex items-center justify-center shrink-0 mt-0.5">
                   ${i + 1}
                 </span>
                 <span>${step}</span>
@@ -3020,20 +2847,20 @@
           .join("");
 
         explanationHtml = `
-          <div class="mt-5 p-4 sm:p-5 rounded-2xl border-[2.5px] border-dashed border-white bg-white/[0.04] animate-reveal">
-            <div class="flex flex-wrap items-center justify-between gap-2 pb-2.5 mb-3 border-b-2 border-dashed border-white/40">
-              <span class="font-display text-lg sm:text-xl font-bold text-white">
+          <div class="mt-5 p-4 sm:p-5 rounded-2xl border-[2.5px] border-dashed border-main surface-tint animate-reveal">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-2.5 mb-3 border-b-2 border-dashed border-soft">
+              <span class="font-display text-lg sm:text-xl font-bold text-main">
                 ${ansRecord.isCorrect ? "✓ Tepat! Pembahasan:" : "✎ Pembahasan Langkah demi Langkah:"}
               </span>
               <div class="flex items-center gap-2">
-                <span class="text-xs sm:text-sm text-white/85">
-                  Kunci: <strong class="text-white font-extrabold">${letters[q.answer]}</strong>
+                <span class="text-xs sm:text-sm text-muted">
+                  Kunci: <strong class="text-main font-extrabold">${letters[q.answer]}</strong>
                 </span>
                 ${
                   !ansRecord.isCorrect
                     ? `<button
                         onclick="retrySingleQuestion(${state.currentIndex})"
-                        class="btn-tactile px-2.5 py-0.5 rounded-md border-2 border-white/65 hover:bg-white hover:text-black text-xs font-extrabold cursor-pointer"
+                        class="btn-tactile btn-outline px-2.5 py-0.5 rounded-md border-2 text-xs font-extrabold cursor-pointer"
                       >
                         ↻ Coba Lagi
                       </button>`
@@ -3052,25 +2879,25 @@
         <section class="animate-view flex-1 flex flex-col justify-between pb-24 sm:pb-4">
           <div>
             <!-- Tingkat 1: Bingkai Soal Solid Tebal -->
-            <div class="p-4 sm:p-5 mb-4 rounded-2xl border-2 border-white/80 bg-white/[0.025]">
-              <div class="flex flex-wrap items-center justify-between gap-2 pb-2.5 mb-3 border-b-2 border-dashed border-white/35 text-xs sm:text-sm text-white/80">
+            <div class="p-4 sm:p-5 mb-4 rounded-2xl border-2 border-mid surface-tint">
+              <div class="flex flex-wrap items-center justify-between gap-2 pb-2.5 mb-3 border-b-2 border-dashed border-soft text-xs sm:text-sm text-muted">
                 <div class="flex flex-wrap items-center gap-1.5">
-                  <span class="font-extrabold text-white">Soal #${state.currentIndex + 1}</span>
+                  <span class="font-extrabold text-main">Soal #${state.currentIndex + 1}</span>
                   <span>•</span>
-                  <span class="px-2 py-0.5 rounded border-[1.5px] border-white/55 text-white font-bold">${q.topic}</span>
-                  <span class="hidden sm:inline text-white/70">• ${q.standard}</span>
+                  <span class="px-2 py-0.5 rounded border-[1.5px] border-mid text-main font-bold">${q.topic}</span>
+                  <span class="hidden sm:inline text-muted">• ${q.standard}</span>
                 </div>
 
-                <span class="text-white/85 shrink-0">
-                  Skor Paket: <strong class="text-white font-extrabold">${pack.correct}</strong>/${pack.answered}
+                <span class="text-muted shrink-0">
+                  Skor Paket: <strong class="text-main font-extrabold">${pack.correct}</strong>/${pack.answered}
                 </span>
               </div>
 
-              <p class="chalk-text text-base sm:text-lg font-semibold leading-relaxed text-white">
+              <p class="text-base sm:text-lg font-semibold leading-relaxed text-main">
                 ${q.question}
               </p>
 
-              ${q.svg ? `<div class="mt-3.5 p-3 rounded-xl border-2 border-dashed border-white/55 bg-black/40">${q.svg}</div>` : ""}
+              ${q.svg ? `<div class="mt-3.5 p-3 rounded-xl border-2 border-dashed border-mid surface-page">${q.svg}</div>` : ""}
             </div>
 
             <!-- Tingkat 2: Pilihan Jawaban -->
@@ -3082,26 +2909,26 @@
             ${explanationHtml}
           </div>
 
-          <!-- Navigasi Bawah Sticky di Mobile (Ramah Ibu Jari + Safe Area) -->
-          <div class="fixed bottom-0 left-0 right-0 sm:static z-20 bg-[#0a0a0a]/95 backdrop-blur-md sm:bg-transparent border-t-2 border-white/55 sm:border-0 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-0 sm:pt-6 sm:pb-0">
+          <!-- Navigasi Bawah Sticky di Mobile -->
+          <div class="fixed bottom-0 left-0 right-0 sm:static z-20 surface-sticky backdrop-blur-md sm:bg-transparent border-t-2 border-mid sm:border-0 px-4 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:px-0 sm:pt-6 sm:pb-0">
             <div class="max-w-3xl mx-auto flex items-center justify-between gap-2">
               <button
                 onclick="prevQuestion()"
                 ${state.currentIndex === pack.start ? "disabled" : ""}
-                class="btn-tactile px-3 sm:px-4 py-2 rounded-xl border-2 border-white/60 text-xs sm:text-sm font-bold text-white disabled:opacity-25 hover:border-white cursor-pointer shrink-0"
+                class="btn-tactile btn-subtle px-3 sm:px-4 py-2 rounded-xl border-2 text-xs sm:text-sm font-bold disabled:opacity-25 cursor-pointer shrink-0"
               >
-                ← <span class="hidden xs:inline">Sebelumnya</span><span class="xs:hidden">Sblm</span>
+                ← <span class="hidden sm:inline">Sebelumnya</span><span class="sm:hidden">Sblm</span>
               </button>
 
               <button
                 onclick="openQuestionMap()"
-                class="btn-tactile sm:hidden px-3 py-2 rounded-xl border-2 border-dashed border-white/55 text-xs font-extrabold text-white/90 hover:border-white cursor-pointer shrink-0"
+                class="btn-tactile btn-subtle sm:hidden px-3 py-2 rounded-xl border-2 border-dashed text-xs font-extrabold cursor-pointer shrink-0"
                 title="Buka Peta Nomor Soal"
               >
                 ⊞ ${localNum}/${pack.count}
               </button>
 
-              <span class="text-xs text-white/60 hidden sm:inline">
+              <span class="text-xs text-subtle hidden sm:inline">
                 Tip: Geser layar kiri/kanan untuk pindah soal
               </span>
 
@@ -3109,13 +2936,13 @@
                 ansRecord
                   ? `<button
                       onclick="nextQuestion()"
-                      class="btn-tactile flex-1 sm:flex-initial px-5 py-2 rounded-xl bg-white text-black hover:bg-white/90 text-xs sm:text-sm font-extrabold cursor-pointer truncate"
+                      class="btn-tactile surface-inv flex-1 sm:flex-initial px-5 py-2 rounded-xl text-xs sm:text-sm font-extrabold cursor-pointer truncate"
                     >
                       ${state.currentIndex + 1 < pack.end ? "Soal Berikutnya →" : `Selesai Paket ${pack.number} →`}
                     </button>`
                   : `<button
                       onclick="nextQuestion()"
-                      class="btn-tactile px-3.5 sm:px-4 py-2 rounded-xl border-2 border-dashed border-white/55 text-xs sm:text-sm font-bold text-white/85 hover:text-white hover:border-white cursor-pointer shrink-0"
+                      class="btn-tactile btn-subtle px-3.5 sm:px-4 py-2 rounded-xl border-2 border-dashed text-xs sm:text-sm font-bold cursor-pointer shrink-0"
                     >
                       Lewati →
                     </button>`
@@ -3143,20 +2970,20 @@
 
       return `
         <section class="animate-view text-center py-4">
-          <span class="inline-block px-3.5 py-1 rounded-full bg-white text-black text-xs font-extrabold uppercase tracking-wider mb-3">
+          <span class="inline-block px-3.5 py-1 rounded-full surface-inv text-xs font-extrabold uppercase tracking-wider mb-3">
             Kelas ${grade} • Paket ${pack.number} (No. ${pack.start + 1}–${pack.end})
           </span>
 
-          <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-2">
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-main mb-2">
             ${title}
           </h2>
 
-          <div class="my-5 inline-flex items-baseline gap-2 px-6 py-4 rounded-2xl border-[2.5px] border-dashed border-white/85 bg-white/[0.04]">
-            <span class="font-display text-4xl sm:text-5xl font-bold text-white">${pack.correct}</span>
-            <span class="text-base sm:text-lg font-bold text-white/85">/ ${pack.count} Benar (${pct}%)</span>
+          <div class="my-5 inline-flex items-baseline gap-2 px-6 py-4 rounded-2xl border-[2.5px] border-dashed border-main surface-tint">
+            <span class="font-display text-4xl sm:text-5xl font-bold text-main">${pack.correct}</span>
+            <span class="text-base sm:text-lg font-bold text-muted">/ ${pack.count} Benar (${pct}%)</span>
           </div>
 
-          <p class="text-sm text-white/80 max-w-md mx-auto mb-7 leading-relaxed">
+          <p class="text-sm text-muted max-w-md mx-auto mb-7 leading-relaxed">
             Kamu menjawab ${pack.answered} dari ${pack.count} soal pada Paket ${pack.number}. ${
               pack.wrong > 0 ? `Ada ${pack.wrong} soal yang perlu diulang agar nilaimu sempurna!` : "Semua soal terjawab dengan tepat!"
             }
@@ -3167,7 +2994,7 @@
               hasNextPack
                 ? `<button
                     onclick="startPack(${grade}, ${state.selectedPack + 1}, false)"
-                    class="btn-tactile w-full sm:w-auto px-6 py-2.5 rounded-xl bg-white text-black hover:bg-white/90 text-sm font-extrabold cursor-pointer"
+                    class="btn-tactile surface-inv w-full sm:w-auto px-6 py-2.5 rounded-xl text-sm font-extrabold cursor-pointer"
                   >
                     Lanjut Paket ${pack.number + 1} →
                   </button>`
@@ -3177,7 +3004,7 @@
               pack.wrong > 0
                 ? `<button
                     onclick="openQuestionMap('wrong')"
-                    class="btn-tactile w-full sm:w-auto px-5 py-2.5 rounded-xl border-2 border-white text-white hover:bg-white/10 text-sm font-bold cursor-pointer"
+                    class="btn-tactile btn-subtle w-full sm:w-auto px-5 py-2.5 rounded-xl border-2 text-sm font-bold cursor-pointer"
                   >
                     Ulangi ${pack.wrong} Soal Salah
                   </button>`
@@ -3185,13 +3012,13 @@
             }
             <button
               onclick="startPack(${grade}, ${state.selectedPack}, true)"
-              class="btn-tactile w-full sm:w-auto px-5 py-2.5 rounded-xl border-2 border-dashed border-white/65 text-white/95 hover:border-white text-sm font-bold cursor-pointer"
+              class="btn-tactile btn-subtle w-full sm:w-auto px-5 py-2.5 rounded-xl border-2 border-dashed text-sm font-bold cursor-pointer"
             >
               ↻ Reset Paket Ini
             </button>
             <button
               onclick="goToPacks(${grade})"
-              class="btn-tactile w-full sm:w-auto px-5 py-2.5 rounded-xl border-2 border-white/50 text-white/85 hover:text-white hover:border-white text-sm font-bold cursor-pointer"
+              class="btn-tactile btn-subtle w-full sm:w-auto px-5 py-2.5 rounded-xl border-2 text-sm font-bold cursor-pointer"
             >
               Daftar Paket Kelas ${grade}
             </button>
@@ -3234,7 +3061,6 @@
       }
     }
 
-    // Inisialisasi saat halaman dimuat
     window.addEventListener("DOMContentLoaded", () => {
       loadProgress();
       render();
