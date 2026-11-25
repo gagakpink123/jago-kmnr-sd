@@ -20,6 +20,7 @@
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jago-kmnr-sd.vercel.app/" />
   <meta property="og:site_name" content="Jago KMNR SD" />
   <meta property="og:locale" content="id_ID" />
   <meta property="og:title" content="Jago KMNR SD — Kuis Matematika Nalaria Realistik Kelas 1–6" />
@@ -38,6 +39,7 @@
       {
         "@type": "WebApplication",
         "name": "Jago KMNR SD",
+        "url": "https://jago-kmnr-sd.vercel.app/",
         "alternateName": "Kuis Kompetisi Matematika Nalaria Realistik SD",
         "description": "Aplikasi web interaktif kumpulan soal dan pembahasan langsung Kompetisi Matematika Nalaria Realistik (KMNR) untuk siswa SD kelas 1 sampai kelas 6.",
         "applicationCategory": "EducationalApplication",
@@ -632,7 +634,14 @@
       animation: techTickerLoop 24s linear infinite;
     }
 
-    .tech-ticker-viewport:hover .tech-ticker-track {
+    .subtitle-marquee-track {
+      display: flex;
+      width: max-content;
+      animation: techTickerLoop 12s linear infinite;
+    }
+
+    .tech-ticker-viewport:hover .tech-ticker-track,
+    .tech-ticker-viewport:hover .subtitle-marquee-track {
       animation-play-state: paused;
     }
 
@@ -681,32 +690,54 @@
 
     <!-- Header Standar (Masthead Editorial) -->
     <header id="header-standard" class="surface-card border-[1.5px] border-main mb-5">
-      <!-- Strip Metadata Teknis Atas dengan High-Tech Looping Ticker -->
-      <div class="flex items-center justify-between gap-2 px-3 py-1.5 border-b border-main surface-muted font-mono-tech text-[10px] sm:text-[11px] uppercase tracking-[0.08em]">
-        <div class="flex items-center gap-2 shrink-0">
-          <span class="inline-block w-2 h-2 surface-accent tech-pulse shrink-0"></span>
+      <!-- Strip Metadata Teknis Atas + Kontrol Pojok Kanan Atas -->
+      <div class="flex items-center justify-between gap-2 px-2.5 py-1 sm:px-3 sm:py-1.5 border-b border-main surface-muted font-mono-tech text-[9px] sm:text-[11px] uppercase tracking-[0.08em]">
+        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          <span class="inline-block w-1.5 h-1.5 sm:w-2 sm:h-2 surface-accent tech-pulse shrink-0"></span>
           <span class="font-bold text-main">INDEX // KMNR-SD</span>
         </div>
 
-        <div class="tech-ticker-viewport flex-1 mx-2 hidden sm:block">
+        <div class="tech-ticker-viewport flex-1 mx-2 hidden md:block">
           <div class="tech-ticker-track text-muted">
             <span class="pr-8">RME • KANGAROO MATH • SASMO • TIMSS • 530 MODULAR PROBLEMS • REALISTIC MATHEMATICS EDUCATION •</span>
             <span class="pr-8" aria-hidden="true">RME • KANGAROO MATH • SASMO • TIMSS • 530 MODULAR PROBLEMS • REALISTIC MATHEMATICS EDUCATION •</span>
           </div>
         </div>
 
-        <div class="flex items-center gap-1.5 text-main font-bold shrink-0">
-          <span id="telemetry-status" class="text-muted">SYS.READY</span>
-          <span class="text-accent tech-cursor">_</span>
+        <div class="flex items-center gap-1 sm:gap-2 shrink-0">
+          <div class="hidden sm:flex items-center gap-1.5 text-main font-bold mr-1">
+            <span id="telemetry-status" class="text-muted">SYS.READY</span>
+            <span class="text-accent tech-cursor">_</span>
+          </div>
+
+          <button
+            type="button"
+            onclick="toggleTheme()"
+            class="theme-toggle-btn btn-swiss h-6 px-1.5 sm:px-2 font-mono-tech text-[9px] sm:text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 cursor-pointer"
+            title="Ganti Tema Putih / Hitam"
+          >
+            <span class="theme-swatch w-1.5 h-1.5 sm:w-2 sm:h-2 border border-main surface-inv inline-block"></span>
+            <span class="theme-label">DARK</span>
+          </button>
+
+          <button
+            type="button"
+            onclick="toggleSound()"
+            class="sound-toggle-btn btn-swiss h-6 px-1.5 sm:px-2 font-mono-tech text-[9px] sm:text-[10px] font-bold uppercase tracking-wider flex items-center gap-1 cursor-pointer"
+            title="Suara Efek"
+          >
+            <span class="sound-dot w-1.5 h-1.5 surface-accent inline-block"></span>
+            <span class="sound-label">SFX</span>
+          </button>
         </div>
       </div>
 
       <!-- Baris Utama Masthead -->
-      <div class="flex items-stretch justify-between gap-3 p-3.5 sm:p-5">
+      <div class="flex items-stretch justify-between p-3.5 sm:p-5">
         <button
           type="button"
           onclick="goHome()"
-          class="flex items-center gap-3.5 text-left group cursor-pointer min-w-0"
+          class="flex items-center gap-3.5 text-left group cursor-pointer min-w-0 w-full"
           title="Kembali ke Indeks Kelas"
         >
           <!-- Simbol Geometris Swiss -->
@@ -718,56 +749,36 @@
               <rect class="logo-accent-block" x="18" y="18" width="8" height="8" fill="#FF0000" stroke="none" />
             </svg>
           </div>
-          <div class="min-w-0">
+          <div class="min-w-0 flex-1 overflow-hidden">
             <h1 class="font-display text-2xl sm:text-[38px] text-main">
               JAGO KMNR SD
             </h1>
-            <p class="font-mono-tech text-[11px] sm:text-xs text-muted uppercase tracking-[0.06em] mt-1 truncate">
-              MATEMATIKA NALARIA REALISTIK — KELAS 01–06
-            </p>
+            <div class="tech-ticker-viewport w-full mt-1">
+              <div class="subtitle-marquee-track font-mono-tech text-[11px] sm:text-xs text-muted uppercase tracking-[0.06em]">
+                <span class="pr-8">MATEMATIKA NALARIA REALISTIK — KELAS 01–06 •</span>
+                <span class="pr-8" aria-hidden="true">MATEMATIKA NALARIA REALISTIK — KELAS 01–06 •</span>
+              </div>
+            </div>
           </div>
         </button>
-
-        <!-- Kontrol Pojok Kanan Atas -->
-        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
-          <button
-            type="button"
-            onclick="toggleTheme()"
-            class="theme-toggle-btn btn-swiss h-9 px-2.5 sm:px-3.5 font-mono-tech text-[11px] font-bold uppercase tracking-wider flex items-center gap-2 cursor-pointer"
-            title="Ganti Tema Putih / Hitam"
-          >
-            <span class="theme-swatch w-2.5 h-2.5 border border-main surface-inv inline-block"></span>
-            <span class="theme-label">DARK</span>
-          </button>
-
-          <button
-            type="button"
-            onclick="toggleSound()"
-            class="sound-toggle-btn btn-swiss h-9 px-2.5 sm:px-3 font-mono-tech text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5 cursor-pointer"
-            title="Suara Efek"
-          >
-            <span class="sound-dot w-2 h-2 surface-accent inline-block"></span>
-            <span class="sound-label">SFX</span>
-          </button>
-        </div>
       </div>
     </header>
 
     <!-- Header Ringkas Saat Kuis Berjalan -->
     <header id="header-compact" class="hidden sticky top-0 z-30 surface-page border-b-[1.5px] border-main pb-2.5 pt-2 mb-4 -mx-3.5 px-3.5 sm:-mx-6 sm:px-6">
-      <div class="flex items-center justify-between gap-1.5 mb-2">
+      <div class="flex items-center justify-between gap-1 mb-2">
         <button
           type="button"
           id="compact-back-btn"
           onclick="goToPacks(state.selectedGrade)"
-          class="btn-swiss h-8 px-2.5 font-mono-tech text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5 cursor-pointer"
+          class="btn-swiss h-7 sm:h-8 px-2 sm:px-2.5 font-mono-tech text-[10px] sm:text-[11px] font-bold uppercase tracking-wider flex items-center gap-1 cursor-pointer shrink-0"
         >
           <span>←</span>
           <span id="compact-back-label">PAKET</span>
         </button>
 
         <div class="text-center min-w-0 px-1">
-          <span id="compact-title" class="font-mono-tech text-[11px] sm:text-xs font-bold uppercase tracking-wider text-main truncate block">
+          <span id="compact-title" class="font-mono-tech text-[10px] sm:text-xs font-bold uppercase tracking-wider text-main truncate block">
             KLS 01 // PKT 01
           </span>
         </div>
@@ -776,7 +787,7 @@
           <button
             type="button"
             onclick="openScratchpad()"
-            class="btn-swiss h-8 px-2 sm:px-2.5 font-mono-tech text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5 cursor-pointer"
+            class="btn-swiss h-7 sm:h-8 px-2 sm:px-2.5 font-mono-tech text-[10px] sm:text-[11px] font-bold uppercase tracking-wider flex items-center gap-1 cursor-pointer"
             title="Buka Kanvas Coret-Coretan"
           >
             <span class="w-1.5 h-1.5 surface-accent inline-block"></span>
@@ -786,19 +797,20 @@
           <button
             type="button"
             onclick="toggleTheme()"
-            class="theme-toggle-btn btn-swiss h-8 px-2 font-mono-tech text-[10px] font-bold uppercase flex items-center gap-1.5 cursor-pointer"
+            class="theme-toggle-btn btn-swiss h-6 sm:h-7 px-1.5 sm:px-2 font-mono-tech text-[9px] sm:text-[10px] font-bold uppercase flex items-center gap-1 cursor-pointer"
             title="Ganti Tema Putih / Hitam"
           >
-            <span class="theme-swatch w-2 h-2 border border-main surface-inv inline-block"></span>
-            <span class="theme-label hidden sm:inline">DARK</span>
+            <span class="theme-swatch w-1.5 h-1.5 sm:w-2 sm:h-2 border border-main surface-inv inline-block"></span>
+            <span class="theme-label">DARK</span>
           </button>
 
           <button
             type="button"
             onclick="toggleSound()"
-            class="sound-toggle-btn btn-swiss h-8 px-2 font-mono-tech text-[10px] font-bold uppercase flex items-center justify-center cursor-pointer"
+            class="sound-toggle-btn btn-swiss h-6 sm:h-7 px-1.5 sm:px-2 font-mono-tech text-[9px] sm:text-[10px] font-bold uppercase flex items-center gap-1 cursor-pointer"
             title="Suara Efek"
           >
+            <span class="sound-dot w-1.5 h-1.5 surface-accent inline-block"></span>
             <span class="sound-label">SFX</span>
           </button>
         </div>
